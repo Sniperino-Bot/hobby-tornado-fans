@@ -1,0 +1,2225 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Hobby Tornado Fans — Konvektions-Potenzial Deutschland</title>
+<style>
+:root{
+  --bg:#05070d; --bg2:#080d16; --ink:#e8f1f8; --ink2:#8fa6b8; --ink3:#5b7086;
+  --line:rgba(120,190,230,.18); --glass:rgba(10,18,30,.72);
+  --l1:#57b6e0; --l2:#f2d84b; --l3:#ee7a12; --l4:#d92f86;
+  --accent:#57b6e0; --gut:#4fd18b;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+.mono{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-variant-numeric:tabular-nums}
+
+/* ---------- Hero ---------- */
+#hero{position:relative;height:100vh;height:100svh;min-height:540px;overflow:hidden;
+  background:radial-gradient(130% 100% at 50% 0%,#0e1c31 0%,#070d1a 52%,#04060c 100%)}
+#heroCv{position:absolute;inset:0;width:100%;height:100%;display:block}
+#hero .vignette{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:radial-gradient(120% 90% at 50% 60%,transparent 40%,rgba(2,4,8,.55) 100%)}
+.hero-in{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;padding:0 24px}
+.hero-badge{display:inline-flex;align-items:center;gap:9px;padding:7px 16px;
+  border-radius:24px;border:1px solid rgba(238,122,18,.45);background:rgba(238,122,18,.08);
+  backdrop-filter:blur(6px);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:#f0b27a;margin-bottom:26px;animation:badgein 1s .2s both}
+.hero-badge i{width:8px;height:8px;border-radius:50%;background:#ee7a12;
+  box-shadow:0 0 10px #ee7a12;animation:blink 2.4s infinite}
+.hero-in h1{font-size:clamp(34px,6.6vw,80px);font-weight:800;letter-spacing:.13em;
+  line-height:1.05;animation:herotitle 1.1s .1s both;
+  text-shadow:0 0 44px rgba(87,182,224,.35)}
+.hero-in h1 i{font-style:normal;color:var(--accent);
+  text-shadow:0 0 26px rgba(87,182,224,.9)}
+.hero-sub{margin-top:18px;max-width:660px;font-size:clamp(13px,1.6vw,16px);
+  line-height:1.75;color:var(--ink2);animation:badgein 1s .35s both}
+.hero-sub b{color:var(--ink)}
+.hero-tags{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:22px;
+  animation:badgein 1s .5s both}
+.hero-tags span{padding:6px 14px;border-radius:20px;font-size:11px;letter-spacing:.08em;
+  border:1px solid var(--line);background:rgba(10,18,30,.55);backdrop-filter:blur(6px);
+  color:var(--ink2)}
+.hero-tags span.nein{border-color:rgba(255,110,110,.35);color:#ff9d9d}
+#heroCta{margin-top:38px;display:inline-flex;align-items:center;gap:12px;cursor:pointer;
+  padding:15px 30px;border-radius:14px;border:1px solid rgba(87,182,224,.55);
+  background:linear-gradient(180deg,rgba(87,182,224,.16),rgba(87,182,224,.05));
+  color:var(--ink);font-size:14.5px;font-weight:650;letter-spacing:.06em;
+  backdrop-filter:blur(8px);transition:.25s;position:relative;animation:badgein 1s .65s both;
+  user-select:none}
+#heroCta:hover{border-color:rgba(150,220,255,.9);box-shadow:0 0 34px rgba(87,182,224,.45);
+  transform:translateY(-2px)}
+#heroCta em{font-style:normal;color:var(--accent);font-size:18px;animation:ctapfeil 1.6s infinite}
+#heroCta:after{content:"";position:absolute;inset:-1px;border-radius:14px;
+  border:1px solid rgba(87,182,224,.5);animation:ctapuls 2.6s infinite;pointer-events:none}
+.hero-amtlich{margin-top:16px;font-size:10.5px;letter-spacing:.1em;color:var(--ink3);
+  animation:badgein 1s .8s both}
+.hero-amtlich a{color:var(--ink2)}
+#heroScroll{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);z-index:2;
+  color:var(--ink3);font-size:10px;letter-spacing:.28em;text-transform:uppercase;
+  cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:7px}
+#heroScroll i{width:1px;height:34px;background:linear-gradient(180deg,transparent,var(--accent));
+  animation:scrolllinie 1.8s infinite}
+@keyframes badgein{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes herotitle{from{opacity:0;transform:translateY(22px) scale(.97);filter:blur(6px)}
+  to{opacity:1;transform:none;filter:none}}
+@keyframes ctapfeil{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+@keyframes ctapuls{0%{opacity:.8;transform:scale(1)}70%,100%{opacity:0;transform:scale(1.14,1.5)}}
+@keyframes scrolllinie{0%{transform:scaleY(0);transform-origin:top}
+  45%{transform:scaleY(1);transform-origin:top}
+  55%{transform:scaleY(1);transform-origin:bottom}
+  100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ---------- HUD-Ecken auf der Karte ---------- */
+.hudE{position:absolute;width:26px;height:26px;z-index:4;pointer-events:none;
+  border-color:rgba(87,182,224,.6);filter:drop-shadow(0 0 6px rgba(87,182,224,.55));
+  animation:hudpuls 3.4s infinite}
+.hudE.tl{top:9px;left:9px;border-top:2px solid;border-left:2px solid}
+.hudE.tr{top:9px;right:9px;border-top:2px solid;border-right:2px solid}
+.hudE.bl{bottom:9px;left:9px;border-bottom:2px solid;border-left:2px solid}
+.hudE.br{bottom:9px;right:9px;border-bottom:2px solid;border-right:2px solid}
+@keyframes hudpuls{0%,100%{opacity:.5}50%{opacity:1}}
+
+/* ---------- Karten-Ansicht ---------- */
+#app{height:100vh;display:grid;grid-template-rows:auto 1fr auto}
+#stage{position:relative;overflow:hidden;background:
+  radial-gradient(120% 90% at 50% 10%, #0b1526 0%, #05070d 62%, #03050a 100%);
+  touch-action:none}
+#stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+#fx{cursor:crosshair}
+#fx.grab{cursor:grabbing}
+
+/* ---------- Kopf ---------- */
+header{
+  display:flex;align-items:center;gap:18px;padding:12px 20px;
+  border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(10,20,34,.9),rgba(5,7,13,.6));
+  backdrop-filter:blur(8px);position:relative;z-index:5;
+}
+header:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--accent),transparent);
+  background-size:55% 100%;background-repeat:no-repeat;opacity:.6;
+  animation:headshine 5.5s ease-in-out infinite}
+@keyframes headshine{0%{background-position:-60% 0}50%{background-position:160% 0}
+  100%{background-position:-60% 0}}
+.brand{display:flex;align-items:baseline;gap:10px}
+.brand b{font-size:17px;letter-spacing:.16em;font-weight:700}
+.brand b i{font-style:normal;color:var(--accent)}
+.brand span{font-size:11px;color:var(--ink3);letter-spacing:.13em;text-transform:uppercase}
+.spacer{flex:1}
+.stat{display:flex;flex-direction:column;gap:2px;padding:0 14px;border-left:1px solid var(--line)}
+.stat u{text-decoration:none;font-size:9.5px;letter-spacing:.14em;color:var(--ink3);text-transform:uppercase}
+.stat b{font-size:13px;font-weight:600;letter-spacing:.02em}
+.led{display:inline-flex;align-items:center;gap:7px;font-size:11px;letter-spacing:.14em;color:#7fe0a8}
+.led i{width:7px;height:7px;border-radius:50%;background:#4fd18b;box-shadow:0 0 10px #4fd18b;animation:blink 2.4s infinite}
+.led.warn{color:#f2d84b}.led.warn i{background:#f2d84b;box-shadow:0 0 10px #f2d84b}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.28}}
+
+/* ---------- Seitenpanel ---------- */
+#panel{
+  position:absolute;top:16px;right:16px;width:292px;z-index:4;
+  background:var(--glass);border:1px solid var(--line);border-radius:14px;
+  backdrop-filter:blur(14px);box-shadow:0 18px 50px rgba(0,0,0,.6);
+  overflow:hidden;max-height:calc(100% - 32px);overflow-y:auto;
+}
+#panel .ph{padding:11px 14px 9px;border-bottom:1px solid var(--line);
+  font-size:9.5px;letter-spacing:.18em;color:var(--ink3);text-transform:uppercase;
+  display:flex;justify-content:space-between;align-items:center;gap:8px}
+#panel .pb{padding:13px 14px 14px}
+.tpi{display:flex;align-items:flex-end;gap:9px;margin-bottom:3px}
+.tpi b{font-size:46px;line-height:.86;font-weight:700;letter-spacing:-.03em}
+.tpi u{text-decoration:none;font-size:11px;color:var(--ink3);padding-bottom:6px}
+.chip{display:inline-flex;align-items:center;gap:7px;margin:9px 0 12px;
+  padding:4px 11px 4px 8px;border-radius:20px;font-size:11.5px;font-weight:600;
+  border:1px solid;letter-spacing:.03em}
+.chip i{width:9px;height:9px;border-radius:50%}
+
+/* Parameter mit Schwellwert-Skala */
+.par{padding:9px 0 8px;border-top:1px solid rgba(120,190,230,.09)}
+.par .kopf{display:flex;justify-content:space-between;align-items:baseline;font-size:12px}
+.par .kopf span{color:var(--ink2)}
+.par .kopf b{font-weight:600}
+.par .kopf em{font-style:normal;color:var(--ink3);font-size:10.5px;margin-left:4px}
+.skala{position:relative;height:5px;border-radius:3px;background:rgba(120,190,230,.11);margin:7px 0 4px}
+.skala .opt{position:absolute;top:0;bottom:0;background:rgba(79,209,139,.34);border-radius:3px}
+.skala .min{position:absolute;top:-2px;bottom:-2px;width:1.5px;background:rgba(232,241,248,.5)}
+.skala .nad{position:absolute;top:50%;width:9px;height:9px;margin:-4.5px 0 0 -4.5px;
+  border-radius:50%;background:#eaf6ff;box-shadow:0 0 8px rgba(234,246,255,.8);transition:left .25s ease}
+.par .fuss{display:flex;justify-content:space-between;font-size:9.5px;color:var(--ink3);letter-spacing:.02em}
+.par.aus .kopf b{color:var(--ink3)}
+.hinweis{margin-top:11px;padding-top:9px;border-top:1px solid rgba(120,190,230,.1);
+  font-size:9.5px;line-height:1.55;color:var(--ink3)}
+
+/* ---------- Legende ---------- */
+#legend{
+  position:absolute;left:16px;bottom:16px;z-index:4;
+  background:var(--glass);border:1px solid var(--line);border-radius:12px;
+  backdrop-filter:blur(14px);padding:11px 13px;min-width:186px;
+  box-shadow:0 14px 40px rgba(0,0,0,.55);
+}
+#legend h4{font-size:9.5px;letter-spacing:.17em;color:var(--ink3);
+  text-transform:uppercase;font-weight:600;margin-bottom:9px}
+.lg{display:flex;align-items:center;gap:9px;padding:3px 0;font-size:11.5px;color:var(--ink2)}
+.lg i{width:16px;height:9px;border-radius:2px;flex:none}
+.lg u{text-decoration:none;margin-left:auto;font-size:10px;color:var(--ink3)}
+#legend .note{margin-top:9px;padding-top:8px;border-top:1px solid rgba(120,190,230,.1);
+  font-size:9.5px;line-height:1.5;color:var(--ink3);max-width:210px}
+.tornote{margin-top:9px;padding-top:8px;border-top:1px solid rgba(120,190,230,.1);max-width:210px}
+.tornote b{font-size:11px;color:var(--ink2);font-weight:600;vertical-align:middle}
+.tornote u{text-decoration:none;float:right;font-size:10px;color:var(--ink3);padding-top:2px}
+.tornote i{display:block;margin-top:5px;font-style:normal;font-size:9.5px;
+  line-height:1.5;color:var(--ink3);clear:both}
+.tornote i b{font-size:9.5px;color:var(--ink2)}
+.torpunkt{display:inline-block;width:9px;height:9px;border-radius:50%;
+  background:#ff4d4d;box-shadow:0 0 7px rgba(255,77,77,.8);margin-right:7px;
+  vertical-align:middle}
+
+/* ---------- Layer-Schalter + Zoom ---------- */
+#layers{position:absolute;left:16px;top:16px;z-index:4;display:flex;flex-direction:column;gap:7px}
+.tgl{display:flex;align-items:center;gap:8px;cursor:pointer;user-select:none;
+  background:var(--glass);border:1px solid var(--line);border-radius:9px;
+  backdrop-filter:blur(12px);padding:7px 11px;font-size:11px;color:var(--ink2);
+  letter-spacing:.05em;transition:.18s}
+.tgl:hover{border-color:rgba(120,190,230,.4);color:var(--ink)}
+.tgl i{width:8px;height:8px;border-radius:50%;background:var(--ink3);transition:.18s;flex:none}
+.tgl.on{color:var(--ink);border-color:rgba(87,182,224,.42)}
+.tgl.on i{background:var(--accent);box-shadow:0 0 9px var(--accent)}
+/* Die Tornado-Ebene führt ihre eigene Farbe — aber nur im eingeschalteten
+   Zustand, sonst sieht ein ausgeschalteter Schalter aus wie ein aktiver. */
+.tgl[data-l="tornados"].on{border-color:rgba(255,77,77,.45)}
+.tgl[data-l="tornados"].on i{background:#ff4d4d;box-shadow:0 0 9px rgba(255,77,77,.9)}
+#zoomui{position:absolute;right:16px;bottom:16px;z-index:4;display:flex;flex-direction:column;gap:6px;align-items:flex-end}
+.zb{width:34px;height:34px;border-radius:9px;cursor:pointer;user-select:none;
+  background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(12px);
+  color:var(--ink2);display:grid;place-items:center;font-size:15px;transition:.18s}
+.zb:hover{border-color:rgba(87,182,224,.45);color:var(--ink)}
+.zb.txt{width:auto;padding:0 11px;font-size:10.5px;letter-spacing:.1em}
+#zoomlvl{font-size:9.5px;color:var(--ink3);letter-spacing:.1em;padding-right:2px}
+
+/* ---------- Zeitleiste ---------- */
+footer.tlbar{
+  padding:11px 20px 13px;border-top:1px solid var(--line);
+  background:linear-gradient(0deg,rgba(10,20,34,.94),rgba(5,7,13,.7));
+  backdrop-filter:blur(8px);position:relative;z-index:5;
+}
+.tl{display:flex;align-items:center;gap:16px}
+#play{
+  width:38px;height:38px;flex:none;border-radius:50%;cursor:pointer;
+  border:1px solid rgba(87,182,224,.42);background:rgba(87,182,224,.1);
+  color:var(--accent);display:grid;place-items:center;transition:.18s;font-size:13px}
+#play:hover{background:rgba(87,182,224,.22);box-shadow:0 0 18px rgba(87,182,224,.3)}
+.tw{flex:1;position:relative}
+.ticks{position:relative;height:15px;margin-bottom:1px}
+.ticks u{position:absolute;top:0;transform:translateX(-50%);text-decoration:none;
+  font-size:9.5px;color:var(--ink3);letter-spacing:.08em;white-space:nowrap}
+.ticks u:before{content:"";position:absolute;left:50%;top:13px;width:1px;height:5px;
+  background:var(--line)}
+input[type=range]{
+  -webkit-appearance:none;appearance:none;width:100%;height:22px;background:transparent;cursor:pointer;display:block}
+input[type=range]::-webkit-slider-runnable-track{height:4px;border-radius:3px;
+  background:linear-gradient(90deg,rgba(87,182,224,.55),rgba(87,182,224,.12))}
+input[type=range]::-moz-range-track{height:4px;border-radius:3px;
+  background:linear-gradient(90deg,rgba(87,182,224,.55),rgba(87,182,224,.12))}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:15px;height:15px;
+  border-radius:50%;background:#eaf6ff;border:2px solid var(--accent);margin-top:-5.5px;
+  box-shadow:0 0 14px rgba(87,182,224,.85)}
+input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;
+  background:#eaf6ff;border:2px solid var(--accent);box-shadow:0 0 14px rgba(87,182,224,.85)}
+.tstamp{flex:none;text-align:right;min-width:200px}
+.tstamp b{display:block;font-size:15px;font-weight:600;letter-spacing:.02em}
+.tstamp u{text-decoration:none;font-size:10px;color:var(--ink3);letter-spacing:.12em;text-transform:uppercase}
+
+/* ---------- Peak-Leiste / Disclaimer / Scroll-Hinweis ---------- */
+.peak{position:absolute;left:50%;top:16px;transform:translateX(-50%);z-index:4;cursor:pointer;
+  display:flex;align-items:center;gap:10px;padding:8px 15px;border-radius:24px;
+  background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(12px);
+  font-size:11.5px;color:var(--ink2);letter-spacing:.03em;transition:.18s;
+  box-shadow:0 10px 30px rgba(0,0,0,.5);max-width:calc(100% - 640px)}
+.peak:hover{border-color:rgba(87,182,224,.45);color:var(--ink)}
+.peak b{font-weight:600}
+.peak i{width:9px;height:9px;border-radius:50%;flex:none}
+.peak s{text-decoration:none;color:var(--ink3);font-size:10px;
+  border-left:1px solid var(--line);padding-left:10px;white-space:nowrap}
+.disc{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);z-index:4;
+  font-size:9.5px;color:var(--ink3);letter-spacing:.09em;text-align:center;
+  background:rgba(5,7,13,.6);padding:4px 12px;border-radius:20px;
+  border:1px solid rgba(120,190,230,.1);backdrop-filter:blur(6px);white-space:nowrap}
+#runter{position:absolute;left:50%;bottom:44px;transform:translateX(-50%);z-index:4;
+  display:flex;align-items:center;gap:8px;padding:7px 15px;border-radius:22px;cursor:pointer;
+  background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(12px);
+  font-size:11px;color:var(--ink2);letter-spacing:.04em;transition:.18s}
+#runter:hover{border-color:rgba(87,182,224,.45);color:var(--ink)}
+#runter em{font-style:normal;animation:hopf 2.2s infinite}
+@keyframes hopf{0%,100%{transform:translateY(0)}50%{transform:translateY(3px)}}
+
+/* ---------- Erklärstrecke ---------- */
+#erklaer{border-top:1px solid var(--line);background:
+  linear-gradient(180deg,#070b14 0%,#05070d 100%);padding:78px 0 20px}
+.ekopf{max-width:1180px;margin:0 auto 46px;padding:0 32px}
+.ekopf h2{font-size:clamp(30px,4.2vw,46px);font-weight:800;letter-spacing:-.015em;margin-bottom:12px}
+.ekopf h2 i{font-style:normal;
+  background:linear-gradient(100deg,#57b6e0 15%,#c8ecff 50%,#57b6e0 85%);
+  background-size:200% 100%;-webkit-background-clip:text;background-clip:text;
+  color:transparent;animation:shimmer 5s linear infinite}
+@keyframes shimmer{to{background-position:-200% 0}}
+.ekopf p{font-size:14.5px;line-height:1.75;color:var(--ink2);max-width:660px}
+.egrid{max-width:1180px;margin:0 auto;padding:0 32px;display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1.06fr);gap:56px;align-items:start}
+.eschritte{display:flex;flex-direction:column}
+.schritt{min-height:76vh;display:flex;flex-direction:column;justify-content:center;
+  opacity:.22;border-left:2px solid rgba(120,190,230,.08);padding-left:26px;
+  transform:translateX(-6px);
+  transition:opacity .5s ease,transform .5s ease,border-color .5s ease}
+.schritt.aktiv{opacity:1;transform:none;border-color:rgba(87,182,224,.55)}
+.schritt.aktiv .nr{text-shadow:0 0 12px rgba(87,182,224,.8)}
+.schritt.aktiv .wert{border-color:rgba(87,182,224,.5);
+  box-shadow:0 0 18px rgba(87,182,224,.14)}
+.schritt .nr{font-size:10px;letter-spacing:.24em;color:var(--accent);
+  text-transform:uppercase;margin-bottom:12px;font-weight:600}
+.schritt h3{font-size:22px;font-weight:650;margin-bottom:13px;letter-spacing:-.01em}
+.schritt p{font-size:14.5px;line-height:1.78;color:var(--ink2);max-width:470px}
+.schritt .wert{display:inline-flex;align-items:center;gap:8px;margin-top:17px;
+  padding:6px 13px;border-radius:8px;background:rgba(87,182,224,.08);
+  border:1px solid rgba(87,182,224,.22);font-size:11.5px;color:var(--ink2)}
+.schritt .wert b{color:var(--ink);font-weight:600}
+.ebuehne{position:sticky;top:calc(50vh - 218px);height:436px;
+  border:1px solid var(--line);border-radius:16px;overflow:hidden;
+  background:linear-gradient(180deg,#091220,#060a12);box-shadow:0 24px 70px rgba(0,0,0,.5)}
+.ebuehne:after{content:"";position:absolute;inset:0;border-radius:16px;pointer-events:none;
+  border:1px solid rgba(87,182,224,.16);
+  box-shadow:inset 0 0 60px rgba(87,182,224,.06),inset 0 -30px 60px rgba(217,47,134,.05);
+  animation:hudpuls 4.2s infinite}
+#eCanvas{width:100%;height:100%;display:block}
+.eabsp{position:absolute;left:14px;bottom:12px;font-size:9.5px;letter-spacing:.14em;
+  color:var(--ink3);text-transform:uppercase}
+
+/* ---------- Fußzeile ---------- */
+#fuss{border-top:1px solid var(--line);margin-top:60px;padding:34px 32px 42px;
+  background:#04060b}
+.fuss-in{max-width:1180px;margin:0 auto;display:flex;gap:34px;flex-wrap:wrap;
+  justify-content:space-between;font-size:11.5px;line-height:1.8;color:var(--ink3)}
+.fuss-in b{color:var(--ink2);display:block;margin-bottom:5px;font-size:10px;
+  letter-spacing:.16em;text-transform:uppercase}
+.fuss-in a{color:var(--accent);text-decoration:none}
+.fuss-in a:hover{text-decoration:underline}
+.warnung{max-width:1180px;margin:0 auto 26px;padding:13px 17px;border-radius:11px;
+  background:rgba(238,122,18,.07);border:1px solid rgba(238,122,18,.25);
+  font-size:12px;line-height:1.7;color:var(--ink2)}
+.warnung b{color:#ee7a12}
+
+/* ---------- Rechtliches ---------- */
+#recht{background:#04060b;border-top:1px solid var(--line);padding:46px 32px 70px}
+.recht-in{max-width:820px;margin:0 auto;font-size:13px;line-height:1.8;color:var(--ink2)}
+.recht-in h2{font-size:17px;color:var(--ink);margin:34px 0 12px;letter-spacing:.02em;
+  scroll-margin-top:20px}
+.recht-in h2:first-child{margin-top:0}
+.recht-in h3{font-size:13.5px;color:var(--ink);margin:20px 0 7px;font-weight:650}
+.recht-in p{margin-bottom:11px}
+.recht-in ul{margin:0 0 11px 18px}
+.recht-in li{margin-bottom:6px}
+.recht-in a{color:var(--accent);text-decoration:none}
+.recht-in a:hover{text-decoration:underline}
+.recht-in .anschrift{padding:11px 15px;border-left:2px solid var(--line);
+  background:rgba(120,190,230,.04);border-radius:0 6px 6px 0}
+.recht-in .platzhalter{font-size:12px;color:#ee7a12;
+  background:rgba(238,122,18,.07);border:1px solid rgba(238,122,18,.25);
+  border-radius:8px;padding:9px 13px}
+
+/* ---------- Boot ---------- */
+#boot{position:fixed;inset:0;z-index:50;background:var(--bg);
+  display:grid;place-items:center;transition:opacity .7s ease}
+#boot.gone{opacity:0;pointer-events:none}
+.bootbox{width:min(430px,86vw)}
+.bootbox h1{font-size:21px;letter-spacing:.24em;font-weight:700;margin-bottom:5px}
+.bootbox h1 i{font-style:normal;color:var(--accent)}
+.bootbox p{font-size:10.5px;letter-spacing:.2em;color:var(--ink3);
+  text-transform:uppercase;margin-bottom:22px}
+#bootlog{font-size:11.5px;line-height:1.85;color:var(--ink2);min-height:112px}
+#bootlog div:before{content:"› ";color:var(--accent)}
+.pbar{height:2px;background:rgba(120,190,230,.15);border-radius:2px;margin-top:16px;overflow:hidden}
+.pbar i{display:block;height:100%;width:0;background:var(--accent);
+  box-shadow:0 0 10px var(--accent);transition:width .45s ease}
+
+@media(max-width:1080px){
+  .egrid{grid-template-columns:1fr;gap:26px}
+  .ebuehne{position:relative;top:0;height:330px}
+  .schritt{min-height:auto;padding:26px 0 26px 24px;opacity:1;transform:none}
+}
+@media(max-width:900px){
+  #panel{width:230px;top:10px;right:10px}
+  .tpi b{font-size:36px}
+  #legend{left:10px;bottom:10px;min-width:150px}
+  #legend .note{display:none}
+  #layers{top:10px;left:10px}
+  .tstamp{min-width:130px}
+  .stat:nth-child(n+4){display:none}
+  .peak{max-width:calc(100% - 40px);top:auto;bottom:96px}
+  .ekopf h2{font-size:24px}
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════ Hero — Sturm-Intro ══════════════ -->
+<section id="hero">
+  <canvas id="heroCv"></canvas>
+  <div class="vignette"></div>
+  <div class="hero-in">
+    <div class="hero-badge"><i></i>Hobbyprojekt · kein amtlicher Warndienst</div>
+    <h1>HOBBY TORNADO<i>//</i>FANS</h1>
+    <p class="hero-sub">Die Konvektions-Potenzialkarte für <b>Sturmjäger und
+      Wetter-Nerds</b>. Wir zeigen, wo die Zutaten für rotierende Gewitter
+      zusammenkommen — aus purer Faszination am Wetter.
+      <b>Hier gibt es keine Warnungen:</b> dafür ist allein der DWD zuständig.</p>
+    <div class="hero-tags">
+      <span>⌁ Live-Modelldaten ICON</span>
+      <span>◎ 7.000+ Orte · 48 h Zeitreise</span>
+      <span class="nein">✕ Kein Warnsystem</span>
+    </div>
+    <div id="heroCta"><em>→</em> Zur Tornado-Karte</div>
+    <div class="hero-amtlich">Amtliche Warnlage: <a href="https://www.dwd.de">dwd.de</a> · Warn-App NINA</div>
+  </div>
+  <div id="heroScroll" title="Weiter zur Karte">Scrollen<i></i></div>
+</section>
+
+<div id="app">
+
+  <header>
+    <div class="brand">
+      <b>HOBBY TORNADO<i>//</i>FANS</b>
+      <span>Konvektions-Potenzial Deutschland · Experimentell</span>
+    </div>
+    <div class="spacer"></div>
+    <div class="stat"><u>Modell</u><b class="mono" id="sModel">ICON / Best-Match</b></div>
+    <div class="stat"><u>Gitter</u><b class="mono" id="sGrid">–</b></div>
+    <div class="stat"><u>Lauf</u><b class="mono" id="sRun">–</b></div>
+    <div class="stat"><u>Status</u><b><span class="led" id="sLed"><i></i>VERBINDE</span></b></div>
+  </header>
+
+  <div id="stage">
+    <canvas id="base"></canvas>
+    <canvas id="wind"></canvas>
+    <canvas id="fx"></canvas>
+
+    <div class="hudE tl"></div><div class="hudE tr"></div>
+    <div class="hudE bl"></div><div class="hudE br"></div>
+
+    <div id="layers">
+      <div class="tgl on" data-l="risk"><i></i>Risikofeld</div>
+      <div class="tgl on" data-l="wind"><i></i>Höhenströmung 500 hPa</div>
+      <div class="tgl on" data-l="cells"><i></i>Potenzial-Zellen</div>
+      <div class="tgl on" data-l="places"><i></i>Ortschaften</div>
+      <div class="tgl on" data-l="tornados"><i></i>Bestätigte Tornados</div>
+      <div class="tgl on" data-l="scan"><i></i>Scan-Sweep</div>
+    </div>
+
+    <div id="panel">
+      <div class="ph"><span id="pTitle">Bezugspunkt</span><span class="mono" id="pPos"></span></div>
+      <div class="pb">
+        <div class="tpi"><b class="mono" id="pTpi">–</b><u>/ 100 TPI</u></div>
+        <div class="chip" id="pChip"><i></i><span>–</span></div>
+        <div id="pPars"></div>
+        <div class="hinweis">Weiß = aktueller Wert, grün = Optimalbereich, heller Strich =
+          Untergrenze, ab der Tornadogenese überhaupt beobachtet wird. Richtwerte aus
+          europäischen Fallsammlungen — keine Garantie in beide Richtungen.</div>
+      </div>
+    </div>
+
+    <div id="legend">
+      <h4>Tornado-Potenzial-Index</h4>
+      <div class="lg"><i style="background:#d92f86"></i>Extrem<u>≥ 70</u></div>
+      <div class="lg"><i style="background:#ee7a12"></i>Hoch<u>45–70</u></div>
+      <div class="lg"><i style="background:#f2d84b"></i>Erhöht<u>25–45</u></div>
+      <div class="lg"><i style="background:#57b6e0"></i>Gering<u>10–25</u></div>
+      <div class="lg"><i style="background:rgba(120,190,230,.14)"></i>Minimal<u>&lt; 10</u></div>
+      <div class="note">TPI = eigener Index aus CAPE, Tiefenscherung, CIN und LCL-Höhe,
+        begrenzt durch das Konvektions-Gate aus ICON-D2 (baut das Modell dort überhaupt
+        ein Gewitter?). Keine Tornado-Wahrscheinlichkeit in Prozent — an 360 Tagen im Jahr
+        liegt die nahe null. Zellen sind Modell-Potenzial, <b>kein Radar</b>.</div>
+      <div class="tornote">
+        <span class="torpunkt"></span>
+        <b>Bestätigte Tornados</b>
+        <u id="torZahl">–</u>
+        <i>Historische Fälle, nicht die Vorhersage. Zeigt eine <b>Auswahl</b> gut
+          dokumentierter Ereignisse (überwiegend F2–F5) — Deutschland erlebt im Mittel
+          rund 45 Tornados pro Jahr, die meisten davon schwach. Mit der Maus darüber:
+          Ort und Datum.</i>
+      </div>
+    </div>
+
+    <div id="zoomui">
+      <div class="zb" id="zIn">+</div>
+      <div class="zb" id="zOut">−</div>
+      <div class="zb txt" id="zReset">RESET</div>
+      <div id="zoomlvl" class="mono">1.0×</div>
+    </div>
+
+    <div id="peak" class="peak" hidden></div>
+    <div id="runter">Wie entsteht ein Tornado? <em>↓</em></div>
+
+    <div class="disc">Für Sturmjäger und Wetterfans · <b>keine amtliche Warnung</b> · offizielle Warnlage: dwd.de · Daten: Open-Meteo / DWD ICON</div>
+  </div>
+
+  <footer class="tlbar">
+    <div class="tl">
+      <div id="play">▶</div>
+      <div class="tw">
+        <div class="ticks" id="ticks"></div>
+        <input type="range" id="slider" min="0" max="48" step="0.5" value="0">
+      </div>
+      <div class="tstamp">
+        <b class="mono" id="tLabel">–</b>
+        <u id="tRel">Jetzt</u>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════ Erklärstrecke ══════════════ -->
+<section id="erklaer">
+  <div class="ekopf">
+    <h2>Wie entsteht ein <i>Tornado</i>?</h2>
+    <p>Sechs Schritte, die alle zusammenkommen müssen. Fällt einer aus, passiert nichts —
+      deshalb sind Tornados selbst bei bester Zutatenlage die Ausnahme. Scrolle weiter,
+      die Grafik läuft mit.</p>
+  </div>
+
+  <div class="egrid">
+    <div class="eschritte" id="eSchritte">
+
+      <div class="schritt" data-s="0">
+        <div class="nr">Schritt 1 — Der Treibstoff</div>
+        <h3>Warme, feuchte Luft am Boden</h3>
+        <p>Unten sammelt sich feuchtwarme Luft, darüber liegt trockenere und kältere.
+          Diese Schichtung ist labil: Die untere Luft <em>will</em> aufsteigen, weil sie
+          leichter ist als ihre Umgebung. Wie viel Energie darin steckt, misst CAPE.</p>
+        <div class="wert">Kennzahl <b>CAPE</b> — ab etwa 100 J/kg möglich, richtig ergiebig ab 800</div>
+      </div>
+
+      <div class="schritt" data-s="1">
+        <div class="nr">Schritt 2 — Der Deckel</div>
+        <h3>Eine warme Sperrschicht hält alles zusammen</h3>
+        <p>Meist liegt in der Höhe eine wärmere Schicht wie ein Deckel über der feuchten
+          Luft. Das klingt hinderlich, ist aber entscheidend: Der Deckel verhindert, dass
+          sich die Energie in vielen kleinen Schauern verpufft. Sie staut sich auf.</p>
+        <div class="wert">Kennzahl <b>CIN</b> — unter −75 J/kg bleibt der Deckel meist zu</div>
+      </div>
+
+      <div class="schritt" data-s="2">
+        <div class="nr">Schritt 3 — Die Auslöse</div>
+        <h3>Der Deckel bricht</h3>
+        <p>Eine Front, ein Gebirgszug oder schlicht die Sonne heizt die Luft so weit auf,
+          bis sie den Deckel durchstößt. Die gestaute Energie entlädt sich in einem
+          einzigen, gewaltigen Aufwind — der Turm eines Gewitters wächst in Minuten
+          mehrere Kilometer hoch.</p>
+      </div>
+
+      <div class="schritt" data-s="3">
+        <div class="nr">Schritt 4 — Die Drehung</div>
+        <h3>Windscherung erzeugt eine liegende Walze</h3>
+        <p>Am Boden weht der Wind schwächer und aus anderer Richtung als in der Höhe.
+          Dieser Unterschied — die Scherung — bringt die Luftschicht dazwischen ins Rollen,
+          wie einen liegenden Zylinder. Ohne Scherung gibt es Gewitter, aber keine Tornados.</p>
+        <div class="wert">Kennzahl <b>Tiefenscherung 0–6 km</b> — ab 15 m/s, optimal 20–32 m/s</div>
+      </div>
+
+      <div class="schritt" data-s="4">
+        <div class="nr">Schritt 5 — Die Mesozyklone</div>
+        <h3>Der Aufwind kippt die Walze auf</h3>
+        <p>Der Aufwind aus Schritt 3 packt die liegende Walze und stellt sie senkrecht.
+          Aus dem Rollen wird ein Drehen: Das gesamte Gewitter rotiert. Solche Superzellen
+          sind langlebig, ziehen oft rechts von der Höhenströmung ab — und nur sie bringen
+          starke Tornados hervor.</p>
+      </div>
+
+      <div class="schritt" data-s="5">
+        <div class="nr">Schritt 6 — Der Bodenkontakt</div>
+        <h3>Der Rüssel greift nach unten</h3>
+        <p>Absinkende Kaltluft an der Rückseite zieht die Rotation zusammen und nach unten.
+          Sie wird schneller, je enger sie wird — wie bei einer Eiskunstläuferin, die die
+          Arme anlegt. Entscheidend ist jetzt die Wolkenuntergrenze: Liegt sie tief,
+          ist der Weg zum Boden kurz.</p>
+        <div class="wert">Kennzahl <b>LCL-Höhe</b> — unter 1200 m nötig, optimal 400–900 m</div>
+      </div>
+
+    </div>
+
+    <div class="ebuehne">
+      <canvas id="eCanvas"></canvas>
+      <div class="eabsp">Schematische Darstellung · nicht maßstäblich</div>
+    </div>
+  </div>
+
+  <div style="height:34px"></div>
+</section>
+
+<footer id="fuss">
+  <div class="warnung">
+    <b>Kein Warndienst.</b> Diese Seite ist ein Hobbyprojekt für Sturmjäger und
+    Wetterinteressierte. Sie berechnet ein <em>Potenzial</em> aus frei verfügbaren
+    Modelldaten — keine amtliche Warnung, keine Tornado-Wahrscheinlichkeit in Prozent.
+    Wer wissen will, ob er sich in Sicherheit bringen muss, schaut auf
+    <a href="https://www.dwd.de" style="color:#ee7a12">dwd.de</a> oder in die Warn-App NINA.
+    Wer rausfährt, tut das auf eigenes Risiko und mit Abstand.
+  </div>
+  <div class="fuss-in">
+    <div><b>Datenquellen</b>
+      Wetter: <a href="https://open-meteo.com">Open-Meteo</a> (CC BY 4.0),<br>
+      Modell DWD ICON (DL-DE/BY-2.0)<br>
+      Grenzen: deutschlandGeoJSON,<br>Basis BKG (DL-DE/BY-2.0)<br>
+      Orte: <a href="https://www.geonames.org">GeoNames</a> (CC BY 4.0)<br>
+      Tornado-Fälle: <a href="https://de.wikipedia.org/wiki/Liste_von_Tornados_in_Europa">Wikipedia</a> (CC BY-SA 4.0)</div>
+    <div><b>Index</b>
+      TPI aus CAPE, Tiefenscherung,<br>CIN und LCL-Höhe, gedeckelt<br>durch das Konvektions-Gate<br>aus ICON-D2.</div>
+    <div><b>Genauigkeit</b>
+      Gitterweite siehe Kopfzeile.<br>Zoom zeigt mehr Orte,<br>aber nicht mehr Meteorologie.</div>
+    <div><b>Status</b>
+      Experimenteller Prototyp.<br>Trefferquote wird noch<br>gegen bestätigte Fälle geprüft.</div>
+    <div><b>Rechtliches</b>
+      <a href="#impressum">Impressum</a><br>
+      <a href="#datenschutz">Datenschutz</a><br>
+      <a href="#haftung">Haftungsausschluss</a></div>
+  </div>
+</footer>
+
+<!-- ══════════════ Rechtliches ══════════════ -->
+<section id="recht">
+  <div class="recht-in">
+
+    <h2 id="impressum">Impressum</h2>
+    <p class="platzhalter">Bitte ausfüllen, bevor die Seite öffentlich erreichbar ist.</p>
+    <p>Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG):</p>
+    <p class="anschrift">
+      [VORNAME NACHNAME]<br>
+      [STRASSE HAUSNUMMER]<br>
+      [PLZ ORT]<br>
+      Deutschland
+    </p>
+    <p>Kontakt: [E-MAIL-ADRESSE]</p>
+    <p>Verantwortlich für den Inhalt: [VORNAME NACHNAME], Anschrift wie oben.</p>
+    <p>Dies ist ein privates, nicht gewerbliches Hobbyprojekt ohne Werbung,
+      ohne Verkauf und ohne Einnahmen.</p>
+
+    <h2 id="datenschutz">Datenschutzerklärung</h2>
+    <p><b>Verantwortlicher</b> im Sinne der DSGVO: [VORNAME NACHNAME], Anschrift und
+      Kontakt siehe Impressum.</p>
+
+    <h3>Was diese Seite <em>nicht</em> tut</h3>
+    <p>Keine Cookies. Kein Tracking, keine Statistik, keine Analysewerkzeuge.
+      Keine Benutzerkonten, keine Kontaktformulare. Keine Schriftarten oder Skripte
+      von fremden Servern — alles, was die Seite zum Anzeigen braucht, wird vom
+      eigenen Server ausgeliefert. Es werden keine Daten in Ihrem Browser
+      gespeichert, weshalb auch kein Einwilligungsbanner nötig ist
+      (§ 25 TDDDG greift mangels Speicherzugriff nicht).</p>
+
+    <h3>Server-Protokolle beim Aufruf</h3>
+    <p>Beim Abruf der Seite überträgt Ihr Browser technisch notwendige Daten an den
+      Hoster, darunter Ihre IP-Adresse, Datum und Uhrzeit sowie die aufgerufene
+      Adresse. Gehostet wird die Seite bei <b>[HOSTER EINTRAGEN, z. B. GitHub Pages,
+      GitHub Inc., USA]</b>. Bei einem Hoster außerhalb der EU stützt sich die
+      Übermittlung auf die Standardvertragsklauseln bzw. das EU-US Data Privacy
+      Framework. Rechtsgrundlage ist das berechtigte Interesse am sicheren Betrieb
+      der Seite, Art. 6 Abs. 1 lit. f DSGVO.</p>
+
+    <h3>Wetterdaten</h3>
+    <p>Im Normalbetrieb werden die Vorhersagedaten vorberechnet und zusammen mit der
+      Seite ausgeliefert — es entsteht dabei <b>keine Verbindung zu Dritten</b>.
+      Steht diese Datei nicht zur Verfügung, holt Ihr Browser die Daten ersatzweise
+      direkt bei <b>Open-Meteo</b> (Open-Meteo, Schweiz). Dabei wird Ihre IP-Adresse
+      an Open-Meteo übertragen. Die Schweiz gilt nach einem Angemessenheitsbeschluss
+      der EU-Kommission als sicherer Drittstaat. Rechtsgrundlage ist Art. 6 Abs. 1
+      lit. f DSGVO — das berechtigte Interesse daran, die Karte auch dann anzuzeigen,
+      wenn die vorberechneten Daten fehlen.</p>
+
+    <h3>Ihre Rechte</h3>
+    <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der
+      Verarbeitung, Datenübertragbarkeit und Widerspruch. Außerdem können Sie sich
+      bei einer Datenschutz-Aufsichtsbehörde beschweren, etwa der Behörde des
+      Bundeslandes Ihres Wohnsitzes.</p>
+
+    <h2 id="haftung">Haftungsausschluss</h2>
+    <p><b>Diese Seite ist kein Warndienst.</b> Amtliche Warnungen vor
+      Wettergefahren gibt in Deutschland allein der Deutsche Wetterdienst heraus
+      (§ 4 DWD-Gesetz). Was hier gezeigt wird, ist ein selbst gerechneter,
+      experimenteller Index aus frei verfügbaren Modelldaten — keine Warnung, keine
+      Vorhersage eines Tornados und keine Wahrscheinlichkeit in Prozent.</p>
+    <p>Maßgeblich für Entscheidungen zur eigenen Sicherheit sind ausschließlich die
+      amtlichen Warnungen unter <a href="https://www.dwd.de">dwd.de</a> und die
+      Warn-App NINA. Für Schäden, die aus der Nutzung dieser Seite entstehen, wird
+      keine Haftung übernommen. Wer Gewitterlagen aufsucht, tut dies auf eigenes
+      Risiko.</p>
+    <p>Die Angaben zu bestätigten Tornados stammen aus der Wikipedia-Liste
+      „Liste von Tornados in Europa" (Lizenz CC BY-SA 4.0) und sind eine
+      <b>Auswahl</b> gut dokumentierter Fälle, keine vollständige Chronik.
+      Ortsangaben wurden automatisch zugeordnet und stichprobenartig geprüft;
+      sie bezeichnen den genannten Ort, nicht die exakte Zugbahn.</p>
+
+    <h3>Verwendete Daten und Lizenzen</h3>
+    <ul>
+      <li><b>Wettermodell:</b> Open-Meteo, Daten unter CC BY 4.0; zugrunde liegendes
+        Modell ICON des Deutschen Wetterdienstes. Die kostenlose Schnittstelle von
+        Open-Meteo ist auf nicht-kommerzielle Nutzung beschränkt.</li>
+      <li><b>Staats- und Landesgrenzen:</b> deutschlandGeoJSON auf Basis der
+        Verwaltungsgebiete des Bundesamts für Kartographie und Geodäsie,
+        Datenlizenz Deutschland – Namensnennung – Version 2.0.</li>
+      <li><b>Ortschaften:</b> GeoNames, CC BY 4.0.</li>
+      <li><b>Bestätigte Tornados:</b> Wikipedia, CC BY-SA 4.0.</li>
+    </ul>
+    <p class="platzhalter">Nicht verwendet wurden die Tornadoliste Deutschland und die
+      ESWD: Beide sind urheberrechtlich geschützt und erlauben keine Übernahme in
+      eine eigene Datenbank.</p>
+
+  </div>
+</section>
+
+<div id="boot">
+  <div class="bootbox">
+    <h1>HOBBY TORNADO<i>//</i>FANS</h1>
+    <p>Konvektions-Analyse Deutschland</p>
+    <div id="bootlog"></div>
+    <div class="pbar"><i id="bootbar"></i></div>
+  </div>
+</div>
+
+<!-- Vorgerechnetes Gitter aus der Pipeline. Bewusst als <script> und nicht per
+     fetch(): so funktioniert es auch, wenn die Seite direkt als Datei geöffnet
+     wird — fetch() ist unter file:// blockiert. Fehlt die Datei, geht es ohne. -->
+<script src="daten/gitter.js" onerror="window.__keinGitter=1"></script>
+
+<script>
+"use strict";
+
+/* ══════════════ Eingebettete Daten (aus build.py) ═══════════════════════════
+   LAND   — Bundes-Umriss, Ringe delta-kodiert (1e-4 Grad)
+   GEO    — Landesgrenzen, nur als Linie
+   PLACES — Ortschaften ab 1.000 Einwohnern                                    */
+/*@GEO@*/
+/*@PLACES@*/
+/*@TORNADOS@*/
+
+/* Sicherung: Wird diese Vorlage versehentlich direkt im Browser geöffnet, sind
+   die Platzhalter oben nie ersetzt worden — dann fehlen LAND, GEO und PLACES,
+   und die Seite bliebe wortlos im Startbildschirm hängen. Lieber klar sagen,
+   was zu tun ist. */
+if(typeof LAND==='undefined' || typeof PLACES==='undefined'){
+  document.body.innerHTML=
+    '<div style="max-width:640px;margin:16vh auto;padding:0 28px;'
+    +'font:15px/1.7 ui-sans-serif,system-ui,sans-serif;color:#e8f1f8">'
+    +'<h1 style="font-size:20px;letter-spacing:.1em;margin-bottom:14px">'
+    +'DAS IST DIE BAU-VORLAGE</h1>'
+    +'<p style="color:#8fa6b8">Diese Datei enthält nur Platzhalter statt Karten- und '
+    +'Ortsdaten und kann deshalb nichts anzeigen.</p>'
+    +'<p style="color:#8fa6b8;margin-top:14px">Öffne stattdessen '
+    +'<b style="color:#e8f1f8">prototyp/index.html</b>. Falls es die noch nicht gibt '
+    +'oder du gerade etwas an der Vorlage geändert hast, zuerst im Ordner '
+    +'<b style="color:#e8f1f8">build/</b> einmal <code style="color:#57b6e0">'
+    +'python3 build.py</code> ausführen.</p></div>';
+  throw new Error('Vorlage direkt geöffnet — bitte prototyp/index.html verwenden');
+}
+
+function ringDecode(s){
+  const v=s.split(','), pts=new Float64Array(v.length);
+  let x=0, y=0;
+  for(let i=0;i<v.length;i+=2){
+    x+=+v[i]; y+=+v[i+1];
+    pts[i]=x/1e4; pts[i+1]=y/1e4;
+  }
+  return pts;
+}
+const LANDR = LAND.map(ringDecode);
+const GEOR  = GEO.map(s=>s.r.map(ringDecode));
+const ORTE  = PLACES.split('\n').map(z=>{
+  const f=z.split('|');
+  return {n:f[0], lon:+f[1]/1e4, lat:+f[2]/1e4, p:+f[3]};
+});
+/* Bestätigte Tornados: Datum | Ort | Bundesland | lon | lat | Stärke */
+const TORS = (TORNADOS||'').split('\n').filter(Boolean).map(z=>{
+  const f=z.split('|');
+  const [j,m,t]=f[0].split('-');
+  return {datum:`${t}.${m}.${j}`, jahr:+j, ort:f[1], land:f[2],
+          lon:+f[3]/1e4, lat:+f[4]/1e4, staerke:f[5]||''};
+});
+
+/* ══════════════ Konfiguration ═══════════════════════════════════════════════ */
+const BB   = {lat0:47.10, lat1:55.20, lon0:5.60, lon1:15.40};
+const KX   = Math.cos(51.2*Math.PI/180);
+const GB   = {lat0:47.25, lat1:55.05, lon0:5.85, lon1:15.05};   // Gitter-Ausdehnung
+const KM_LIVE = 30;                     // Live-Abruf im Browser
+const HOURS = 49;                       // 0 … 48 h
+const CHUNK = 350;                      // Punkte je Open-Meteo-Anfrage (URL-Limit)
+const LEVELS = [
+  {t:70, c:'#d92f86', n:'Extrem'},
+  {t:45, c:'#ee7a12', n:'Hoch'},
+  {t:25, c:'#f2d84b', n:'Erhöht'},
+  {t:10, c:'#57b6e0', n:'Gering'},
+  {t:-1, c:'#7f93a6', n:'Minimal'}
+];
+const LAY = {risk:true, wind:true, cells:true, places:true, tornados:true, scan:true};
+
+/* Schwellwerte je Parameter — europäische Fallsammlungen (Taszarek, Púčik u. a.),
+   bewusst NICHT die US-Werte des STP: europäische Tornados entstehen oft bei
+   niedrigem CAPE und hoher Scherung. */
+const PARS = [
+  {k:'cape',  name:'CAPE',              e:'J/kg', von:0,    bis:3000, min:100,  opt:[800,2500], gut:'hoch'},
+  {k:'shear', name:'Scherung 0–6 km',   e:'m/s',  von:0,    bis:45,   min:15,   opt:[20,32],    gut:'hoch'},
+  {k:'cin',   name:'CIN (Deckel)',      e:'J/kg', von:-200, bis:0,    min:-75,  opt:[-40,-5],   gut:'hoch'},
+  {k:'lcl',   name:'LCL-Höhe',          e:'m',    von:0,    bis:2500, min:1200, opt:[400,900],  gut:'tief'},
+  {k:'konv',  name:'Konvektion ICON-D2', e:'%',   von:0,    bis:100,  min:1,    opt:null,       gut:'hoch'},
+  {k:'wind',  name:'Höhenwind 500 hPa', e:'km/h', von:0,    bis:160,  min:null, opt:null,       gut:null}
+];
+
+/* Gitter — wird beim Laden gesetzt (live 30 km, aus Datendienst feiner) */
+let GRID={lat0:0,lat1:0,lon0:0,lon1:0,rows:0,cols:0};
+let NC=0, dLat=0, dLon=0, INDE=null;
+
+function setzeGitter(g){
+  GRID=g; NC=GRID.rows*GRID.cols;
+  dLat=(GRID.lat1-GRID.lat0)/(GRID.rows-1);
+  dLon=(GRID.lon1-GRID.lon0)/(GRID.cols-1);
+}
+function gitterAusKm(km){
+  const dlat=km/111.0, dlon=km/(111.0*KX);
+  return {lat0:GB.lat0, lat1:GB.lat1, lon0:GB.lon0, lon1:GB.lon1,
+          rows:Math.round((GB.lat1-GB.lat0)/dlat)+1,
+          cols:Math.round((GB.lon1-GB.lon0)/dlon)+1};
+}
+function zellPos(idx){
+  const j=Math.floor(idx/GRID.cols), i=idx%GRID.cols;
+  return [GRID.lon0+i*dLon, GRID.lat1-j*dLat];
+}
+
+/* Daten: D.tpi[h] = Float32Array(NC), analog cape/shear/cin/lcl/u/v/konv */
+const D = {tpi:[], cape:[], shear:[], cin:[], lcl:[], u:[], v:[], konv:[], t0:null, run:'–'};
+
+/* ══════════════ Canvas & Projektion ═════════════════════════════════════════ */
+const stage = document.getElementById('stage');
+const cBase = document.getElementById('base'), xB = cBase.getContext('2d');
+const cWind = document.getElementById('wind'), xW = cWind.getContext('2d');
+const cFx   = document.getElementById('fx'),   xF = cFx.getContext('2d');
+const cHit  = document.createElement('canvas'), xH = cHit.getContext('2d');
+cHit.width=cHit.height=1;
+
+let W=0, H=0, DPR=1, SC=1, OX=0, OY=0;
+let Z=1, TX=0, TY=0;                       // Zoom und Verschiebung (Bildschirm-Pixel)
+let landPath=null, grenzPath=null;
+const X0 = BB.lon0*KX;
+
+/* Weltkoordinaten = Grundeinpassung ohne Zoom. Die Pfade liegen in dieser Ebene,
+   Zoom und Pan sind reine Canvas-Transformationen darüber. */
+function world(lon,lat){ return [OX+(lon*KX-X0)*SC, OY+(BB.lat1-lat)*SC]; }
+function project(lon,lat){ const w=world(lon,lat); return [w[0]*Z+TX, w[1]*Z+TY]; }
+function unproject(px,py){
+  const wx=(px-TX)/Z, wy=(py-TY)/Z;
+  return [((wx-OX)/SC+X0)/KX, BB.lat1-(wy-OY)/SC];
+}
+function mitZoom(x){ x.save(); x.translate(TX,TY); x.scale(Z,Z); }
+
+function pfadeBauen(){
+  landPath=new Path2D();
+  for(const r of LANDR){
+    landPath.moveTo(...world(r[0],r[1]));
+    for(let i=2;i<r.length;i+=2) landPath.lineTo(...world(r[i],r[i+1]));
+    landPath.closePath();
+  }
+  grenzPath=new Path2D();
+  for(const land of GEOR) for(const r of land){
+    grenzPath.moveTo(...world(r[0],r[1]));
+    for(let i=2;i<r.length;i+=2) grenzPath.lineTo(...world(r[i],r[i+1]));
+    grenzPath.closePath();
+  }
+}
+
+/* Punkt-in-Deutschland: eigenes Canvas mit Einheits-Transformation, damit weder
+   Gerätepixel noch Zoom hineinspielen. Der Pfad liegt in Weltkoordinaten. */
+function inDE(lon,lat){
+  if(!landPath) return false;
+  const [wx,wy]=world(lon,lat);
+  xH.setTransform(1,0,0,1,0,0);
+  return xH.isPointInPath(landPath, wx, wy);
+}
+function maskeBauen(){
+  INDE=new Uint8Array(NC);
+  for(let c=0;c<NC;c++){ const [lon,lat]=zellPos(c); INDE[c]=inDE(lon,lat)?1:0; }
+}
+
+function resize(){
+  DPR = Math.min(window.devicePixelRatio||1, 2);
+  W = stage.clientWidth; H = stage.clientHeight;
+  if(!W||!H) return;
+  for(const c of [cBase,cWind,cFx]){ c.width = W*DPR; c.height = H*DPR; }
+  for(const x of [xB,xW,xF]){ x.setTransform(DPR,0,0,DPR,0,0); }
+
+  const pad = Math.min(W,H)*0.055;
+  const gw = (BB.lon1-BB.lon0)*KX, gh = BB.lat1-BB.lat0;
+  SC = Math.min((W-2*pad)/gw, (H-2*pad)/gh);
+  OX = (W-gw*SC)/2; OY = (H-gh*SC)/2;
+
+  pfadeBauen();
+  if(NC && !INDE) maskeBauen();
+  panBegrenzen();
+  seedParticles();
+  paintFieldDirty=true;
+}
+window.addEventListener('resize', resize);
+
+/* ══════════════ Zoom und Pan ════════════════════════════════════════════════ */
+const ZMIN=1, ZMAX=42;
+function panBegrenzen(){
+  /* Die Karte darf den Rahmen nicht verlassen: bei Z=1 bleibt sie zentriert. */
+  const bw=W*Z, bh=H*Z;
+  TX = Math.min(0, Math.max(W-bw, TX));
+  TY = Math.min(0, Math.max(H-bh, TY));
+  if(bw<=W) TX=(W-bw)/2;
+  if(bh<=H) TY=(H-bh)/2;
+}
+function zoomAuf(nz, mx, my){
+  nz=Math.max(ZMIN,Math.min(ZMAX,nz));
+  if(nz===Z) return;
+  TX = mx-(mx-TX)*(nz/Z);
+  TY = my-(my-TY)*(nz/Z);
+  Z = nz;
+  panBegrenzen(); ansichtGeaendert();
+}
+function ansichtGeaendert(){
+  /* Nach Zoom oder Verschieben liegen die Marker woanders */
+  torUnterCursor = hover ? tornadoUnter(hover.x, hover.y) : null;
+  paintFieldDirty=true;
+  xW.clearRect(0,0,W,H); seedParticles();
+  document.getElementById('zoomlvl').textContent=Z.toFixed(1)+'×';
+  updatePanel();
+}
+stage.addEventListener('wheel', e=>{
+  e.preventDefault();
+  const r=cFx.getBoundingClientRect();
+  zoomAuf(Z*Math.exp(-e.deltaY*0.0016), e.clientX-r.left, e.clientY-r.top);
+}, {passive:false});
+
+let zieh=null;
+cFx.addEventListener('pointerdown', e=>{
+  zieh={x:e.clientX, y:e.clientY, tx:TX, ty:TY, bewegt:false};
+  cFx.setPointerCapture(e.pointerId); cFx.classList.add('grab');
+});
+cFx.addEventListener('pointermove', e=>{
+  const r=cFx.getBoundingClientRect();
+  if(zieh){
+    const dx=e.clientX-zieh.x, dy=e.clientY-zieh.y;
+    if(Math.abs(dx)>2||Math.abs(dy)>2) zieh.bewegt=true;
+    TX=zieh.tx+dx; TY=zieh.ty+dy;
+    panBegrenzen(); paintFieldDirty=true;
+    document.getElementById('zoomlvl').textContent=Z.toFixed(1)+'×';
+  }else{
+    hover={x:e.clientX-r.left, y:e.clientY-r.top};
+    torUnterCursor=tornadoUnter(hover.x, hover.y);
+    updatePanel();
+  }
+});
+cFx.addEventListener('pointerup', e=>{
+  if(zieh && zieh.bewegt){ xW.clearRect(0,0,W,H); seedParticles(); }
+  zieh=null; cFx.classList.remove('grab');
+});
+cFx.addEventListener('mouseleave',()=>{ hover=null; torUnterCursor=null; updatePanel(); });
+cFx.addEventListener('dblclick', e=>{
+  const r=cFx.getBoundingClientRect();
+  zoomAuf(Z*2, e.clientX-r.left, e.clientY-r.top);
+});
+document.getElementById('zIn').onclick =()=>zoomAuf(Z*1.6, W/2, H/2);
+document.getElementById('zOut').onclick=()=>zoomAuf(Z/1.6, W/2, H/2);
+document.getElementById('zReset').onclick=()=>{ Z=1; TX=TY=0; panBegrenzen(); ansichtGeaendert(); };
+document.getElementById('runter').onclick=()=>
+  document.getElementById('erklaer').scrollIntoView({behavior:'smooth'});
+
+/* ══════════════ Feld-Interpolation ══════════════════════════════════════════ */
+function bilinear(arr, lon, lat){
+  if(!arr) return 0;
+  const fx = (lon-GRID.lon0)/dLon, fy = (GRID.lat1-lat)/dLat;
+  const cx = Math.max(0, Math.min(GRID.cols-1.001, fx));
+  const cy = Math.max(0, Math.min(GRID.rows-1.001, fy));
+  const i0 = Math.floor(cx), j0 = Math.floor(cy);
+  const i1 = Math.min(i0+1, GRID.cols-1), j1 = Math.min(j0+1, GRID.rows-1);
+  const tx = cx-i0, ty = cy-j0;
+  const a = arr[j0*GRID.cols+i0], b = arr[j0*GRID.cols+i1];
+  const c = arr[j1*GRID.cols+i0], d = arr[j1*GRID.cols+i1];
+  return (a*(1-tx)+b*tx)*(1-ty) + (c*(1-tx)+d*tx)*ty;
+}
+let T = 0;
+function fieldAt(key, lon, lat, t=T){
+  const s = D[key]; if(!s.length) return 0;
+  const i = Math.max(0, Math.min(s.length-1, Math.floor(t)));
+  const j = Math.min(s.length-1, i+1), f = t-i;
+  return bilinear(s[i],lon,lat)*(1-f) + bilinear(s[j],lon,lat)*f;
+}
+function cellAt(key, idx, t=T){
+  const s = D[key]; if(!s.length) return 0;
+  const i = Math.max(0, Math.min(s.length-1, Math.floor(t)));
+  const j = Math.min(s.length-1, i+1), f = t-i;
+  return s[i][idx]*(1-f) + s[j][idx]*f;
+}
+
+/* ══════════════ Farbe ═══════════════════════════════════════════════════════ */
+const RAMP = [[0,'#0e2033',0],[10,'#57b6e0',.30],[25,'#f2d84b',.46],
+              [45,'#ee7a12',.60],[70,'#d92f86',.74],[100,'#ff9ad8',.84]];
+function hex2rgb(h){return [parseInt(h.slice(1,3),16),parseInt(h.slice(3,5),16),parseInt(h.slice(5,7),16)];}
+const RAMPRGB = RAMP.map(s=>[s[0], hex2rgb(s[1]), s[2]]);
+function rampColor(v){
+  if(v<=6) return [0,0,0,0];
+  for(let i=1;i<RAMPRGB.length;i++){
+    if(v<=RAMPRGB[i][0] || i===RAMPRGB.length-1){
+      const A=RAMPRGB[i-1], B=RAMPRGB[i];
+      const f=Math.max(0,Math.min(1,(v-A[0])/(B[0]-A[0])));
+      const fade = v<12 ? (v-6)/6 : 1;
+      return [A[1][0]+(B[1][0]-A[1][0])*f, A[1][1]+(B[1][1]-A[1][1])*f,
+              A[1][2]+(B[1][2]-A[1][2])*f, (A[2]+(B[2]-A[2])*f)*fade];
+    }
+  }
+  return [0,0,0,0];
+}
+function levelOf(v){ for(const L of LEVELS) if(v>=L.t) return L; return LEVELS[LEVELS.length-1]; }
+
+/* ══════════════ Basis-Layer ═════════════════════════════════════════════════ */
+const fieldCv = document.createElement('canvas');
+const fieldCx = fieldCv.getContext('2d');
+let SUP = 6;
+
+function paintField(){
+  const w=fieldCv.width, h=fieldCv.height;
+  const img = fieldCx.createImageData(w,h);
+  for(let y=0;y<h;y++){
+    const lat = GRID.lat1 - (y/(h-1))*(GRID.lat1-GRID.lat0);
+    for(let x=0;x<w;x++){
+      const lon = GRID.lon0 + (x/(w-1))*(GRID.lon1-GRID.lon0);
+      const [r,g,b,a] = rampColor(fieldAt('tpi',lon,lat));
+      const o=(y*w+x)*4;
+      img.data[o]=r; img.data[o+1]=g; img.data[o+2]=b; img.data[o+3]=a*255;
+    }
+  }
+  fieldCx.putImageData(img,0,0);
+}
+
+function drawBase(){
+  xB.clearRect(0,0,W,H);
+  if(!landPath) return;
+
+  /* Gradnetz */
+  xB.save(); xB.strokeStyle='rgba(120,190,230,.055)'; xB.lineWidth=1;
+  for(let lat=48;lat<=55;lat++){ const [,y]=project(10,lat);
+    if(y>=0&&y<=H){ xB.beginPath(); xB.moveTo(0,y); xB.lineTo(W,y); xB.stroke(); } }
+  for(let lon=6;lon<=15;lon++){ const [x]=project(lon,51);
+    if(x>=0&&x<=W){ xB.beginPath(); xB.moveTo(x,0); xB.lineTo(x,H); xB.stroke(); } }
+  xB.restore();
+
+  /* Grundfläche */
+  mitZoom(xB); xB.fillStyle='rgba(16,32,52,.55)'; xB.fill(landPath); xB.restore();
+
+  /* Risikofeld, auf die Landesfläche geclippt */
+  if(LAY.risk && D.tpi.length){
+    paintField();
+    /* Clip in Weltkoordinaten setzen, dann zurück in CSS-Pixel: der Clip bleibt
+       bestehen, das Feld wird aber direkt in Bildschirmkoordinaten gezeichnet. */
+    mitZoom(xB);
+    xB.clip(landPath);
+    xB.setTransform(DPR,0,0,DPR,0,0);
+    xB.globalCompositeOperation='lighter';
+    xB.imageSmoothingEnabled=true; xB.imageSmoothingQuality='high';
+    const [px0,py0]=project(GRID.lon0,GRID.lat1), [px1,py1]=project(GRID.lon1,GRID.lat0);
+    xB.drawImage(fieldCv, px0,py0, px1-px0, py1-py0);
+    xB.restore();
+  }
+
+  /* Landesgrenzen (nur Linie — die Fläche kommt allein vom Bundes-Umriss) */
+  if(Z>1.35){
+    mitZoom(xB);
+    xB.strokeStyle='rgba(120,190,230,'+Math.min(.30,(Z-1.35)*.22)+')';
+    xB.lineWidth=0.8/Z; xB.stroke(grenzPath); xB.restore();
+  }
+
+  /* Außengrenze: weicher Schein + scharfe Linie */
+  mitZoom(xB);
+  xB.strokeStyle='rgba(87,182,224,.30)'; xB.lineWidth=1/Z; xB.stroke(landPath);
+  xB.shadowColor='rgba(87,182,224,.85)'; xB.shadowBlur=16;
+  xB.strokeStyle='rgba(150,215,245,.75)'; xB.lineWidth=1.3/Z; xB.stroke(landPath);
+  xB.restore();
+}
+
+/* ══════════════ Wind-Partikel ═══════════════════════════════════════════════ */
+let P = [], NP = 0;
+function seedParticles(){
+  NP = Math.round(Math.min(4200, Math.max(900, (W*H)/430)));
+  P = new Array(NP);
+  for(let i=0;i<NP;i++) P[i] = spawn({});
+}
+function spawn(p){
+  p.x = Math.random()*W; p.y = Math.random()*H;
+  p.age = Math.random()*90|0; p.max = 55 + Math.random()*95|0;
+  return p;
+}
+function drawWind(){
+  if(!LAY.wind || !D.u.length){ xW.clearRect(0,0,W,H); return; }
+  xW.globalCompositeOperation='destination-out';
+  xW.fillStyle='rgba(0,0,0,0.10)'; xW.fillRect(0,0,W,H);
+  xW.globalCompositeOperation='source-over';
+  xW.lineWidth=1.05; xW.lineCap='round';
+
+  const k = 0.038*SC*Z/9;
+  for(let i=0;i<NP;i++){
+    const p=P[i];
+    if(p.age++ > p.max || p.x<-40||p.x>W+40||p.y<-40||p.y>H+40){ spawn(p); continue; }
+    const [lon,lat]=unproject(p.x,p.y);
+    const u=fieldAt('u',lon,lat), v=fieldAt('v',lon,lat);
+    const nx = p.x + u*k, ny = p.y - v*k;
+    const sp = Math.hypot(u,v);
+    const a = Math.min(.62, .13 + sp/58);
+    xW.strokeStyle = sp>26 ? `rgba(190,232,255,${a})`
+                   : sp>15 ? `rgba(120,196,236,${a})`
+                           : `rgba(78,150,196,${a*0.85})`;
+    xW.beginPath(); xW.moveTo(p.x,p.y); xW.lineTo(nx,ny); xW.stroke();
+    p.x=nx; p.y=ny;
+  }
+}
+
+/* ══════════════ Potenzial-Zellen ════════════════════════════════════════════
+   Lokale Maxima des Index innerhalb Deutschlands. Bewusst als Schema gezeichnet
+   (Umriss, Rotationspfeil, Zugrichtung) und nie als Radar-Echo — es sind
+   Modellwerte, keine Beobachtung.                                              */
+let zellen=[];
+function findZellen(){
+  zellen=[];
+  if(!D.tpi.length || !INDE) return;
+  const kand=[];
+  for(let j=0;j<GRID.rows;j++) for(let i=0;i<GRID.cols;i++){
+    const idx=j*GRID.cols+i;
+    if(!INDE[idx]) continue;
+    const v=cellAt('tpi',idx);
+    if(v<20) continue;
+    /* Kein Gewitter im Modell, keine Zelle: ein gezeichneter Kern würde eine
+       Zelle behaupten, die ICON-D2 dort gar nicht baut. Solange der Gate-Faktor
+       in tpiOf() steckt, greift schon die Schwelle oben — die Prüfung steht hier
+       ausdrücklich, damit die Kopplung erhalten bleibt, falls der Index einmal
+       ohne Gate berechnet wird (Maßnahme 5, zwei getrennte Zahlen). */
+    if(cellAt('konv',idx) <= 0) continue;
+    let isMax=true;
+    for(let dj=-1;dj<=1&&isMax;dj++) for(let di=-1;di<=1;di++){
+      if(!di&&!dj) continue;
+      const nj=j+dj, ni=i+di;
+      if(nj<0||nj>=GRID.rows||ni<0||ni>=GRID.cols) continue;
+      if(cellAt('tpi',nj*GRID.cols+ni) > v){ isMax=false; break; }
+    }
+    if(!isMax) continue;
+    const [lon,lat]=zellPos(idx);
+    kand.push({lon,lat,v,idx});
+  }
+  /* Plateaus liefern viele gleichwertige Maxima nebeneinander — Mindestabstand. */
+  kand.sort((a,b)=>b.v-a.v);
+  for(const h of kand){
+    if(zellen.every(k=>Math.hypot((k.lon-h.lon)/dLon,(k.lat-h.lat)/dLat) >= 2.4)) zellen.push(h);
+    if(zellen.length===9) break;
+  }
+}
+
+function drawZellen(ts){
+  for(let n=0;n<zellen.length;n++){
+    const z=zellen[n], [x,y]=project(z.lon,z.lat), L=levelOf(z.v);
+    if(x<-90||x>W+90||y<-90||y>H+90) continue;
+    const r = 15 + Math.min(26, z.v*0.34);
+    const dreh = ts/2600 + n*0.7;
+
+    /* Umriss: bewusst gestrichelt und offen — kein gefülltes Echo */
+    xF.save();
+    xF.translate(x,y); xF.rotate(dreh);
+    xF.strokeStyle=L.c; xF.lineWidth=1.4; xF.globalAlpha=.85;
+    xF.setLineDash([5,4]);
+    xF.beginPath(); xF.ellipse(0,0, r, r*0.72, 0, 0, 6.2832); xF.stroke();
+    /* angedeuteter Hook — der rotierende Teil der Zelle */
+    xF.setLineDash([]); xF.globalAlpha=.95; xF.lineWidth=1.7;
+    xF.beginPath(); xF.arc(0,0, r*0.44, 0.7, 4.4); xF.stroke();
+    xF.beginPath();
+    xF.arc(r*0.44*Math.cos(4.4), r*0.44*Math.sin(4.4), r*0.17, 4.4, 1.4);
+    xF.stroke();
+    xF.restore();
+
+    /* Kern */
+    xF.beginPath(); xF.arc(x,y,3.2,0,6.2832);
+    xF.fillStyle=L.c; xF.shadowColor=L.c; xF.shadowBlur=12; xF.fill(); xF.shadowBlur=0;
+
+    /* Zugrichtung aus der Höhenströmung */
+    const u=cellAt('u',z.idx), v=cellAt('v',z.idx), sp=Math.hypot(u,v);
+    if(sp>2){
+      const ax=u/sp, ay=-v/sp, l=r+16;
+      xF.save(); xF.strokeStyle=L.c; xF.globalAlpha=.5; xF.lineWidth=1.2;
+      xF.beginPath(); xF.moveTo(x+ax*(r+4), y+ay*(r+4));
+      xF.lineTo(x+ax*l, y+ay*l); xF.stroke();
+      xF.beginPath();
+      xF.moveTo(x+ax*l, y+ay*l);
+      xF.lineTo(x+ax*(l-6)-ay*3.4, y+ay*(l-6)+ax*3.4);
+      xF.lineTo(x+ax*(l-6)+ay*3.4, y+ay*(l-6)-ax*3.4);
+      xF.closePath(); xF.fillStyle=L.c; xF.fill(); xF.restore();
+    }
+
+    if(n<4){
+      const links = x > W*0.72, d = links ? -1 : 1;
+      xF.font='600 10px ui-monospace,Menlo,monospace';
+      xF.fillStyle='rgba(232,241,248,.92)';
+      xF.textAlign = links ? 'right' : 'left';
+      xF.fillText(`TPI ${Math.round(z.v)}`, x+(r+8)*d, y-r*0.72-3);
+    }
+  }
+}
+
+/* ══════════════ Ortschaften ═════════════════════════════════════════════════
+   Staffelung nach Zoom: erst Großstädte, dann immer kleinere Orte.            */
+function minEinwohner(){
+  if(Z<1.6)  return 200000;
+  if(Z<2.6)  return 100000;
+  if(Z<4.5)  return 50000;
+  if(Z<7)    return 20000;
+  if(Z<11)   return 10000;
+  if(Z<17)   return 5000;
+  if(Z<26)   return 2000;
+  return 1000;
+}
+function drawOrte(){
+  const minP=minEinwohner(), belegt=[];
+  let gezeichnet=0;
+  xF.save();
+  xF.font='500 11px ui-sans-serif,system-ui,sans-serif';
+  xF.textBaseline='middle';
+  for(const o of ORTE){                       // nach Einwohnern absteigend sortiert
+    if(o.p<minP) break;                       // ab hier sind alle kleiner
+    if(gezeichnet>=190) break;
+    const [x,y]=project(o.lon,o.lat);
+    if(x<24||x>W-24||y<16||y>H-16) continue;
+    const br=xF.measureText(o.n).width;
+    const kasten={x:x+6, y:y-7, w:br+8, h:14};
+    let frei=true;
+    for(const b of belegt){
+      if(kasten.x<b.x+b.w && kasten.x+kasten.w>b.x && kasten.y<b.y+b.h && kasten.y+kasten.h>b.y){
+        frei=false; break;
+      }
+    }
+    if(!frei) continue;
+    belegt.push(kasten); gezeichnet++;
+
+    const gross = o.p>=100000;
+    xF.beginPath(); xF.arc(x,y, gross?2.6:1.9, 0, 6.2832);
+    xF.fillStyle = gross ? 'rgba(214,234,248,.92)' : 'rgba(160,190,214,.75)';
+    xF.fill();
+    xF.lineWidth=2.6; xF.strokeStyle='rgba(5,8,14,.75)';
+    xF.strokeText(o.n, x+6, y);
+    xF.fillStyle = gross ? 'rgba(232,241,248,.95)' : 'rgba(186,208,226,.82)';
+    xF.fillText(o.n, x+6, y);
+  }
+  xF.restore();
+}
+
+/* ══════════════ Bestätigte Tornados ═════════════════════════════════════════
+   Historische Fälle, nicht das Vorhersagefeld. Bewusst klein und in einem Rot,
+   das in der Farbskala des Index nicht vorkommt — sonst liest man sie als
+   Teil der Vorhersage.                                                        */
+const TOR_ROT='#ff4d4d';
+let torUnterCursor=null;
+
+/* Treffersuche gehört zur Mausbewegung, nicht ins Zeichnen: sonst hängt der
+   Tooltip davon ab, ob gerade ein Bild gerendert wird. */
+function tornadoUnter(px,py){
+  if(!LAY.tornados) return null;
+  let bester=null, bd=15;
+  for(const t of TORS){
+    const [x,y]=project(t.lon,t.lat);
+    const d=Math.hypot(px-x, py-y);
+    if(d<bd){ bd=d; bester={t,x,y}; }
+  }
+  return bester;
+}
+
+function drawTornados(ts){
+  const puls=0.5+0.5*Math.sin(ts/1400);
+
+  for(const t of TORS){
+    const [x,y]=project(t.lon,t.lat);
+    if(x<-20||x>W+20||y<-20||y>H+20) continue;
+    xF.save();
+    xF.beginPath(); xF.arc(x,y,7.5+puls*2.5,0,6.2832);
+    xF.fillStyle='rgba(255,77,77,'+(0.10+puls*0.07)+')'; xF.fill();
+    xF.beginPath(); xF.arc(x,y,3.4,0,6.2832);
+    xF.fillStyle=TOR_ROT; xF.shadowColor=TOR_ROT; xF.shadowBlur=9; xF.fill();
+    xF.shadowBlur=0;
+    xF.beginPath(); xF.arc(x,y,3.4,0,6.2832);
+    xF.strokeStyle='rgba(255,225,225,.85)'; xF.lineWidth=0.9; xF.stroke();
+    xF.restore();
+  }
+
+  if(torUnterCursor) tornadoInfo(torUnterCursor);
+}
+
+function tornadoInfo({t,x,y}){
+  const z1=`${t.ort}`;
+  const z2=`${t.datum}${t.staerke?' · '+t.staerke:''}`;
+  const z3=t.land;
+  xF.save();
+  xF.font='600 12px ui-sans-serif,system-ui,sans-serif';
+  const b1=xF.measureText(z1).width;
+  xF.font='500 11px ui-monospace,Menlo,monospace';
+  const b2=xF.measureText(z2).width;
+  xF.font='500 10px ui-sans-serif,system-ui,sans-serif';
+  const b3=xF.measureText(z3).width;
+  const bw=Math.max(b1,b2,b3)+22, bh=56;
+  /* am Rand nach innen klappen, damit die Karte den Kasten nicht abschneidet */
+  let bx=x+14, by=y-bh-10;
+  if(bx+bw>W-8) bx=x-bw-14;
+  if(by<8) by=y+14;
+
+  xF.fillStyle='rgba(8,13,22,.94)';
+  xF.strokeStyle='rgba(255,77,77,.55)'; xF.lineWidth=1;
+  xF.beginPath();
+  if(xF.roundRect) xF.roundRect(bx,by,bw,bh,9); else xF.rect(bx,by,bw,bh);
+  xF.fill(); xF.stroke();
+
+  xF.beginPath(); xF.arc(bx+12, by+16, 3.2, 0, 6.2832);
+  xF.fillStyle=TOR_ROT; xF.fill();
+
+  xF.fillStyle='#e8f1f8'; xF.font='600 12px ui-sans-serif,system-ui,sans-serif';
+  xF.fillText(z1, bx+22, by+20);
+  xF.fillStyle='#8fa6b8'; xF.font='500 11px ui-monospace,Menlo,monospace';
+  xF.fillText(z2, bx+11, by+37);
+  xF.fillStyle='#5b7086'; xF.font='500 10px ui-sans-serif,system-ui,sans-serif';
+  xF.fillText(z3, bx+11, by+50);
+  xF.restore();
+}
+
+/* ══════════════ FX-Layer ════════════════════════════════════════════════════ */
+let hover=null, scanT=0;
+function drawFx(ts){
+  xF.clearRect(0,0,W,H);
+  if(!landPath) return;
+
+  /* Alles außerhalb Deutschlands abdunkeln (Sichtfenster + Land, evenodd = Loch) */
+  mitZoom(xF);
+  const mask=new Path2D();
+  mask.rect(-TX/Z, -TY/Z, W/Z, H/Z);
+  mask.addPath(landPath);
+  xF.fillStyle='rgba(4,7,14,.62)'; xF.fill(mask,'evenodd');
+  xF.restore();
+
+  if(LAY.scan){
+    scanT=(ts/9000)%1.35;
+    if(scanT<1){
+      const y=scanT*H;
+      const g=xF.createLinearGradient(0,y-70,0,y+8);
+      g.addColorStop(0,'rgba(87,182,224,0)'); g.addColorStop(1,'rgba(87,182,224,.11)');
+      mitZoom(xF); xF.clip(landPath); xF.setTransform(DPR,0,0,DPR,0,0);
+      xF.fillStyle=g; xF.fillRect(0,y-70,W,78);
+      xF.strokeStyle='rgba(150,220,255,.35)'; xF.lineWidth=1;
+      xF.beginPath(); xF.moveTo(0,y); xF.lineTo(W,y); xF.stroke();
+      xF.restore();
+    }
+  }
+
+  if(LAY.places)   drawOrte();
+  if(LAY.cells)    drawZellen(ts);
+  if(LAY.tornados) drawTornados(ts);
+
+  if(hover && !zieh && !torUnterCursor){
+    const {x,y}=hover;
+    xF.save(); xF.strokeStyle='rgba(87,182,224,.32)'; xF.setLineDash([4,5]); xF.lineWidth=1;
+    xF.beginPath(); xF.moveTo(x,0); xF.lineTo(x,H); xF.moveTo(0,y); xF.lineTo(W,y); xF.stroke();
+    xF.setLineDash([]);
+    xF.beginPath(); xF.arc(x,y,15,0,6.2832); xF.strokeStyle='rgba(150,220,255,.6)'; xF.stroke();
+    xF.beginPath(); xF.arc(x,y,2,0,6.2832); xF.fillStyle='#eaf6ff'; xF.fill();
+    xF.restore();
+  }
+}
+
+/* ══════════════ Panel mit Schwellwerten ═════════════════════════════════════ */
+function parAufbauen(){
+  const wrap=document.getElementById('pPars');
+  wrap.innerHTML = PARS.map(p=>{
+    let band='', minstrich='', fuss;
+    if(p.opt){
+      const a=pct(p, p.opt[0]), b=pct(p, p.opt[1]);
+      band=`<i class="opt" style="left:${Math.min(a,b)}%;width:${Math.abs(b-a)}%"></i>`;
+    }
+    if(p.min!==null) minstrich=`<i class="min" style="left:${pct(p,p.min)}%"></i>`;
+    if(p.k==='cin'){
+      fuss=`<span>Deckel bleibt zu ab −75</span><span>optimal −40 bis −5</span>`;
+    }else if(p.k==='konv'){
+      fuss=`<span>baut das Modell dort ein Gewitter?</span><span>bei 0 keine Zelle</span>`;
+    }else if(p.opt){
+      fuss=`<span>möglich ab ${p.min} ${p.e}</span><span>optimal ${p.opt[0]}–${p.opt[1]} ${p.e}</span>`;
+    }else{
+      fuss=`<span>nur zur Einordnung</span><span></span>`;
+    }
+    return `<div class="par" id="par-${p.k}">
+      <div class="kopf"><span>${p.name}</span><b class="mono"><span id="v-${p.k}">–</span><em>${p.e}</em></b></div>
+      <div class="skala">${band}${minstrich}<i class="nad" id="n-${p.k}" style="left:0%"></i></div>
+      <div class="fuss">${fuss}</div>
+    </div>`;
+  }).join('');
+}
+function pct(p, wert){
+  return Math.max(0, Math.min(100, (wert-p.von)/(p.bis-p.von)*100));
+}
+/* Erfüllt der Wert die Untergrenze? Bei LCL und CIN liegt „gut" auf der anderen Seite. */
+function erfuellt(p, wert){
+  if(p.min===null) return true;
+  if(p.gut==='tief') return wert<=p.min;
+  return wert>=p.min;
+}
+
+function updatePanel(){
+  let lon,lat,titel,pos='';
+  if(hover && !zieh){
+    [lon,lat]=unproject(hover.x,hover.y);
+    titel='Position unter Cursor';
+    pos=`${lat.toFixed(2)}°N ${lon.toFixed(2)}°E`;
+  }else{
+    const z=zellen[0];
+    if(z){ lon=z.lon; lat=z.lat; } else { lon=10.4; lat=51.2; }
+    titel = z ? 'Stärkste Zelle' : 'Bezugspunkt Mitte';
+  }
+  const tpi=fieldAt('tpi',lon,lat), L=levelOf(tpi);
+  document.getElementById('pTitle').textContent=titel;
+  document.getElementById('pPos').textContent=pos;
+  document.getElementById('pTpi').textContent = D.tpi.length ? Math.round(tpi) : '–';
+
+  const werte={
+    cape: fieldAt('cape',lon,lat),
+    shear:fieldAt('shear',lon,lat),
+    cin:  fieldAt('cin',lon,lat),
+    lcl:  fieldAt('lcl',lon,lat),
+    konv: fieldAt('konv',lon,lat)*100,
+    wind: Math.hypot(fieldAt('u',lon,lat),fieldAt('v',lon,lat))*3.6
+  };
+  for(const p of PARS){
+    const w=werte[p.k];
+    document.getElementById('v-'+p.k).textContent =
+      p.k==='shear' ? w.toFixed(1) : Math.round(w);
+    document.getElementById('n-'+p.k).style.left = pct(p,w)+'%';
+    document.getElementById('par-'+p.k).classList.toggle('aus', !erfuellt(p,w));
+  }
+
+  const chip=document.getElementById('pChip');
+  chip.style.color=L.c; chip.style.borderColor=L.c+'66'; chip.style.background=L.c+'1a';
+  chip.querySelector('i').style.background=L.c;
+  chip.querySelector('span').textContent=L.n+' — Tornado-Potenzial';
+}
+
+/* ══════════════ Zeitleiste ══════════════════════════════════════════════════ */
+const slider=document.getElementById('slider');
+function buildTicks(){
+  const el=document.getElementById('ticks'); el.innerHTML='';
+  if(!D.t0) return;
+  for(let h=0;h<=48;h+=6){
+    const d=new Date(D.t0.getTime()+h*3600e3);
+    const u=document.createElement('u');
+    u.style.left=(h/48*100)+'%';
+    if(h===0)  u.style.transform='translateX(0)';
+    if(h===48) u.style.transform='translateX(-100%)';
+    u.textContent = h===0 ? 'JETZT' : d.toLocaleTimeString('de-DE',{hour:'2-digit',minute:'2-digit'});
+    el.appendChild(u);
+  }
+}
+function updateTime(){
+  if(!D.t0) return;
+  const d=new Date(D.t0.getTime()+T*3600e3);
+  document.getElementById('tLabel').textContent =
+    d.toLocaleString('de-DE',{weekday:'short',day:'2-digit',month:'2-digit',
+                              hour:'2-digit',minute:'2-digit'})+' Uhr';
+  const h=Math.round(T);
+  document.getElementById('tRel').textContent = h===0 ? 'Jetzt' : `+${h} Stunden`;
+}
+slider.addEventListener('input',()=>{ T=parseFloat(slider.value); playing=false;
+  document.getElementById('play').textContent='▶'; onTimeChange(); });
+
+let playing=false;
+document.getElementById('play').addEventListener('click',function(){
+  playing=!playing; this.textContent = playing?'❚❚':'▶';
+});
+
+let lastT=-1;
+function onTimeChange(){
+  paintFieldDirty=true; findZellen(); updateTime(); updatePanel();
+}
+
+/* ══════════════ Layer-Schalter ══════════════════════════════════════════════ */
+document.querySelectorAll('.tgl').forEach(el=>{
+  el.addEventListener('click',()=>{
+    const k=el.dataset.l; LAY[k]=!LAY[k]; el.classList.toggle('on',LAY[k]);
+    if(k==='wind' && !LAY.wind) xW.clearRect(0,0,W,H);
+    if(k==='risk') paintFieldDirty=true;
+    /* Sonst bleibt der Tooltip stehen, bis die Maus das nächste Mal wackelt */
+    if(k==='tornados') torUnterCursor = LAY.tornados && hover
+                                        ? tornadoUnter(hover.x, hover.y) : null;
+  });
+});
+
+/* ══════════════ Render-Schleife ═════════════════════════════════════════════ */
+let paintFieldDirty=true;
+function loop(ts){
+  if(playing){
+    T += 0.045;
+    if(T>48) T=0;
+    slider.value=T;
+    if(Math.floor(T*4)!==Math.floor(lastT*4)){ onTimeChange(); lastT=T; }
+  }
+  if(paintFieldDirty){ drawBase(); paintFieldDirty=false; }
+  drawWind();
+  drawFx(ts);
+  requestAnimationFrame(loop);
+}
+
+/* ══════════════ Index-Berechnung ════════════════════════════════════════════ */
+/* Konvektions-Gate aus ICON-D2. Die vier Umgebungsgrößen sagen nur, wie günstig
+   die Luftmasse WÄRE — nicht, ob das Modell dort überhaupt ein Gewitter baut.
+   Ein hoher Index über konvektionsfreier Luft ist reiner Fehlalarm; dieser
+   Faktor drückt ihn auf null.
+   Argumente: LPI in J/kg, Aufwind in m/s, Niederschlag in mm/h.
+   Fehlen alle drei (jenseits des ICON-D2-Horizonts von +48 h ab Lauf), gibt der
+   Aufrufer 1 herein — kein Konvektionsfeld ist kein Beleg für keine Konvektion. */
+function konvFaktor(lpi, aufwind, nied){
+  return Math.max(0, Math.min(1, Math.max(lpi/5, (aufwind-2)/6, nied/1.0)));
+}
+function tpiOf(cape, shear, cin, lcl, konv=1){
+  /* CIN kommt bei Open-Meteo als positiver Betrag (0 … 300+), in der Meteorologie
+     wird er negativ notiert. Deshalb hier konsequent über den Betrag rechnen —
+     sonst fällt der Deckel-Term stillschweigend auf 1 und wirkt gar nicht. */
+  const cinMag    = Math.abs(cin);
+  const capeTerm  = Math.min(1.45, Math.sqrt(Math.max(cape,0)/1500));
+  const shearTerm = Math.max(0, Math.min(1.25, (shear-8)/17));
+  const cinTerm   = Math.max(0.15, Math.min(1, 1-(cinMag-50)/200));
+  const lclTerm   = Math.max(0.25, Math.min(1.1, 1.2-lcl/2000));
+  const konvTerm  = Math.max(0, Math.min(1, konv));
+  return Math.min(100, 100*capeTerm*shearTerm*cinTerm*lclTerm*konvTerm);
+}
+function uv(spdKmh, dirDeg){
+  const s=spdKmh/3.6, r=dirDeg*Math.PI/180;
+  return [-s*Math.sin(r), -s*Math.cos(r)];
+}
+
+/* ══════════════ Boot-Log ════════════════════════════════════════════════════ */
+const logEl=document.getElementById('bootlog'), barEl=document.getElementById('bootbar');
+function blog(msg, pct){
+  const d=document.createElement('div'); d.textContent=msg; logEl.appendChild(d);
+  barEl.style.width=pct+'%';
+  return d;
+}
+/* Zeile, die später fortgeschrieben wird (Ladefortschritt) */
+function blogZeile(msg){
+  const d=document.createElement('div');
+  d.textContent=msg; d.style.color='var(--ink3)';
+  logEl.appendChild(d);
+  return d;
+}
+function ledSetzen(klasse, text){
+  document.getElementById('sLed').outerHTML =
+    `<span class="led ${klasse}" id="sLed"><i></i>${text}</span>`;
+}
+
+/* ══════════════ Daten laden ═════════════════════════════════════════════════ */
+function feldSpeicherAnlegen(n){
+  for(let h=0;h<n;h++){
+    D.tpi.push(new Float32Array(NC)); D.cape.push(new Float32Array(NC));
+    D.shear.push(new Float32Array(NC)); D.cin.push(new Float32Array(NC));
+    D.lcl.push(new Float32Array(NC));  D.u.push(new Float32Array(NC));
+    D.v.push(new Float32Array(NC));
+    /* Vorbelegung 1 = Gate offen. Wer keine ICON-D2-Daten hat, soll nicht
+       stillschweigend überall null Potenzial bekommen. */
+    D.konv.push(new Float32Array(NC).fill(1));
+  }
+}
+
+async function ladeLive(){
+  const lats=[], lons=[];
+  for(let c=0;c<NC;c++){ const [lon,lat]=zellPos(c); lons.push(lon.toFixed(2)); lats.push(lat.toFixed(2)); }
+
+  const teile=[];
+  for(let i=0;i<NC;i+=CHUNK) teile.push([i, Math.min(NC, i+CHUNK)]);
+  blog(`Frage Modelldaten ab — ${NC} Punkte in ${teile.length} Teilanfragen`, 40);
+  const fortschritt=blogZeile('  … 0 von '+teile.length+' geladen (dauert 10–20 Sekunden)');
+
+  let fertig=0;
+  const abbruch = new Promise((_,ab)=>
+    setTimeout(()=>ab(new Error('Zeitüberschreitung nach 45 s')), 45000));
+
+  /* Zwei Anfragen je Teilstück:
+     (1) die Umgebungsgrößen wie bisher aus dem Modellmix (best_match),
+     (2) das Konvektions-Gate ausdrücklich aus ICON-D2 — LPI und Aufwind gibt es
+         nur dort. ICON-D2 reicht aber nur bis +48 h ab Modelllauf, die letzten
+         Stunden kommen deshalb als null zurück. Das Gate hier NICHT auf die
+         Basisanfrage auszuweiten ist Absicht: sonst verlöre die Zeitleiste ihre
+         hinteren Stunden.
+     Schlägt (2) fehl, läuft die Seite ohne Gate weiter statt gar nicht. */
+  const hol = url => fetch(url).then(r=>{
+    if(!r.ok) throw new Error('HTTP '+r.status);
+    return r.json();
+  });
+
+  const antworten = await Promise.race([abbruch, Promise.all(teile.map(([a,b])=>{
+    const koord='?latitude='+lats.slice(a,b).join(',')+'&longitude='+lons.slice(a,b).join(',');
+    /* forecast_hours statt forecast_days: 51 statt 72 Stunden je Punkt spart
+       rund ein Drittel der Nutzlast — und mehr als 48 h zeigt die Seite nicht. */
+    const basis='https://api.open-meteo.com/v1/forecast'+koord
+      +'&hourly=cape,convective_inhibition,wind_speed_10m,wind_direction_10m,'
+      +'wind_speed_500hPa,wind_direction_500hPa,temperature_2m,dew_point_2m'
+      +'&forecast_hours=51&timezone=UTC';
+    const gate='https://api.open-meteo.com/v1/forecast'+koord
+      +'&hourly=lightning_potential,updraft,precipitation'
+      +'&models=icon_d2&forecast_hours=51&timezone=UTC';
+    return Promise.all([hol(basis), hol(gate).catch(()=>null)]).then(([b_,g_])=>{
+      fertig++;
+      fortschritt.textContent=`  … ${fertig} von ${teile.length} geladen`;
+      barEl.style.width=(40+fertig/teile.length*25)+'%';
+      return [b_,g_];
+    });
+  }))]);
+
+  const roh=[], gate=[];
+  for(const [b_,g_] of antworten){
+    const bs = Array.isArray(b_) ? b_ : [b_];
+    roh.push(...bs);
+    /* Bei Ausfall von (2) ebenso viele Platzhalter nachschieben, damit die
+       Punktindizes zwischen beiden Listen deckungsgleich bleiben. */
+    if(g_===null) for(let i=0;i<bs.length;i++) gate.push(null);
+    else Array.isArray(g_) ? gate.push(...g_) : gate.push(g_);
+  }
+  if(roh.length!==NC) throw new Error('Punktzahl '+roh.length+' statt '+NC);
+  if(gate.length!==NC) throw new Error('Gate-Punktzahl '+gate.length+' statt '+NC);
+  const gateAus = gate.every(g=>g===null);
+  if(gateAus) blogZeile('  … ICON-D2 nicht erreichbar — ohne Konvektions-Gate');
+
+  blog('Verarbeite Vertikalprofile, berechne Scherung und LCL …', 68);
+
+  const times = roh[0].hourly.time;
+  const jetzt = Date.now();
+  let start = times.findIndex(t => new Date(t+'Z').getTime() >= jetzt - 3600e3);
+  if(start<0) start=0;
+  start = Math.min(start, Math.max(0, times.length-HOURS));
+  D.t0 = new Date(times[start]+'Z');
+  D.run = new Date(times[0]+'Z').toLocaleString('de-DE',
+            {day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'});
+
+  const n = Math.min(HOURS, times.length-start);
+  feldSpeicherAnlegen(n);
+
+  /* Die Gate-Anfrage kann bei einem anderen Zeitstempel beginnen als die Basis.
+     Deshalb einmal den Versatz bestimmen statt blind denselben Index zu nehmen. */
+  let gVersatz=0;
+  const gTimes = gate.find(g=>g)?.hourly?.time;
+  if(gTimes){
+    const p = gTimes.indexOf(times[0]);
+    if(p<0){ blogZeile('  … ICON-D2-Zeitachse passt nicht — ohne Konvektions-Gate'); }
+    else gVersatz = p;
+  }
+  const gateNutzbar = !gateAus && gTimes && gTimes.indexOf(times[0])>=0;
+
+  let ohneGate=0;
+  for(let h=0;h<n;h++){
+    const k=start+h;
+    for(let c=0;c<NC;c++){
+      const H_=roh[c].hourly;
+      const cp = H_.cape[k] ?? 0;
+      /* negativ speichern, wie in der Meteorologie üblich — die API liefert Beträge */
+      const ci = -Math.abs(H_.convective_inhibition[k] ?? 0);
+      const [u10,v10] = uv(H_.wind_speed_10m[k]??0, H_.wind_direction_10m[k]??0);
+      const [u50,v50] = uv(H_.wind_speed_500hPa[k]??0, H_.wind_direction_500hPa[k]??0);
+      const sh = Math.hypot(u50-u10, v50-v10);
+      const t2 = H_.temperature_2m[k] ?? 15, td = H_.dew_point_2m[k] ?? 10;
+      const lz = Math.max(50, 125*(t2-td));
+
+      let kv = 1;
+      if(gateNutzbar && gate[c]){
+        const G_=gate[c].hourly, gk=k+gVersatz;
+        /* Über das Arrayende hinaus liefert JS undefined, nicht null — beides
+           muss hier gleich behandelt werden, sonst schlösse das Gate fälschlich. */
+        const lies = arr => (gk>=0 && gk<arr.length) ? arr[gk] : null;
+        const lpi=lies(G_.lightning_potential), up=lies(G_.updraft), nd=lies(G_.precipitation);
+        /* Alle drei null = jenseits des ICON-D2-Horizonts → Gate offen lassen. */
+        if(lpi==null && up==null && nd==null) ohneGate++;
+        else kv = konvFaktor(lpi??0, up??0, nd??0);
+      }
+      D.cape[h][c]=cp; D.cin[h][c]=ci; D.shear[h][c]=sh; D.lcl[h][c]=lz;
+      D.u[h][c]=u50;   D.v[h][c]=v50;  D.konv[h][c]=kv;
+      D.tpi[h][c]=tpiOf(cp, sh, ci, lz, kv);
+    }
+  }
+  if(ohneGate) blogZeile(`  … letzte ${Math.round(ohneGate/NC)} Stunden ohne ICON-D2-Gate`);
+  ledSetzen('', 'DATEN AKTIV');
+  document.getElementById('sRun').textContent=D.run+' UTC';
+  blog(`${n} Vorhersagestunden aufbereitet · Index berechnet`, 90);
+}
+
+/* Vorgerechnetes Gitter aus der Aufzeichnungs-Pipeline, falls vorhanden.
+   Feiner als der Live-Abruf und sofort da, weil es als Skript mitgeladen wird. */
+function ladeDienst(){
+  const j=window.GITTER;
+  if(!j) throw new Error('kein vorgerechnetes Gitter');
+  setzeGitter(j.grid);
+  maskeBauen();
+  D.t0=new Date(j.t0); D.run=j.run;
+  const n=j.hours;
+  feldSpeicherAnlegen(n);
+  /* konv ist optional: ältere gitter.js aus der Zeit vor dem Konvektions-Gate
+     haben das Feld nicht. Dann bleibt die Vorbelegung 1 stehen, also Gate offen. */
+  const felder=['cape','cin','shear','lcl','u','v','konv'];
+  for(const f of felder){
+    if(!j.fields[f]) continue;
+    const roh=Uint8Array.from(atob(j.fields[f]), c=>c.charCodeAt(0));
+    const view=new Int16Array(roh.buffer);
+    const s=j.scale[f];
+    for(let h=0;h<n;h++) for(let c=0;c<NC;c++) D[f][h][c]=view[h*NC+c]/s;
+  }
+  for(let h=0;h<n;h++) for(let c=0;c<NC;c++)
+    D.tpi[h][c]=tpiOf(D.cape[h][c], D.shear[h][c], D.cin[h][c], D.lcl[h][c], D.konv[h][c]);
+  ledSetzen('', 'DATENDIENST');
+  document.getElementById('sRun').textContent=D.run;
+  blog(`Vorgerechnetes Gitter geladen — ${n} Stunden`, 90);
+}
+
+function synth(){
+  D.t0=new Date(Math.ceil(Date.now()/3600e3)*3600e3);
+  document.getElementById('sRun').textContent='—';
+  feldSpeicherAnlegen(HOURS);
+  for(let h=0;h<HOURS;h++){
+    const px=0.35+h*0.06, py=0.9-h*0.012;
+    for(let j=0;j<GRID.rows;j++) for(let i=0;i<GRID.cols;i++){
+      const c=j*GRID.cols+i, fx=i/(GRID.cols-1), fy=j/(GRID.rows-1);
+      const d=Math.hypot(fx-(px%1.4-0.2), fy-py);
+      const blob=Math.exp(-d*d*9);
+      const cp=200+2600*blob*(0.6+0.4*Math.sin(h/3.4+i*0.12));
+      const sh=9+22*blob+4*Math.sin(h/5+j*0.16);
+      D.cape[h][c]=cp; D.shear[h][c]=sh;
+      D.cin[h][c]=-20-60*(1-blob); D.lcl[h][c]=1500-800*blob;
+      const dir=200+60*fy+18*Math.sin(h/6+fx*3);
+      const spd=35+70*blob+25*fy;
+      const w=uv(spd,dir); D.u[h][c]=w[0]; D.v[h][c]=w[1];
+      /* Der Ersatzdatensatz bekommt ein Gate mit derselben Kernform wie das
+         CAPE-Feld — sonst zeigt der Notlauf ein Verhalten, das es live nicht gibt. */
+      const kv=Math.max(0, Math.min(1, blob*1.8-0.15));
+      D.konv[h][c]=kv;
+      D.tpi[h][c]=tpiOf(cp,sh,D.cin[h][c],D.lcl[h][c],kv);
+    }
+  }
+}
+
+/* Höchstwert der nächsten 48 h — nur innerhalb Deutschlands, sonst verspricht
+   die Leiste Werte, die auf der geclippten Karte gar nicht zu sehen sind. */
+function buildPeak(){
+  const el=document.getElementById('peak');
+  let best={v:-1,h:0,c:0};
+  for(let h=0;h<D.tpi.length;h++){
+    const a=D.tpi[h];
+    for(let c=0;c<NC;c++) if(INDE[c] && a[c]>best.v) best={v:a[c],h,c};
+  }
+  const L=levelOf(best.v);
+  const d=new Date(D.t0.getTime()+best.h*3600e3);
+  const wann = best.h===0 ? 'jetzt'
+    : d.toLocaleString('de-DE',{weekday:'short',hour:'2-digit',minute:'2-digit'})+' Uhr';
+  const ort = best.v>=10 ? naechsterOrt(...zellPos(best.c)) : null;
+  el.hidden=false;
+  el.innerHTML = best.v<10
+    ? `<i style="background:${L.c}"></i>Ruhige Lage — kein nennenswertes Konvektionspotenzial in 48 h`
+      + `<s>Höchstwert TPI ${Math.round(best.v)}</s>`
+    : `<i style="background:${L.c}"></i>Höchstes Potenzial: <b style="color:${L.c}">`
+      + `${L.n} · TPI ${Math.round(best.v)}</b> ${ort?'bei '+ort+' ':''}um ${wann}<s>anspringen ›</s>`;
+  el.onclick=()=>{
+    T=best.h; slider.value=T; playing=false;
+    document.getElementById('play').textContent='▶';
+    onTimeChange();
+  };
+}
+function naechsterOrt(lon,lat){
+  let best=null, bd=1e9;
+  for(const o of ORTE){
+    if(o.p<25000) continue;
+    const d=Math.hypot((o.lon-lon)*KX, o.lat-lat);
+    if(d<bd){ bd=d; best=o; }
+  }
+  return (best && bd<1.1) ? best.n : null;
+}
+
+function finish(){
+  document.getElementById('sGrid').textContent =
+    `${GRID.cols}×${GRID.rows} · ${Math.round(dLat*111)} km`;
+  if(TORS.length){
+    const j=TORS.map(t=>t.jahr);
+    document.getElementById('torZahl').textContent =
+      `${TORS.length} · ${Math.min(...j)}–${Math.max(...j)}`;
+  }
+  parAufbauen();
+  buildTicks(); buildPeak(); resize();
+  const q=new URLSearchParams(location.search);
+  const qt=parseFloat(q.get('t'));
+  if(!isNaN(qt)){ T=Math.max(0,Math.min(48,qt)); slider.value=T; }
+
+  /* Deep-Link auf eine Region: ?z=8&lat=48.5&lon=11.2 — zum Teilen einer Lage */
+  const qz=parseFloat(q.get('z')), qlat=parseFloat(q.get('lat')), qlon=parseFloat(q.get('lon'));
+  if(!isNaN(qz)){
+    Z=Math.max(ZMIN,Math.min(ZMAX,qz));
+    if(!isNaN(qlat)&&!isNaN(qlon)){
+      const w=world(qlon,qlat);
+      TX=W/2-w[0]*Z; TY=H/2-w[1]*Z;
+    }
+    panBegrenzen();
+    document.getElementById('zoomlvl').textContent=Z.toFixed(1)+'×';
+  }
+  /* Wer mit Karten- oder Zeit-Parametern verlinkt wurde, will die Karte sehen,
+     nicht das Intro — direkt hinscrollen, ohne Animation. */
+  if(!isNaN(qz) || !isNaN(qt))
+    window.scrollTo({top:document.getElementById('app').offsetTop, behavior:'instant'});
+  onTimeChange();
+  blog('Bereit.', 100);
+  const boot=document.getElementById('boot');
+  if(new URLSearchParams(location.search).has('noboot')) boot.remove();
+  else setTimeout(()=>{ boot.classList.add('gone');
+                        setTimeout(()=>boot.remove(), 900); }, 520);
+  requestAnimationFrame(loop);
+  erklaerStart();
+}
+
+async function load(){
+  blog('Initialisiere Projektion und Landesgeometrie …', 12);
+  setzeGitter(gitterAusKm(KM_LIVE));
+  fieldCv.width=(GRID.cols-1)*SUP+1; fieldCv.height=(GRID.rows-1)*SUP+1;
+  resize();
+  maskeBauen();
+  blog(`Gitter aufgespannt — ${NC} Stützstellen, davon ${INDE.reduce((a,b)=>a+b,0)} in Deutschland`, 26);
+
+  if(new URLSearchParams(location.search).get('demo')==='1'){
+    blog('DEMO-MODUS — synthetische Superzellenlage', 70);
+    ledSetzen('warn','DEMO-LAGE');
+    document.getElementById('sModel').textContent='Synthetisch';
+    synth(); finish(); return;
+  }
+
+  try{
+    await ladeDienst();
+  }catch(e1){
+    try{
+      await ladeLive();
+    }catch(e2){
+      blog('⚠ Keine Verbindung ('+e2.message+') — Demo-Modus mit synthetischem Feld', 70);
+      ledSetzen('warn','DEMO-MODUS');
+      document.getElementById('sModel').textContent='Synthetisch';
+      synth();
+    }
+  }
+  /* Die Feldauflösung hängt am Gitter — erst jetzt steht sie fest. */
+  fieldCv.width=(GRID.cols-1)*SUP+1; fieldCv.height=(GRID.rows-1)*SUP+1;
+  finish();
+}
+
+/* ══════════════ Erklärstrecke ═══════════════════════════════════════════════ */
+let eStufe=0, eAlt=0, eMisch=1, eCv=null, eCx=null, eW=0, eH=0;
+
+function erklaerStart(){
+  eCv=document.getElementById('eCanvas'); eCx=eCv.getContext('2d');
+  const groesse=()=>{
+    const r=eCv.getBoundingClientRect();
+    const dpr=Math.min(window.devicePixelRatio||1,2);
+    eW=r.width; eH=r.height;
+    eCv.width=eW*dpr; eCv.height=eH*dpr;
+    eCx.setTransform(dpr,0,0,dpr,0,0);
+  };
+  groesse();
+  window.addEventListener('resize', groesse);
+
+  const schritte=[...document.querySelectorAll('.schritt')];
+  const beob=new IntersectionObserver(eintraege=>{
+    for(const e of eintraege){
+      if(e.isIntersecting){
+        schritte.forEach(s=>s.classList.toggle('aktiv', s===e.target));
+        const neu=+e.target.dataset.s;
+        if(neu!==eStufe){ eAlt=eStufe; eStufe=neu; eMisch=0; }
+      }
+    }
+  }, {rootMargin:'-45% 0px -45% 0px', threshold:0});
+  schritte.forEach(s=>beob.observe(s));
+  schritte[0].classList.add('aktiv');
+
+  requestAnimationFrame(eLoop);
+}
+
+function eLoop(ts){
+  if(eW>0){
+    eMisch=Math.min(1, eMisch+0.022);
+    eZeichne(ts/1000);
+  }
+  requestAnimationFrame(eLoop);
+}
+
+/* Hilfen */
+function ePfeil(x1,y1,x2,y2,farbe,dicke){
+  const a=Math.atan2(y2-y1,x2-x1);
+  eCx.strokeStyle=farbe; eCx.lineWidth=dicke; eCx.lineCap='round';
+  eCx.beginPath(); eCx.moveTo(x1,y1); eCx.lineTo(x2,y2); eCx.stroke();
+  eCx.beginPath(); eCx.moveTo(x2,y2);
+  eCx.lineTo(x2-Math.cos(a-0.42)*8, y2-Math.sin(a-0.42)*8);
+  eCx.lineTo(x2-Math.cos(a+0.42)*8, y2-Math.sin(a+0.42)*8);
+  eCx.closePath(); eCx.fillStyle=farbe; eCx.fill();
+}
+function eText(t,x,y,farbe,gr){
+  eCx.font=`600 ${gr||11}px ui-sans-serif,system-ui,sans-serif`;
+  eCx.fillStyle=farbe; eCx.textAlign='left'; eCx.fillText(t,x,y);
+}
+function eWolke(x,y,b,h,alpha){
+  eCx.save(); eCx.globalAlpha=alpha;
+  const g=eCx.createLinearGradient(0,y-h,0,y+h*0.2);
+  g.addColorStop(0,'rgba(150,180,210,.95)'); g.addColorStop(1,'rgba(70,95,125,.85)');
+  eCx.fillStyle=g;
+  eCx.beginPath();
+  eCx.ellipse(x,y,b,h,0,0,6.2832);
+  eCx.fill(); eCx.restore();
+}
+
+/* Beschriftung: nur die aktive Stufe wird benannt. Sonst stehen am Ende sechs
+   Textschichten übereinander und die Grafik ist unlesbar. */
+function eMarke(text, x, y, farbe, anker){
+  eCx.font='600 11px ui-sans-serif,system-ui,sans-serif';
+  eCx.textAlign = anker || 'left';
+  eCx.textBaseline='middle';
+  const br=eCx.measureText(text).width;
+  const px = anker==='right' ? x-br-7 : x-7;
+  eCx.fillStyle='rgba(6,10,18,.82)';
+  eCx.beginPath();
+  eCx.roundRect ? eCx.roundRect(px, y-9, br+14, 18, 5)
+                : eCx.rect(px, y-9, br+14, 18);
+  eCx.fill();
+  eCx.fillStyle=farbe; eCx.fillText(text, x, y);
+  eCx.textAlign='left'; eCx.textBaseline='alphabetic';
+}
+
+function eZeichne(t){
+  const s=eStufe, boden=eH-46, cx=eW*0.52;
+  eCx.clearRect(0,0,eW,eH);
+
+  const g=eCx.createLinearGradient(0,0,0,eH);
+  g.addColorStop(0,'#0a1524'); g.addColorStop(1,'#0d1420');
+  eCx.fillStyle=g; eCx.fillRect(0,0,eW,eH);
+
+  /* Wetterleuchten, sobald der Gewitterturm steht — deterministisches Flackern
+     aus überlagerten Sinusschwingungen, damit es unregelmäßig wirkt. */
+  if(s>=2){
+    const wl=Math.pow(Math.max(0, Math.sin(t*1.9)*Math.sin(t*0.53+1.3)*Math.sin(t*0.27+4)), 24);
+    if(wl>0.02){ eCx.fillStyle=`rgba(170,205,245,${(wl*0.16).toFixed(3)})`;
+                 eCx.fillRect(0,0,eW,eH); }
+  }
+
+  eCx.fillStyle='rgba(22,38,34,.9)'; eCx.fillRect(0,boden,eW,eH-boden);
+  eCx.strokeStyle='rgba(120,190,150,.35)'; eCx.lineWidth=1.2;
+  eCx.beginPath(); eCx.moveTo(0,boden); eCx.lineTo(eW,boden); eCx.stroke();
+
+  /* 1 — feuchtwarme Luft */
+  if(s>=0){
+    eCx.save();
+    eCx.globalAlpha = s===0 ? 1 : .34;
+    for(let i=0;i<7;i++){
+      const x=eW*0.10+i*eW*0.13;
+      const ph=(t*0.6+i*0.35)%1;
+      eCx.globalAlpha=(s===0?1:.34)*(0.30+0.35*Math.sin(ph*Math.PI));
+      ePfeil(x, boden-6-ph*34, x, boden-22-ph*34, 'rgba(238,160,90,.9)', 1.6);
+    }
+    eCx.restore();
+    if(s===0) eMarke('feuchtwarme Luft — CAPE', 14, boden-64, 'rgba(238,160,90,.95)');
+  }
+
+  /* 2 — Deckel */
+  const yDeckel=boden-112;
+  if(s>=1){
+    eCx.save();
+    eCx.globalAlpha = s===1 ? 1 : 0.32;
+    eCx.setLineDash([7,5]); eCx.strokeStyle='rgba(238,122,18,.9)'; eCx.lineWidth=2;
+    eCx.beginPath(); eCx.moveTo(eW*0.05,yDeckel); eCx.lineTo(eW*0.95,yDeckel); eCx.stroke();
+    eCx.setLineDash([]);
+    eCx.fillStyle='rgba(238,122,18,.07)'; eCx.fillRect(eW*0.05,yDeckel-14,eW*0.90,14);
+    eCx.restore();
+    if(s===1) eMarke('Deckel (CIN) — warme Sperrschicht', 14, yDeckel-26, 'rgba(238,122,18,.95)');
+  }
+
+  /* 3 — Durchbruch und Turm */
+  if(s>=2){
+    const wachs = s===2 ? Math.min(1, eMisch) : 1;
+    const hoehe = (boden-64)*wachs;
+    eCx.save();
+    const tg=eCx.createLinearGradient(0,boden,0,boden-hoehe);
+    tg.addColorStop(0,'rgba(90,120,155,.28)'); tg.addColorStop(1,'rgba(150,180,212,.52)');
+    eCx.fillStyle=tg;
+    eCx.beginPath();
+    eCx.moveTo(cx-32, boden);
+    eCx.quadraticCurveTo(cx-54, boden-hoehe*0.6, cx-42, boden-hoehe);
+    eCx.lineTo(cx+42, boden-hoehe);
+    eCx.quadraticCurveTo(cx+54, boden-hoehe*0.6, cx+32, boden);
+    eCx.closePath(); eCx.fill();
+    if(wachs>0.9) eWolke(cx, boden-hoehe, 104, 18, .78);
+    eCx.restore();
+    const ph=(t*0.9)%1;
+    eCx.save(); eCx.globalAlpha = s===2 ? 1 : .5;
+    ePfeil(cx, boden-10-ph*38, cx, boden-54-ph*38, 'rgba(120,210,255,.95)', 2.4);
+    eCx.restore();
+    if(s===2) eMarke('Aufwind durchbricht den Deckel', eW-14, boden-hoehe*0.45,
+                     'rgba(120,210,255,.95)', 'right');
+  }
+
+  /* 4 — Scherung und liegende Walze */
+  if(s>=3){
+    const yo=boden-176, yu=boden-30;
+    eCx.save(); eCx.globalAlpha = s===3 ? 1 : .4;
+    ePfeil(eW*0.06, yo, eW*0.06+62, yo, 'rgba(87,182,224,.95)', 2.2);
+    ePfeil(eW*0.06, yu, eW*0.06+22, yu, 'rgba(87,182,224,.6)', 1.8);
+    eCx.restore();
+    if(s===3){
+      eMarke('Höhenwind schnell', eW*0.06, yo-17, 'rgba(87,182,224,.95)');
+      eMarke('Bodenwind langsam', eW*0.06, yu-17, 'rgba(87,182,224,.8)');
+      const wy=boden-88, dreh=t*1.6;
+      eCx.save(); eCx.strokeStyle='rgba(242,216,75,.85)'; eCx.lineWidth=2;
+      eCx.beginPath(); eCx.ellipse(cx, wy, 78, 24, 0, 0, 6.2832); eCx.stroke();
+      for(let i=0;i<3;i++){
+        const a=dreh+i*2.09;
+        eCx.beginPath(); eCx.ellipse(cx, wy, 78, 24, 0, a, a+0.9);
+        eCx.lineWidth=3.2; eCx.strokeStyle='rgba(242,216,75,.95)'; eCx.stroke();
+      }
+      eCx.restore();
+      eMarke('liegende Rotationswalze', eW-14, wy-40, 'rgba(242,216,75,.95)', 'right');
+    }
+  }
+
+  /* 5 — aufgekippte Mesozyklone */
+  const myMeso=boden-196;
+  if(s>=4){
+    const dreh=t*2.0;
+    eCx.save();
+    eCx.globalAlpha = s===4 ? 1 : .55;
+    eCx.translate(cx, myMeso);
+    eCx.strokeStyle='rgba(242,216,75,.9)'; eCx.lineWidth=2;
+    eCx.beginPath(); eCx.ellipse(0,0, 50, 16, 0, 0, 6.2832); eCx.stroke();
+    for(let i=0;i<3;i++){
+      const a=dreh+i*2.09;
+      eCx.beginPath(); eCx.ellipse(0,0, 50, 16, 0, a, a+0.85);
+      eCx.lineWidth=3.4; eCx.stroke();
+    }
+    eCx.restore();
+    eCx.save(); eCx.strokeStyle='rgba(242,216,75,.28)'; eCx.lineWidth=1.4;
+    eCx.setLineDash([4,5]);
+    eCx.beginPath(); eCx.moveTo(cx-50,myMeso); eCx.lineTo(cx-26,boden-84);
+    eCx.moveTo(cx+50,myMeso); eCx.lineTo(cx+26,boden-84); eCx.stroke();
+    eCx.restore();
+    if(s===4) eMarke('Mesozyklone — das ganze Gewitter dreht', 14, myMeso-26,
+                     'rgba(242,216,75,.95)');
+  }
+
+  /* 6 — Rüssel */
+  if(s>=5){
+    const p=Math.min(1,eMisch*1.4);
+    const oben=boden-84, unten=oben+(boden-oben)*p;
+    eCx.save();
+    /* Wandwolke */
+    eCx.fillStyle='rgba(120,146,178,.45)';
+    eCx.beginPath(); eCx.ellipse(cx, oben, 40, 9, 0, 0, 6.2832); eCx.fill();
+    /* Trichter als geschlossene, sich verjüngende Form */
+    eCx.beginPath();
+    eCx.moveTo(cx-24, oben);
+    for(let y=oben;y<=unten;y+=3){
+      const f=(y-oben)/Math.max(1,boden-oben);
+      eCx.lineTo(cx-24*(1-f*0.76)+Math.sin(t*2.2+f*5)*8*f, y);
+    }
+    for(let y=unten;y>=oben;y-=3){
+      const f=(y-oben)/Math.max(1,boden-oben);
+      eCx.lineTo(cx+24*(1-f*0.76)+Math.sin(t*2.2+f*5)*8*f, y);
+    }
+    eCx.closePath();
+    eCx.fillStyle='rgba(217,47,134,.22)'; eCx.fill();
+    eCx.strokeStyle='rgba(217,47,134,.95)'; eCx.lineWidth=2; eCx.stroke();
+    if(p>=0.98){
+      for(let i=0;i<18;i++){
+        const a=t*3+i*0.36, r=10+((t*40+i*15)%32);
+        eCx.globalAlpha=0.75-(r-10)/32*0.75;
+        eCx.fillStyle='rgba(217,47,134,.9)';
+        eCx.beginPath();
+        eCx.arc(cx+Math.cos(a)*r, boden-4-Math.sin(a)*r*0.26, 1.8, 0, 6.2832);
+        eCx.fill();
+      }
+      eCx.globalAlpha=1;
+    }
+    eCx.restore();
+    eCx.save(); eCx.setLineDash([3,4]);
+    eCx.strokeStyle='rgba(232,241,248,.3)'; eCx.lineWidth=1;
+    eCx.beginPath(); eCx.moveTo(eW*0.05,oben); eCx.lineTo(eW*0.95,oben); eCx.stroke();
+    eCx.restore();
+    eMarke('Wolkenuntergrenze (LCL)', 14, oben-17, 'rgba(232,241,248,.7)');
+    if(p>=0.98) eMarke('Bodenkontakt', eW-14, boden-22, 'rgba(217,47,134,.95)', 'right');
+  }
+}
+
+/* ══════════════ Hero: Sturm-Intro ═══════════════════════════════════════════
+   Eigener Canvas, komplett unabhängig von der Karte. Zeichnet nur, solange der
+   Hero im Sichtfeld ist — sonst kostet die Startseite dauerhaft Rechenzeit.  */
+(function(){
+  const cv=document.getElementById('heroCv');
+  if(!cv) return;
+  const hx=cv.getContext('2d');
+  let hw=0, hh=0, sichtbar=true;
+
+  function hSize(){
+    const d=Math.min(window.devicePixelRatio||1,2);
+    hw=cv.clientWidth; hh=cv.clientHeight;
+    cv.width=hw*d; cv.height=hh*d;
+    hx.setTransform(d,0,0,d,0,0);
+  }
+  hSize(); window.addEventListener('resize',hSize);
+  new IntersectionObserver(e=>{sichtbar=e[0].isIntersecting},{threshold:.01}).observe(cv);
+
+  /* Wolkendecke, Wirbelpartikel, Bodenstaub, Regen */
+  const wolken=[]; for(let i=0;i<32;i++) wolken.push({
+    x:Math.random(), y:0.03+Math.random()*0.18, r:0.10+Math.random()*0.17,
+    v:(Math.random()-0.5)*0.02, ph:Math.random()*7});
+  const wirbel=[]; for(let i=0;i<240;i++) wirbel.push({
+    f:Math.random(), a:Math.random()*6.2832,
+    v:1.6+Math.random()*2.6, d:0.75+Math.random()*0.8, s:0.6+Math.random()*1.5});
+  const staub=[]; for(let i=0;i<70;i++) staub.push({
+    a:Math.random()*6.2832, r:Math.random(), v:0.9+Math.random()*1.8, s:1+Math.random()*2.2});
+  const regen=[]; for(let i=0;i<90;i++) regen.push({
+    x:Math.random(), y:Math.random(), v:0.6+Math.random()*0.9});
+
+  /* Blitze: gezackter Hauptkanal plus Seitenäste, kurzes Flackern */
+  let blitz=null, blitzNext=1.1;
+  function bolzen(x0,y0,y1){
+    const seg=[[x0,y0]]; let x=x0; const n=14;
+    for(let i=1;i<=n;i++){
+      x+=(Math.random()-0.5)*hw*0.045;
+      seg.push([x, y0+(y1-y0)*i/n]);
+    }
+    return seg;
+  }
+  function neuerBlitz(t){
+    const x=hw*(0.12+Math.random()*0.76), y0=hh*(0.08+Math.random()*0.10);
+    const haupt=bolzen(x,y0, hh*(0.55+Math.random()*0.33));
+    const aeste=[];
+    for(let i=0;i<2+(Math.random()*2|0);i++){
+      const s=haupt[2+(Math.random()*(haupt.length-5)|0)];
+      aeste.push(bolzen(s[0],s[1], s[1]+hh*(0.10+Math.random()*0.18)));
+    }
+    blitz={haupt,aeste,t0:t,dauer:0.16+Math.random()*0.14};
+    blitzNext=t+1.6+Math.random()*3.8;
+  }
+  function malBlitz(flack){
+    hx.save();
+    hx.lineCap='round'; hx.lineJoin='round';
+    hx.shadowColor='rgba(190,225,255,.9)'; hx.shadowBlur=18;
+    const zieh=p=>{ hx.beginPath(); hx.moveTo(p[0][0],p[0][1]);
+      for(let i=1;i<p.length;i++) hx.lineTo(p[i][0],p[i][1]); hx.stroke(); };
+    hx.strokeStyle=`rgba(215,238,255,${0.9*flack})`; hx.lineWidth=2.6; zieh(blitz.haupt);
+    hx.strokeStyle=`rgba(150,205,255,${0.5*flack})`; hx.lineWidth=1.1;
+    for(const a of blitz.aeste) zieh(a);
+    hx.restore();
+  }
+
+  function wolkendecke(t,flack){
+    for(const w of wolken){
+      w.x+=w.v/60; if(w.x<-0.25) w.x=1.25; if(w.x>1.25) w.x=-0.25;
+      const x=w.x*hw, y=w.y*hh+Math.sin(t*0.5+w.ph)*6, r=Math.max(30,w.r*hw);
+      const g=hx.createRadialGradient(x,y,0,x,y,r);
+      g.addColorStop(0,`rgba(88,114,148,${0.21+flack*0.5})`);
+      g.addColorStop(1,'rgba(20,30,46,0)');
+      hx.fillStyle=g;
+      hx.beginPath(); hx.arc(x,y,r,0,6.2832); hx.fill();
+    }
+  }
+
+  function malRegen(dt){
+    hx.strokeStyle='rgba(140,180,215,.10)'; hx.lineWidth=1;
+    hx.beginPath();
+    for(const r of regen){
+      r.y+=r.v*dt*1.3; r.x-=r.v*dt*0.12;
+      if(r.y>1.02){ r.y=-0.05; r.x=Math.random(); }
+      const x=r.x*hw, y=r.y*hh;
+      hx.moveTo(x,y); hx.lineTo(x+6,y+16);
+    }
+    hx.stroke();
+  }
+
+  function trichter(t,dt){
+    const yT=hh*0.24, yB=hh*0.86, rT=Math.min(hw*0.17,210);
+    const mitte =f=>hw*0.5 + Math.sin(t*0.7+f*2.4)*hw*0.018*f
+                           + Math.sin(t*0.31)*hw*0.012*f;
+    const radius=f=>rT*(0.10+0.90*Math.pow(1-f,1.65))*(1+0.05*Math.sin(t*2+f*9));
+
+    /* Körper als Silhouette */
+    hx.beginPath();
+    for(let f=0;f<=1.001;f+=0.04) hx.lineTo(mitte(f)-radius(f), yT+(yB-yT)*f);
+    for(let f=1;f>=-0.001;f-=0.04) hx.lineTo(mitte(f)+radius(f), yT+(yB-yT)*f);
+    hx.closePath();
+    const g=hx.createLinearGradient(0,yT,0,yB);
+    g.addColorStop(0,'rgba(52,72,98,.85)');
+    g.addColorStop(0.6,'rgba(34,48,68,.78)');
+    g.addColorStop(1,'rgba(24,34,50,.92)');
+    hx.fillStyle=g; hx.fill();
+
+    /* rotierende Bänder */
+    for(let i=0;i<22;i++){
+      const f=i/21, y=yT+(yB-yT)*f, r=radius(f), m=mitte(f);
+      const a=t*(1.4+f*2.2)+i*0.9;
+      hx.strokeStyle=`rgba(150,190,225,${0.14+0.22*Math.sin(a)*Math.sin(a)})`;
+      hx.lineWidth=1+2.4*(1-f);
+      hx.beginPath(); hx.ellipse(m,y,r,Math.max(2,r*0.16),0,a,a+1.7+0.5*Math.sin(i)); hx.stroke();
+    }
+
+    /* Wirbelpartikel steigen spiralig auf */
+    for(const p of wirbel){
+      p.a+=p.v*dt*(1.3+(1-p.f));
+      p.f-=dt*0.14*p.s;
+      if(p.f<0){ p.f=1; p.a=Math.random()*6.2832; }
+      const y=yT+(yB-yT)*p.f, r=radius(p.f)*p.d+2;
+      const sx=mitte(p.f)+Math.cos(p.a)*r, sy=y+Math.sin(p.a)*r*0.16;
+      const vorn=Math.sin(p.a)>0;
+      hx.fillStyle=`rgba(170,205,235,${vorn?0.5:0.18})`;
+      hx.fillRect(sx,sy,p.s+(vorn?0.8:0),p.s);
+    }
+
+    /* Staubkranz am Boden */
+    for(const p of staub){
+      p.a+=p.v*dt; p.r+=dt*0.5; if(p.r>1) p.r=0;
+      const rr=8+p.r*rT*0.75;
+      const sx=mitte(1)+Math.cos(p.a)*rr;
+      const sy=yB+2-Math.abs(Math.sin(p.a))*rr*0.10-p.r*14;
+      hx.fillStyle=`rgba(120,140,160,${0.5*(1-p.r)})`;
+      hx.fillRect(sx,sy,p.s,p.s);
+    }
+  }
+
+  let last=0;
+  function hLoop(ts){
+    requestAnimationFrame(hLoop);
+    if(!sichtbar || !hw){ last=ts; return; }
+    const t=ts/1000, dt=Math.min(0.05, (ts-last)/1000 || 0.016); last=ts;
+    hx.clearRect(0,0,hw,hh);
+
+    if(!blitz && t>blitzNext) neuerBlitz(t);
+    let flack=0;
+    if(blitz){
+      const f=(t-blitz.t0)/blitz.dauer;
+      if(f>=1) blitz=null;
+      else flack=Math.max(0,Math.sin(f*Math.PI))*(0.55+0.45*Math.sin(f*40));
+    }
+
+    wolkendecke(t,flack);
+    malRegen(dt);
+    trichter(t,dt);
+    if(blitz) malBlitz(flack);
+    if(flack>0){ hx.fillStyle=`rgba(185,215,250,${flack*0.09})`; hx.fillRect(0,0,hw,hh); }
+  }
+  requestAnimationFrame(hLoop);
+
+  const zurKarte=()=>document.getElementById('app').scrollIntoView({behavior:'smooth'});
+  document.getElementById('heroCta').addEventListener('click', zurKarte);
+  document.getElementById('heroScroll').addEventListener('click', zurKarte);
+})();
+
+blog('Systemstart …', 4);
+setTimeout(load, 260);
+</script>
+</body>
+</html>

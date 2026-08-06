@@ -1,0 +1,69 @@
+name: Gitter vorrechnen
+
+# ICON-D2 läuft alle 3 Stunden — öfter zu rechnen liefert nur dieselben Zahlen.
+# Der Versatz von 40 Minuten gibt Open-Meteo Zeit, den neuen Lauf einzuspielen.
+on:
+  schedule:
+    - cron: "40 */3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gitter
+  cancel-in-progress: false
+
+jobs:
+  rechnen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Gitter rechnen und Lagen aufzeichnen
+        run: python3 pipeline/rechne_gitter.py --km 15
+
+      - name: Aufzeichnung sichern
+        # Nur die Datenbank wandert in die Historie. Das Gitter-JSON ist ~2 MB und
+        # würde das Repo bei acht Läufen am Tag in Wochen unbrauchbar aufblähen.
+        run: |
+          git config user.name  "tornado-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add pipeline/ereignisse.db
+          git diff --staged --quiet || git commit -m "Aufzeichnung $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push
+
+      - name: Seite und Gitter veröffentlichen
+        # Eigener Zweig, jedes Mal frisch überschrieben: so bleibt die Repo-Größe
+        # konstant, obwohl das Gitter achtmal täglich neu entsteht.
+        run: |
+          mkdir -p /tmp/site
+          cp -r prototyp/. /tmp/site/
+          cd /tmp/site
+          git init -q -b gh-pages
+          git config user.name  "tornado-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Stand $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push -q --force \
+            "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" \
+            gh-pages
+
+      - name: Kurzbericht
+        run: |
+          python3 - <<'PY'
+          import sqlite3
+          con = sqlite3.connect("pipeline/ereignisse.db")
+          n, spitze = con.execute("SELECT COUNT(*), MAX(tpi) FROM lagen").fetchone()
+          print(f"Aufgezeichnete Lagen gesamt: {n}, Höchstwert TPI {spitze}")
+          for zeile in con.execute(
+              "SELECT gilt_fuer, ROUND(lat,2), ROUND(lon,2), tpi FROM lagen "
+              "ORDER BY tpi DESC LIMIT 5"):
+              print("  ", *zeile)
+          PY

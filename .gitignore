@@ -1,0 +1,9 @@
+# Vorgerechnetes Gitter: ~2 MB, entsteht achtmal am Tag neu. Es gehört nach
+# gh-pages, nicht in die Historie — sonst wächst das Repo in Wochen ins
+# Unbrauchbare. Der Workflow kopiert prototyp/ als Ganzes, das Gitter ist dort
+# also trotzdem dabei.
+prototyp/daten/gitter.js
+prototyp/daten/gitter.json
+
+__pycache__/
+*.pyc

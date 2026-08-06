@@ -1,0 +1,588 @@
+Die '''Liste von Tornados''' beschreibt [[Tornado]]ereignisse in Europa in einer Auswahl nach verschiedenen Ländern sortiert. Die Stärke ist, soweit bekannt, nach der [[Fujita-Skala]] angegeben.
+
+== Liste ==
+=== Belgien ===
+{| class="sortable wikitable zebra toptextcells"
+|-
+! width="120"| Datum
+! F
+! Tote
+! Beschreibung
+|-
+| align=right | 25. Juni 1967
+| F3
+| 0
+| Der Tornado entstand um 16:15 Uhr und zerstörte 117 Häuser komplett in der [[Belgien|belgischen]] Ortschaft [[Oostmalle]]. Auch die Kirche wurde zerstört.<ref>{{Internetquelle |autor=Wendy Luyks |url=https://www.nieuwsblad.be/cnt/dmf20120905_00284408 |titel=Oostmalle is verwoestende tornado nog niet vergeten |titelerg=Open Monumentendag herdenkt ramp van 1967 |werk=nieuwsblad.be |datum=2012-09-06 |sprache=nl |abruf=2022-01-14}}</ref>
+|}
+
+=== Deutschland ===
+Diese Auswahl zeigt signifikante Ereignisse (F2–F5 auf der [[Fujita-Skala]]), die aufgrund von Erscheinung oder Jahreszeit von Interesse sind. Ein umfassendes Archiv findet sich in der [[European Severe Storms Laboratory#Europäische Unwetterdatenbank ESWD|Europäischen Unwetterdatenbank]] (ESWD).
+
+{| class="sortable wikitable zebra toptextcells"
+|-
+! style="width:120px"| Datum
+! F
+! Tote
+! Beschreibung
+|-
+| align=right | 15. Juli 1582
+| F4
+| ?
+| [[Rockhausen]] (Thüringen), der Tornado zerstörte die Stadt fast gänzlich.
+|-
+| align=right | 29. Juni 1764
+| F5
+| 2 (mind.)
+| [[Woldegk]] (Mecklenburg), einer der bislang stärksten in Deutschland aufgetretenen Tornados, Spurlänge etwa 30 Kilometer<ref>[[Gottlob Burchard Genzmer]]: ''Umständliche und zuverläßige Beschreibung des Orcans, welcher den 29ten Jun. 1764 einen Strich von etlichen Meilen im Stargardischen Kreise des Herzogthums Mecklenburg gewaltig verwüstet hat.'' Berlin/Stettin 1765, {{URN|nbn:de:bvb:12-bsb11110409-7}} ([http://reader.digitale-sammlungen.de/resolve/display/bsb11110409.html Digitalisat online] bei [[Münchener Digitalisierungszentrum|MDZ]]).</ref> Etliche Verletzte und nur zwei dokumentierte Tote kann mit dem Aufenthalt der meisten in der Kirche statt auf den Feldern, wo der Tornado am heftigsten war, zusammenhängen. Es war der vierteljährliche Buß- und Bettag.<ref>Henning Strüber: [https://www.ndr.de/geschichte/schauplaetze/Der-Jahrtausendtornado-von-Woldegk-vom-29-Juni-1764,tornado236.html ''Der Jahrtausendtornado von Woldegk vom 29. Juni 1764.''] Artikel vom 28.&nbsp;Juni 2014, Website des NDR, abgerufen am 14.&nbsp;November 2021.</ref><ref>{{Internetquelle|url=https://diglib.uibk.ac.at/download/pdf/1886352.pdf |titel=Wind- und Wasserhosen in Europa |autor=[[Alfred Wegener]] |werk=Die Wissenschaft - Sammlung von Einzeldarstellungen aus den Gebieten der Naturwissenschaft und der Technik, Band 60 |datum=1917 |format=PDF |abruf=2025-03-02}}</ref>
+
+|-
+| align=right | 23. April 1800
+| F5
+| ?
+| [[Hainichen]] (Sachsen), der zweite bisher bekannte Tornado der Stärke F5 in Deutschland.<ref>{{Internetquelle |autor=Tornadoliste.de |url=https://tornadoliste.de/read:2114 |titel=Arnsdorf (Sachsen), Dittersdorf (Dittersdorf), Etzdorf (Etzdorf), 23.04.1800 |abruf=2020-05-04 |sprache=de}}</ref>
+|-
+| align=right | 1. Juli 1891
+| F4
+| 
+| [[Wirbelsturm vom 1. Juli 1891]], verbunden mit schwerem Hagelschlag quer über einen Bereich in Deutschland
+|-
+| align=right | 14. Juli 1894
+| F3
+| 2
+| [[Wirbelsturm in Oberbayern vom 14. Juli 1894|''Zyklon'' östlich von München]], als Tornado der Stärke F3 vermutet<ref>''[https://tornadoliste.de/read:2568 Tornado ID #2568.]'' In: ''tornadoliste.de''. Abgerufen am 6. März 2019.</ref>
+|-
+| align=right | 7. August 1898
+|F4
+|1
+|Köln, ein Tornado zog eine etwa 38 Kilometer lange Schneise unter anderem durch den Süden und Osten der Stadt, gleichzeitig gibt es schweren Hagelschlag. Es kam zu schweren Sach- und Personenschäden.<ref>{{Internetquelle |url=https://tornadoliste.de/1898koeln.htm |titel=Tornado in Köln am 07. August 1898 |abruf=2022-04-07}}</ref>
+|-
+| align=right | 14. August 1906
+| 
+| 3
+| [[Wirbelsturm im Bergischen Land 1906|Wirbelsturm im Bergischen Land]]
+|-
+| align=right | 1. Juni 1913
+| 
+| ?
+| Ein Tornado in [[Plochingen]] zerstörte zahlreiche Gebäude.
+|-
+| align=right | 10. August 1925
+| F3
+| 1
+| [[Windhose von Uetersen]].
+|-
+| align=right | 1. Juni 1927
+| F4
+| ?
+| [[Lindern (Oldenburg)|Auen-Holthaus]] (Landkreis Cloppenburg), verheerende Schäden, Kühe durch die Luft gewirbelt, weitere schwere/verheerende Tornados am gleichen Tag unter anderem in den Niederlanden (F4)
+|-
+| align=right | 10. Januar 1936
+| F4
+| 2
+| Zu einer eigentlich außergewöhnlichen Zeit für Tornados zog ein F4-Tornado durch [[Düsseldorf]]. Zwei Menschen starben und mehrere wurden schwer verletzt.<ref>{{Internetquelle |url=https://tornadoliste.de/19360110duesseldorf.htm |titel=Tornado in Düsseldorf am 10.01.1936 |abruf=2021-01-03}}</ref>
+|-
+| align=right | 15. Juli 1936
+| F4
+|
+| Ein Tornado zerstörte die Gemeinden [[Trinwillershagen]], [[Wiepkenhagen]] und [[Lüdershagen]] in [[Mecklenburg-Vorpommern]].<ref>{{Internetquelle |autor=Tornadoliste.de |url=https://tornadoliste.de/read:4092 |titel=Trinwillershagen (Mecklenburg-Vorpommern), Wiepkenhagen (Wiepkenhagen ), Lüdershagen bei Ribnitz-Damgarten (Lüdershagen bei Ribnitz-Damgarten), 15.07.1936 |abruf=2021-01-03 |sprache=de}}</ref>
+|-
+| align=right | 11. Juli 1951
+| F2
+| ?
+| [[Unwetter in Norddeutschland vom 11. Juli 1951|Unwetter in Norddeutschland]]
+|-
+| align=right | 10. Juli 1968
+| F4
+| 2
+| [[Tornado über Pforzheim]], 2 Tote, über 200 zum Teil lebensgefährlich Verletzte, 1750 Häuser beschädigt.
+|-
+| align=right | 5. Mai 1973
+| F3
+| 1
+| [[Kiel]], ein Toter.
+|-
+| align=right | 24. Mai 1979
+| F4
+| 0
+| Tornado auf einer Linie von [[Bad Liebenwerda]] durch [[Prestewitz]] bis in die Nähe von [[Lübben (Spreewald)|Lübben]].<ref>{{Internetquelle |url=http://www.meteomedia.de/fileadmin/template/meteomedia/download/Pressemitteilungen/Tornado_Brandenburg_060310.pdf |titel=Pressemitteilung: Neue spektakuläre Tornado-Erkenntnisse |hrsg=meteomedia GmbH |datum=2010-03-06 |archiv-url=http://web.archive.org/web/20120131144016/http://www.meteomedia.de/fileadmin/template/meteomedia/download/Pressemitteilungen/Tornado_Brandenburg_060310.pdf |archiv-datum=2012-01-31 |abruf=2019-03-06 |format=PDF; 34 kB |offline=1}}</ref>
+|-
+| align=right | 15. Juni 1980
+| F1
+| 6
+| Tornado in [[Wilhelmsthal (Gerstungen)|Wilhelmsthal]]: Durch umgeworfene Bäume sterben 6 Menschen, 11 weitere werden verletzt.<ref>{{Internetquelle |url=https://tornadoarchiv.de.tl/Wilhelmsthal-Tornado.htm |titel=Wilhelmsthal Tornado |werk=tornadoarchiv.de.tl|abruf=2020-02-08}}</ref>
+|-
+| align=right | 17. Juli 1987
+| F1
+| 0
+| Tornado in [[Dalum|Geeste-Dalum]]: Ein Tornado beschädigt 70 Häuser in der Siedlung [[Großer Sand (Geeste)|Großer Sand]]. 3 Personen werden verletzt.<ref>{{Internetquelle |url=http://www.tornadozentrale.de/read:3757 |titel=Geeste (NI) |werk=www.tornadozentrale.de |abruf=2020-02-08}}</ref>
+|-
+| align=right | 9. August 1992
+| 
+| 0
+| Ein Tornado richtete in [[Buchholz in der Nordheide]] große Schäden an. Diverse Häuser und Autos wurden beschädigt, Strommasten abgeknickt und viele zum Teil uralte Bäume entwurzelt.
+|-
+| align=right | 29. Juni 1997
+| F2
+| 0
+| Vier F2-Tornados in Niedersachsen mit bis zu 85&nbsp;km Spurlänge. Am schwersten betroffen [[Bissendorf]] bei Osnabrück.
+|-
+| align=right | 22. Juni 1998
+| 
+| 0
+| Am 22. Juni 1998 fegte ein Tornado über das Westerzgebirge / Vogtland. Besonders betroffen war die Stadt Falkenstein. Der Tornado zog über Hammerbrücke, Jägersgrün und Tannenbergsthal Richtung Morgenröthe-Rautenkranz. Es entstand Millionenschaden.
+|-
+| align=right | 9. September 1998
+| F2
+| 0
+| Ein F2-Tornado wütete zwischen [[Ibbenbüren]] und [[Tecklenburg]] (westlich von Osnabrück). Neben unzähligen umgeworfenen Bäumen wurden auch Stromleitungen abgerissen und Dächer abgedeckt. Am stärksten betroffen war der Tecklenburger Ortsteil [[Ledde]].<ref>''Tonnenschwerer Wohnwagen flog 300 Meter durch die Luft.'' In: ''[[Ibbenbürener Volkszeitung]]'' vom 11. September 1999, {{Webarchiv|url=http://www.wetterstation-schlickelde.de/html/ibbenbueren98.html |wayback=20190311035821 |text=Artikel online |archiv-bot=2022-03-20 07:09:50 InternetArchiveBot }} auf der Website der Wetterstation Schlickelde.</ref>
+|-
+| align=right | 19./20. August 2000 
+|F2-F3
+|0
+|In der Nacht zum 20. August 2000 zog ein Tornado über Geldern (Landkreis Kleve, NRW) hinweg. Betroffen waren vor allem die Ortsteile Aengenesch und Issum. Mauern wurden eingerissen und ein mit drei Personen besetztes Auto wurde durch die Luft gewirbelt. Die Stärke des Tornados wurde auf F2-F3 geschätzt
+|-
+| align=right | 6. August 2001
+| F1/F2
+| 0
+| [[Tornado von Belm|Ein F1/F2-Tornado]] fräste mitten durchs Ortszentrum der Gemeinde [[Belm]] bei [[Osnabrück]] eine sechs Kilometer lange und 50 Meter breite Schneise. Der Gesamtschaden lag bei über fünf Millionen&nbsp;DM.<ref>Jürgen Kaschner: ''[http://www.naturgewalten.de/010806belm.htm Tornado in Belm am 06.08.2001.]'' In: ''naturgewalten.de.'' Abgerufen am 6. März 2019.</ref><ref>Heinz Schliehe: ''[https://www.noz.de/lokales/osnabrueck/artikel/75150/als-der-tornado-in-belm-wutete-erinnerungen-zehn-jahre-nach-der-katastrophe Als der Tornado in Belm wütete. Erinnerungen zehn Jahre nach der Katastrophe.]'' In: ''[[Neue Osnabrücker Zeitung|noz.de]].'' 5. August 2011, abgerufen am 6. März 2019.</ref><ref>''[http://www.tornadoliste.de/2001 2001.]'' In: ''tornadoliste.de''. Abgerufen am 6. März 2019.</ref>
+|-
+| align=right | 12. Juni 2002
+| F2
+| 0
+| Ein F2-Tornado verwüstete ein Gewerbegebiet in [[Lutherstadt Wittenberg|Wittenberg]] in [[Sachsen-Anhalt]].<ref>''[http://www.tornadoliste.de/2002 2002.]'' In: ''tornadoliste.de''. Abgerufen am 6. März 2019.</ref>
+|-
+| align=right | 10. Juni 2003
+| F3
+| 0
+| Es erfasste ein F3-Tornado die Gemeinde [[Acht (Eifel)|Acht]] in der [[Eifel]]. Aufgrund der geringen Größe des Ortes hielt sich der Gesamtschaden in Grenzen, es blieb bei zwei Verletzten.
+|-
+| align=right | 13. Januar 2004
+| F2
+| 0
+| [[Drochtersen|Assel]] (Gemeinde [[Drochtersen]] bei Stade) (F2)
+|-
+| align=right | 23. Juni 2004
+| F3
+| 0
+| [[Micheln]] ([[Sachsen-Anhalt]]), mehrere Verletzte, etwa 300 Gebäude beschädigt (F3)
+|-
+| align=right | 27. März 2006
+| F2
+| 2
+| Ein Tornado zog um circa 19 Uhr (geschätzte Stärke F2) über [[Hamburg]] hinweg. Dabei starben zwei Menschen durch den Umsturz von drei Baukränen und mehr als 300.000 Menschen waren vorübergehend ohne Strom.
+|-
+| align=right | 21. August 2006
+| 
+| 1
+| Hierbei starb ein Mann in [[Brohl-Lützing]], nachdem der Wohnwagen, in dem er sich aufgehalten hatte, von einem Tornado in ein Hafenbecken geschleudert worden war. Sein neunjähriger Sohn überlebte schwer verletzt. Außerdem wurden einige Häuser schwer beschädigt.
+|-
+| align=right | 18. Januar 2007
+|F3
+|0
+|Zwischen Brachwitz und Kemnitz in [[Brandenburg]] beschädigte und zerstörte ein Tornado gegen auf einer Strecke von etwa 11 Kilometern mehrere Gebäude, des Weiteren hinterließ er in einem Waldstück eine 450 Meter breite Schneise. Das Ereignis trat gegen 17:00 Uhr auf. Ein Mann wurde schwer verletzt.
+|-
+| align=right | 18. Januar 2007
+|F3
+|0
+|Gegen 18:40 Uhr verursachte ein Tornado auf seiner 10 Kilometer langen Bahn durch [[Lutherstadt Wittenberg|Lutherstadt-Wittenberg]] Sachschäden von über 10 Millionen [[Euro]].<ref>{{Internetquelle |url=http://www.naturgewalten.de/070118wittenberg.htm |titel=Tornado in Wittenberg am 18.01.07 |abruf=2022-04-07}}</ref>
+|-
+| align=right | 18. Januar 2007
+|F3
+|0
+|Ein Tornado zog gegen 19:30 Uhr eine 34 Kilometer lange Schneise der Verwüstung unter anderem durch [[Lauchhammer]] in Brandenburg. Das Ereignis trat wie einige andere Tornados in Verbindung mit der Kaltfront von [[Orkan Kyrill]] auf. Es kam zu schweren Sach- und Vegetationsschäden, in der Ortschaft Kahla stürzten vier Gebäude gänzlich ein. Mit einer Einstufung als Tornado der Stärke T7 auf der [[TORRO-Skala]] war es der stärkste durch Kyrill hervorgebrachte Tornado.<ref>{{Internetquelle |url=http://www.naturgewalten.de/070118lauchhammer.htm |titel=Tornado in Elsterwerda, Kahla, Lauchhammer, Schwarzheide am 18.01.07 |abruf=2022-04-07}}</ref>
+|-
+| align=right | 12. August 2008
+| F1
+| 0
+| Ein Tornado wütete in der mittelhessischen Stadt [[Gießen]]. Obwohl es sich nur um einen F1-Tornado handelte, waren die Schäden erheblich. Zahlreiche Bäume, Dachziegel und sogar ganze Dachgiebel wurden herumgewirbelt und einige Häuser, darunter auch eine Schule und Teile der Universität, in Mitleidenschaft gezogen. Besonders stark betroffen war der Gießener Philosophenwald; Teile des mehrere hundert Jahre alten Stadtwalds, darunter zahlreiche Eichen, fielen dem Tornado zum Opfer.<ref>''[https://www.giessener-allgemeine.de/regional/stadtgiessen/Stadt-Giessen-Philosophenwald-wie-nach-Flugzeugabsturz;art71,22462 Philosophenwald »wie nach Flugzeugabsturz«]''. In: ''[[Gießener Allgemeine Zeitung|giessener-allgemeine.de]]''. 18. August 2008, abgerufen am 6. März 2019.</ref> Die Großtrombe wirbelte lediglich wenige Minuten, löste sich über einem Berg von der Erdoberfläche und zog sich in die Wolkenfront zurück.<ref>{{Internetquelle |url=http://www.n-tv.de/Daecher_in_Giessen_abgedeckt_Tornados_in_Deutschland/130820083209/1007969.html |titel=Dächer in Gießen abgedeckt – Tornados in Deutschland |werk=[[n-tv|n-tv.de]] |datum=2008-08-13 |archiv-url=https://web.archive.org/web/20090202094053/http://www.n-tv.de/Daecher_in_Giessen_abgedeckt_Tornados_in_Deutschland/130820083209/1007969.html |archiv-datum=2009-02-02 |abruf=2019-03-06 |offline=1}}</ref>
+|-
+| align=right | 24. Mai 2010
+| F3
+| 1
+| Eine Serie von Tornados, von welchen [[Tornado am Pfingstmontag|einer die Stufe F3 erreicht]], verwüstet große Teile der Stadt [[Großenhain]] und der angrenzenden Gemeinden. Die Unwetterfront, aus Südwestbrandenburg nach Südostsachsen ziehend, wütete auf einer 80 bis 100 Kilometer langen Strecke und verursacht neben den Tornados auch starken Hagel. Das Zentrum der Zerstörung lag zwischen dem südbrandenburgischen [[Mühlberg/Elbe]] und Großenhain. Allein in Großenhain wurden ungefähr 40 Menschen teilweise schwer verletzt und ein Kind wurde durch einen umstürzenden Baum getötet. In den Stadtteilen Walda und Kleinthiemig wurden 80 % der Hausdächer zerstört.<ref>{{Internetquelle |url=https://www.abendblatt.de/vermischtes/article106514758/Aufraeumen-nach-dem-Sturm-Trauer-um-totes-Maedchen.html |titel=Tornados in Ostdeutschland. Aufräumen nach dem Sturm – Trauer um totes Mädchen |werk=[[Hamburger Abendblatt|abendblatt.de]] |datum=2010-05-25 |abruf=2019-03-06}}</ref>
+|-
+| align=right | 23. August 2010
+| 
+| 0
+| Hier wütete ein Tornado über den mittelhessischen Orten [[Reinhardshain|Grünberg-Reinhardshain]] und [[Lumda (Grünberg)|Grünberg-Lumda]]. Vermutlich handelte es sich um einen starken F3/T6-Tornado, der erhebliche Schäden an Gebäuden und Waldstücken verursachte. Mehr als 50 Dächer wurden dabei abgedeckt und mehrere Gebäude und Fahrzeuge zum Teil schwer beschädigt. In einem Waldstück zwischen den beiden Ortschaften hinterließ der Tornado eine Schneise der Verwüstung. Zahlreiche Bäume wurden wie Streichhölzer abgeknickt und entwurzelt. Es wurde kein Mensch verletzt, jedoch hinterließ der Tornado einen hohen Sachschaden von etwa einer Million Euro.
+|-
+| align=right | 11. September 2011
+| F1
+| 1
+| Ein Tornado der Stärke F1 verwüstete mehrere Ortschaften zwischen [[Bernburg (Saale)|Bernburg]] und [[Dessau]] in Sachsen-Anhalt.<ref>''[https://tornadoliste.de/read:734 Tornado ID #734.]'' In: ''tornadoliste.de''. Abgerufen am 6. März 2019.</ref><ref>[https://www.youtube.com/watch?v=Q9Q80PKAtUs ''Tornado von Osternienburg aus gefilmt (11.Sep.2011).''] Videoaufnahme des Tornados auf [[YouTube]].</ref>
+|-
+| align=right | 19. August 2013
+| F2
+| 0
+| Bei diesem Ereignis verwüstete ein Tornado der Stärke F2 einen Campingplatz in Abtsgmünd-Pommertsweiler im Ostalbkreis (Baden-Württemberg) und verletzte dort 27 Menschen. Auf einem benachbarten Campingplatz flogen Wohnwagen durch die Luft. Es war der erste Tornado dieser Stärke seit dem Mai 2012.
+|-
+| align=right | 5. Mai 2015
+| F3
+| 0
+| Ein Tornado verwüstete [[Bützow]] in Mecklenburg-Vorpommern, siehe [[Tornado in Bützow]]. Herumwirbelnde Trümmer verletzten etwa 30 Personen. Dieser Tornado erreichte vermutlich eine Stärke von F3 auf der [[Fujita-Skala]]. Am gleichen Tag gab es laut der [[ESWD|European Severe Weather Database]] noch drei weitere Tornadoereignisse in Deutschland.
+|-
+| align=right | 13. Mai 2015
+| F3
+| 0
+| Ein Tornado, der am Abend des 13. Mai über dem [[Landkreis Waldshut]] in Baden-Württemberg entstand, hat vermutlich eine Stärke von F3 erreicht.<ref>{{Internetquelle |url=https://sturmjagd.wordpress.com/2015/05/21/analyse-zum-f2-tornado-am-13-05-15/ |titel=Analyse zum F2 Tornado am 13.05.15 |werk=Sturmjagd |datum=2015-05-21 |abruf=2020-02-26 |sprache=de-DE}}</ref>
+|-
+| align=right | 13. Mai 2015
+| F3
+| 0
+| Ein weiterer Tornado, der vermutlich eine Stärke von F3 erreichte, entstand am späten Abend des 13. Mai über [[Stettenhofen (Langweid)|Stettenhofen]], zog in weiterer Folge über [[Gebenhofen]] nach [[Affing]] in [[Bayern]] und verursachte schwere Schäden.<ref>{{Webarchiv |url=http://www.br.de/nachrichten/schwaben/inhalt/tornado-schwaben-finanzhilfe-100.html |wayback=20150520131113 |text=''Tornado in Schwaben – Staatsregierung beschließt Finanzhilfe für Sturm-Opfer''}}. In: ''[[Bayerischer Rundfunk|br.de]].'' 19. Mai 2015.</ref> Es war der dritte F3-Tornado im Jahr [[2015]].
+|-
+| align=right | 7. Juni 2016
+| F1
+| 0
+| Ein F1-Tornado zog über die östlichen Stadtteile [[Hamburg]]s. Bäume wurden umgestürzt, Gartenhäuser zerstört und Fahrräder und auch große Blumenkübel durch die Luft gewirbelt. Personenschäden wurden nicht bekannt.
+|-
+| align="right" |13. Juni 2016
+|F0/F1
+|0
+|Rund 30 Häuser beschädigte ein Tornado, der durch [[Bad Waldsee|Bad Waldsees']] Ortsteil [[Reute (Bad Waldsee)|Reute]] zog.<ref>{{Internetquelle |autor=Wolfgang Heyer |url=https://www.schwaebische.de/regional/oberschwaben/bad-waldsee/nach-einer-schneise-der-verwuestung-ist-im-ort-vieles-nicht-mehr-so-wie-es-einmal-war-4460925 |titel=Über Reute fegt 2016 ein verheerender Tornado hinweg |datum=2026-06-14 |sprache=de |abruf=2026-07-01}}</ref>
+|-
+|align=right | 22. Juni 2017
+|F2
+|0
+|Ein F2-Tornado verwüstete am Nachmittag das 56-Seelen-Dorf [[Töppel]] in Sachsen-Anhalt und richtete eine Halbe Million Schaden an.<ref>Quelle für die Schadens-Höhe?</ref>
+|-
+| align=right | 16. Mai 2018
+| F2
+| 0
+| Ein F2-Tornado zog am Abend des 16. Mai 2018 über den [[Kreis Viersen]] in [[Nordrhein-Westfalen]] und verursachte abgedeckte Häuser und entwurzelte Bäume, die auf Straßen stürzten. Mehrere Menschen wurden leicht verletzt, einer schwer. Siehe: [[Tornado im Kreis Viersen vom 16. Mai 2018]]<ref>''[https://rp-online.de/nrw/panorama/tornado-ueber-viersen-so-haeufig-ist-das-phaenomen-in-deutschland_aid-22704433 Experte über den Sturm am Niederrhein: „Tornados sind bei uns keine Seltenheit“.]'' In: ''[[Rheinische Post|rp-online.de]].'' 17. Mai 2018, abgerufen am 6. März 2019.</ref>
+|-
+| align=right | 13. März 2019
+| F3
+| 0
+| Am Nachmittag des 13. März 2019 zog ein F3-Tornado über den Ort [[Roetgen]] in [[Nordrhein-Westfalen]]. Mehrere Menschen wurden verletzt, rund 35 Häuser teils schwer beschädigt, zehn Häuser waren vorerst unbewohnbar.<ref>[https://www1.wdr.de/nachrichten/sturmtief-franz-100.html ''Tief „Franz“: Unwetter und ein Tornado über Roetgen.''] In: ''[[Westdeutscher Rundfunk Köln|wdr.de]].'' 14. März 2019, abgerufen am 14. März 2019.</ref>
+|-
+| align=right | 4. Juni 2019
+| F2
+| 0
+| In der Nacht, um 23:11 Uhr zog ein Tornado der Stärke F2 über ein Wohngebiet in [[Bocholt]] in Nordrhein-Westfalen. Ein Mensch wurde verletzt, neun Häuser teils schwer beschädigt, 100 Bäume entwurzelt und Autos und Wohnwagen durch die Luft gewirbelt.<ref>[https://www.n-tv.de/panorama/Meteorologen-bestaetigen-Tornado-Verdacht-article21068783.html ''Extreme Sturmschäden in Bocholt: Meteorologen bestätigen Tornado-Verdacht.''] In: ''n-tv.de''. 5. Juni 2019, abgerufen am 6. Juni 2019.</ref>
+|-
+| align=right | 28. März 2021
+|F1
+|0
+|Infolge eines Regengebiets kam es über [[Dortmund]]-[[Eving]] in Nordrhein-Westfalen zu einem bestätigten Tornado. Mehrere Bäume wurden entwurzelt oder beschädigt, Dächer wurden abgedeckt, ein Kirchendach beschädigt und ein LKW umgeworfen.<ref>{{Internetquelle |url=https://www.tornadomap.org/post/vdortmund-eving21/ |titel=&#91;F1&#93; Dortmund-Eving, NW |sprache=de |abruf=2022-01-07}}</ref><ref>{{Internetquelle |autor=Tornadoliste.de |url=https://tornadoliste.de/read:7990 |titel=Eving (Nordrhein-Westfalen), 27.03.2021 |werk=tornadoliste.de |sprache=de |abruf=2022-01-07}}</ref><ref>{{Internetquelle |url=https://wetternrw.org/blog/moeglicher-tornado-in-dortmund-verwuestete-strassenzuege/ |titel=Möglicher Tornado in Dortmund: Verwüstete Straßenzüge |werk=Wetter NRW |datum=2021-03-28 |sprache=de |abruf=2022-01-07}}</ref>
+|-
+| style="text-align:right;" | 16. August 2021
+| F2
+| 0
+| Am späten Nachmittag des 16. August 2021 zog ein Tornado der Stärke F2 durch die Gemeinde [[Großheide]] in Niedersachsen. 50 Häuser wurden beschädigt, darunter fünf Häuser, die nicht mehr bewohnbar sind.<ref>{{Internetquelle |url=https://www.sueddeutsche.de/panorama/katastrophen-tornado-in-ostfriesland-hinterlaesst-schwere-schaeden-dpa.urn-newsml-dpa-com-20090101-210817-99-866270 |titel=Tornado in Ostfriesland hinterlässt schwere Schäden |datum=2021-08-17 |werk=[[Süddeutsche Zeitung]] |abruf=2021-08-17}}</ref>
+|-
+| style="text-align:right;" | 20. Mai 2022
+| F2
+| 0
+| Gegen 17 Uhr traf eine Serie bestehend aus vier Tornados, drei davon mit der Stärke F2, in [[Nordrhein-Westfalen]] unter anderem [[Lippstadt]],<ref>https://www.wa.de/nordrhein-westfalen/tornado-fegt-ueber-lippstadt-schaeden-so-weit-das-auge-reicht-grosseinsatzlage-91562170.html</ref><ref> {{Internetquelle |autor=fek/tfb/dpa/AFP |url=https://www.spiegel.de/panorama/lippstadt-in-nordrhein-westfalen-mutmasslicher-tornado-richtet-schaeden-an-a-5bfd02ae-be5c-49f4-adb2-e35bc2bd0750 |titel=Lippstadt und Paderborn: Tornado richtet massive Schäden an |werk=[[Spiegel Online]] |datum=2022-05-20 |abruf=2024-02-17}}</ref> [[Paderborn]]<ref>{{Internetquelle |url=https://www.westfalen-blatt.de/owl/liveticker-unwetter-ostwestfalen-lippe-owl-2574341 |titel=Tornado zieht Schneise der Verwüstung durch Paderborn:  bis zu 40 Verletzte - OWL bundesweit offenbar Hotspot |datum=2022-05-20 |werk=Westfalen Blatt |abruf=2022-05-20}}</ref> und [[Höxter]].<ref>{{Internetquelle | autor= | url=https://www.stern.de/politik/deutschland/themen/hoexter-4159586.html | titel=Höxter | werk=[[Stern (Zeitschrift)|stern.de]] | datum=2015-02-27 |abruf=2024-02-01}}</ref><ref>https://www.radiohochstift.de/nachrichten/paderborn-hoexter/detailansicht/auch-schwere-unwetter-schaeden-im-kreis-hoexter-tornado-in-luetmarsen-1.html{{Toter Link|url=https://www.radiohochstift.de/nachrichten/paderborn-hoexter/detailansicht/auch-schwere-unwetter-schaeden-im-kreis-hoexter-tornado-in-luetmarsen-1.html |date=2026-05 |archivebot=2026-05-11 13:20:04 InternetArchiveBot }}</ref> Die Ereignisse waren Teil eines größeren Tornadoausbruchs und wurden alle von derselben Superzelle produziert. In Paderborn wurden mindestens 40 Menschen verletzt, davon zehn schwer. Zwei Häuser sind dort unbewohnbar, ein weiteres ist zum Teil eingestürzt. Es wurden zahlreiche Bäume entwurzelt und Dächer abgedeckt. Es könnte sich um unterschiedliche Tornados gehandelt haben 
+|-
+| align=right | 17. November 2022
+|F2
+|0
+|Gegen 14:45 Uhr entwickelte sich im [[Saarland]] aus einer Superzelle ein Tornado der im [[Marpingen|Marpinger]] Ortsteil Urexweiler etwa 50 Häuser zum Teil stark beschädigt hat. Weiterhin wurden viele Bäume entwurzelt oder abgeknickt sowie zahlreiche Autos beschädigt. Personen kamen nicht zu Schaden.<ref>{{Internetquelle|url=https://www.wndn.de/tornado-in-urexweiler-und-remmesweiler-diesen-schaden-hat-er-verursacht-bildergalerie/|titel=Tornado in Urexweiler und Remmesweiler: Diesen Schaden hat er verursacht (Bildergalerie) |werk=wndn.de |datum=2022-11-18 |abruf=2022-11-24 |sprache=de}}</ref>
+|-
+| align="right" |31. August 2023
+|F0/F1
+|0
+|Gegen 20:05 Uhr richtet ein Tornado der Stärke F0 Schäden an einigen Dächern und Bäumen in [[Wuppertal]] an. Fünf Bäume wurden dabei umgestürzt.<ref>{{Internetquelle |autor=WDR |url=https://www1.wdr.de/nachrichten/rheinland/windhose-verwuestet-in-wuppertal-haeuser-100.html |titel=Tornado über Wuppertal: Schäden an mehreren Häusern |datum=2023-08-31 |sprache=de |abruf=2025-05-31}}</ref><ref>{{Internetquelle |autor=Tornadoliste.de |url=https://tornadoliste.de/read:9174 |titel=Wuppertal (Nordrhein-Westfalen), 30.08.2023 |sprache=de |abruf=2025-07-22}}</ref>
+|}
+
+=== Frankreich ===
+{| class="sortable wikitable zebra toptextcells"
+|-
+! width="120"| Datum
+! F
+! Tote
+! Beschreibung
+
+|-
+| align=right | 24. Juni 1967
+| F5
+| 
+| Ein F5-Tornado zerstörte [[Palluel]].<ref>{{Literatur |Autor=Bogdan Antonescu, Jonathan G. Fairman, David M. Schultz |Titel=What is the Worst That Could Happen? Reexamining the 24–25 June 1967 Tornado Outbreak over Western Europe |Sammelwerk=Weather, Climate, and Society |Band=10 |Nummer=2 |Datum=2018-04-01 |ISSN=1948-8327 |DOI=10.1175/WCAS-D-17-0076.1 |Seiten=323–340 |Online=[https://journals.ametsoc.org/view/journals/wcas/10/2/wcas-d-17-0076_1.xml ametsoc.org] |Abruf=2021-01-03}}</ref>
+
+|-
+| align=right | 25. Juni 1967
+| F4
+|
+| Ein F4-Tornado zerstörte [[Pommereuil]].<ref>{{Literatur |Autor=Bogdan Antonescu, Jonathan G. Fairman, David M. Schultz |Titel=What is the Worst That Could Happen? Reexamining the 24–25 June 1967 Tornado Outbreak over Western Europe |Sammelwerk=Weather, Climate, and Society |Band=10 |Nummer=2 |Datum=2018-04-01 |ISSN=1948-8327 |DOI=10.1175/WCAS-D-17-0076.1 |Seiten=323–340 |Online=[https://journals.ametsoc.org/view/journals/wcas/10/2/wcas-d-17-0076_1.xml ametsoc.org] |Abruf=2021-01-03}}</ref>
+
+|-
+| align=right | 7. Januar 1998
+| F3
+|
+| Durch den Ort [[Saint-Omer-Capelle]] zieht auf einer Länge von 14 km ein F3-Tornado. Die Kirche des Ortes wird stark zerstört. An der [[Autoroute A 16]] wird eine Schutzwand umgeworfen.<ref>{{Internetquelle |url=https://www.keraunos.org/actualites/faits-marquants/1990-1999/tornade-saint-omer-capelle-7-janvier-1998-nord-pas-de-calais |titel=Tornade EF3 à Saint-Omer-Capelle (Pas-de-Calais) le 7 janvier 1998 |werk=keraunos.org |hrsg=Keraunos |sprache=fr |abruf=2025-12-14}}</ref>
+
+|-
+| align=right | 3. August 2008
+| F4
+| 3
+| Für die Bewohner der Gemeinde [[Hautmont]], in Frankreich war der Abend des 3. August 2008 unvergesslich, als ein F4-Tornado große Teile des Ortes beschädigte. Auf der 18,7&nbsp;km langen Schneise kamen 3 Menschen ums Leben.
+
+|}
+
+=== Italien ===
+{| class="sortable wikitable zebra toptextcells"
+|-
+! width="120"| Datum
+! F
+! Tote
+! Beschreibung
+
+|-
+| align=right | 24. Juli 1930
+| F5
+| 24
+| Der Tornado zog eine 80&nbsp;km lange Schneise der Verwüstung zwischen [[Treviso]] und [[Udine]]. Dieser Tornado war mit geschätzten Windgeschwindigkeiten von rund 500&nbsp;km/h der stärkste Tornado in Europa, zumindest in den letzten 100 Jahren und auch allgemein einer der stärksten auf der Welt.<ref>{{Internetquelle |url=https://www.severe-weather.eu/event-analysis/the-most-violent-tornado-in-europe-on-record-july-24-1930-montello-northeastern-italy-f5-tornado/ |titel=The most violent tornado in Europe on record: July 24, 1930 Montello, northeastern Italy F5 tornado |werk=Severe Weather Europe |datum=2017-05-08 |abruf=2021-01-03 |sprache=en-US}}</ref> Der Sturm forderte 24 Todesopfer und zahlreiche Verletzte.<ref>Vgl. den zeitgenössischen Bericht ''Wirbelsturm in der Provinz von Treviso'' in der Tageszeitung [[Dolomiten (Zeitung)|Dolimten]] vom 26. Juli 1930, S. 6, Sp. 3 ([https://digital.tessmann.it/tessmannDigital/digitisedJournalsArchive/page/journal/4/1/26.07.1930/86068/6 Digitalisat]).</ref>
+
+|-
+| align=right | 16. Juni 1957
+| F4
+| 8
+| Der Ort [[Robecco Pavese]] in Italien wurde von einem F4-Tornado getroffen. Die Folge waren 8 Tote und mehr als 60 Verletzte.
+
+|-
+| align=right | 11. September 1970
+| F4
+| 36
+| Ein Tornado hinterließ eine 70&nbsp;km lange Schneise bei [[Padua]] und [[Venedig]], Italien. Insgesamt starben 36 Menschen durch den Tornado.<ref>{{Internetquelle |url=https://www.answers.com/Q/What_tornado_happened_in_Italy |titel=What tornado happened in Italy? |abruf=2021-01-03 |sprache=en}}</ref>
+
+|-
+| align=right | 8. Juli 2015
+| F4
+| 1
+| Es bildete sich ein Tornado in der Region bei Venedig (im Rahmen der [[Hitzewelle in Europa 2015|Juli-Hitzewelle]]). Besonders die Orte [[Dolo (Venetien)|Dolo]] und [[Mira (Venetien)|Mira]] wurden stark getroffen: über 500 Gebäude wurden stark beschädigt oder zerstört. Ein Mensch kam ums Leben, 72 weitere wurden zum Teil schwer verletzt.<ref>{{Internetquelle |autor=xobor |url=https://www.stormhunters-austria.com/t8617f24-Tornado-F-T-Raum-Cazzago-Dolo-Mira-amp-Sambruson-ITA.html |titel=08.07.2015 - Tornado F4 T8 @ Raum Cazzago, Dolo, Mira & Sambruson (ITA) |abruf=2021-01-03 |sprache=de}}</ref><ref name="corrieredelveneto 20150708"> ''[https://corrieredelveneto.corriere.it/veneziamestre/notizie/cronaca/2015/8-luglio-2015/maltempo-tromba-d-aria-mira-2301627582345.shtml Maltempo, un morto nel Veneziano Tromba d’aria e devastazioni.]'' In ''Corriere del Veneto'' online, 8. Juli 2015.</ref>
+
+|}
+
+=== Luxemburg ===
+{| class="sortable wikitable zebra toptextcells"
+|-
+! width="120"| Datum
+! F
+! Tote
+! Beschreibung
+
+|-
+| align=right | 9. August 2019
+| F2
+| 0
+| Gegen 18:00 Uhr zog ein F2-Tornado<!--siehe ESWD--> mehrere Kilometer durch den Südwesten Luxemburgs und beschädigte dabei etwa 160 Häuser in [[Petingen]] und [[Käerjeng]]. 19 Menschen wurden verletzt, zwei davon schwer.<ref>{{Internetquelle |url=https://brf.be/international/1304474/ |titel=Luxemburg: Tornado verursacht schwere Schäden |werk=[[Belgischer Rundfunk|brf.be]] |datum=2019-08-10 |abruf=2019-08-10}}</ref><ref>{{Internetquelle |autor=Gaël Arellano, Romain Van Dyck |url=https://5minutes.rtl.lu/actu/luxembourg/a/1387994.html |titel=19 blessés, 90 maisons inhabitables, les réparations se poursuivent |werk=[[Den 2. RTL|rtl.lu]] |datum=2019-08-12 |abruf=2020-04-16 |sprache=fr}}</ref>
+|}
+
+=== Niederlande ===
+{| class="sortable wikitable zebra toptextcells"
+|-
+! width="120"| Datum
+! F
+! Tote
+! Beschreibung
+
+|-
+| align=right | 23. August 1950
+| F5
+| 0
+| Der Tornado schlug eine 50&nbsp;km lange Schneise durch den [[Veluwe]]-Wald.<ref>{{Internetquelle |url=https://wie-einfach.com/Tiere/post/40368-Tornados-in-den-Niederlanden.html |titel=Tornados in den Niederlanden |abruf=2021-01-03 |offline=ja }}</ref>
+|-
+| align=right | 25. Juni 1967
+| F3
+| 2
+| Der Tornado entstand um 16:27 Uhr im belgisch-niederländischen Grenzgebiet und schlug bis 16:40 Uhr in Richtung der Ortschaft [[Chaam]] eine 11 Kilometer lange Schneise durch den Wald. Dabei wurden auf einem Campingplatz zwei Menschen getötet.
+|-
+| align=right | 25. Juni 1967
+| F3
+| 5
+| Um 17:10 Uhr entstand ein Tornado, der 15 Kilometer über das Land zog und dabei den Ort [[Tricht (Gelderland)|Tricht]] traf. Er forderte 5 Menschenleben und 32 Verletzte, zerstörte 50 Häuser und beschädigte weitere 150.<ref>{{Internetquelle |url=http://www.zero-meridean.nl/c_chaamtricht_250667.html |titel=25 juni 1967: Tornado Chaam/Tricht |werk=zero-meridean.nl |datum=2007 |archiv-url=https://web.archive.org/web/20100916082003/http://www.zero-meridean.nl/c_chaamtricht_250667.html |archiv-datum=2010-09-16 |abruf=2019-03-17 |sprache=nl |offline=1}}</ref>
+
+|}
+
+=== Österreich ===
+Von 1951 bis 2010 hat die [[Zentralanstalt für Meteorologie und Geodynamik]] knapp 100 Tornados in Österreich registriert, davon erreichten drei Stärke F3.<ref name="orf260510">[https://noev1.orf.at/stories/445680 ''Schwerster Sturm fegte 1916 über NÖ.''] In: ''noe.orf.at''. 26. Mai 2010, abgerufen am 10. April 2020.</ref> Der heftigste dokumentierte Tornado ereignete sich am [[Tornado in Wiener Neustadt 1916|10. Juli 1916 in Wiener Neustadt]] im südlichen Niederösterreich und kostete 34 Menschen das Leben.
+
+{| class="sortable wikitable zebra toptextcells"
+|-
+! width="120"| Datum
+! F
+! Tote
+! Beschreibung
+|-
+| align=right | 10. Juli 1916
+| F4
+| 34
+| Der [[Tornado in Wiener Neustadt 1916|heftigste in Österreich registrierte Tornado]] zog über den Norden von [[Wiener Neustadt]] und erreichte zeitweise Stärke F4. Er tötete 34 Menschen und verletzte 328. Zahlreiche massiv gebaute Häuser wurden zerstört, die Schneisenlänge der Großtrombe betrug rund 20 Kilometer.<ref>[[Alois M. Holzer]], Thomas M. E. Schreiner, Tomáš Púčik: ''A forensic re-analysis of one of the deadliest European tornadoes.'' In: ''Natural Hazards and Earth System Sciences''. Band 18, Nr. 6, 2018, S. 1555–1565, [[DOI:10.5194/nhess-18-1555-2018]].</ref>
+|-
+| align=right | 4. Juli 1929
+| F1
+| 3
+| Ein nur mäßig starker F1/T3-Tornado fegte durch die Stadt [[Salzburg]], tötete dennoch drei Menschen.
+|-
+| align=right | 9. Mai 1961
+| F2
+| 1
+| Bei einem F2/T5-Tornado in [[Kleintal (Gemeinde Übelbach)|Kleintal]] bei Graz starb ein Mann, drei weitere wurden durch fallende Trümmer verletzt.
+|-
+| align=right | 11. August 1994
+| F3
+| 0
+| Ein F3-Tornado zog bei [[Sankt Michael im Burgenland]] eine zwei Kilometer lange Schneise. Ein Gebäude wurde gänzlich zerstört, von einem weiteren wurde das Dach weggefegt.<ref name="orf260510" />
+|-
+| align=right | 7. Juli 1998
+| F3
+| 0
+| Ein F3/T6-Tornado bei [[Weinburg am Saßbach]] zog eine 5 km lange Schneise, entwurzelte Bäume, verursachte Stromausfälle und drückte kleinere Mauern ein.<ref name="orf260510" /><ref name="eswd">{{Webarchiv|url=https://www.eswd.eu/cgi-bin/eswd.cgi#lookupanchor |wayback=20200512020909 |text=Europäische Unwetterdatenbank (ESWD), bitte Suchformular benutzen |archiv-bot=2026-05-11 13:20:04 InternetArchiveBot }}.</ref>
+|-
+| align=right | 27. Juli 1998
+| F3
+| 0
+| Eine F3/T6-Trombe zerstörte mehrere Wirtschaftsgebäude im Bereich [[Vornholz]] ([[Bezirk Hartberg-Fürstenfeld]]/[[Steiermark]]), die Schneise war 8&nbsp;km lang.
+|-
+| align=right | 13. Mai 2003
+| F1
+| 0
+| Im Zuge einer Superzelle mit Hagel bis 6&nbsp;cm Durchmesser wurden zwei Tornados in [[Wien]] registriert; einer der beiden erreichte F1/T3-Stärke; mehrere Menschen wurden durch Sturm und Hagelschloßen verletzt.
+|-
+| align=right | 11. März 2006
+| F2
+| 0
+| Ein F2/T5-Tornado in [[Weitensfeld im Gurktal]] in Kärnten hob einen Kleinbus rund zwei Meter hoch in die Luft und schleuderte ihn gegen zwei Pkw. Die Augenzeugen flüchteten in ein angrenzendes Gebäude.
+|-
+| align=right | 11. Mai 2009
+| 
+| 0
+| Schwacher Tornado bei [[Atzenbrugg]] nahe [[Tulln an der Donau|Tulln]], NÖ.<ref name="eswd" /><ref>{{Webarchiv |url=http://www.skywarn.at/forum2/showtopic.php?threadid=23759 |wayback=20111204103047 |text=''2009.05.11, Tornado bei Atzenbrugg (nahe Tulln).''}} In: ''skywarn.at''. 12. Mai 2009.</ref>
+|-
+| align=right | 26. Mai 2010
+| F1
+| 0
+| Ein F1/T3-Tornado<!--siehe eswd--> verursachte im [[Bezirk Tulln]] zahlreiche Schäden an Strommasten, Bäumen und Fahrzeugen.<ref>[https://noev1.orf.at/stories/445439 ''Tornado, Hagel, Regenrekorde und zwei Tote – Tornado hinterlässt Spur der Verwüstung.''] In: ''noe.orf.at''. 26. Mai 2010, abgerufen am 10. April 2020.</ref><ref name="orf260510" /> Eine Stunde später knickte ein F2/T4-Tornado bei [[Kritzendorf]] Bäume um und beschädigte Gebäude, Fahrzeuge und Rebstöcke.<ref name="eswd" />
+|-
+| align=right | 14. Mai 2011
+| F1
+| 0
+| Ein F1/T3 Tornado zog durch [[Müllendorf]], [[Burgenland]]. Es entstand teils erheblicher Sachschaden, so wurden viele Dächer abgedeckt, die Windgeschwindigkeiten waren so hoch, dass Teile von Dachkonstruktionen in den Fassaden anderer Häuser stecken blieben. Personen wurden nicht verletzt.<ref>[https://www.stormhunters-austria.com/t2909f53-Bestaetigt-Tornado-F-T-Gustnado-Muellendorf-Eisenstadt-Umgeb-Burgenland.html ''14. Mai 2011 – (Bestätigt) Tornado F1 T3 + Gustnado Müllendorf (Eisenstadt-Umgeb., Burgenland).''] In: ''stormhunters-austria.com''. 15. Mai 2015, abgerufen am 16. April 2020.</ref>
+|-
+| align=right | 21. Juli 2016
+| F1
+| 0
+| Am 21. Juli 2016 kam es im Raum Karlstein (Waldviertel) zu einem heftigen Unwetter, das wegen der enormen Schäden nachträglich als Tornado eingestuft wurde.<ref>[https://www.bfk-waidhofen.at/2016/07/22/21-07-2016-schweres-hagelgewitter-trifft-den-bezirk-waidhofen/ Bericht der Feuerwehr Waidhofen/Thaya]</ref>
+|-
+| align=right | 10. Juli 2017
+| F1
+| 0
+| Im Zuge einer [[Superzelle]], die sich am Nachmittag im südlichen Wien gebildet hatte und zu teils erheblichen Schäden durch Hagel und lokalen Überflutungen führte, tauchte in der Nähe des Flughafens Wien-Schwechat auch ein F1-Tornado mit Windgeschwindigkeiten von bis zu 180 km/h auf. Er zog über einige Getreidefelder und verursachte dort lokal kleinere Schäden. Menschen kamen nicht zu Schaden.<ref>[https://www.nachrichten.at/panorama/chronik/Tornado-suedlich-von-Wien-entstand-aus-Superzelle;art58,2619999 ''Tornado südlich von Wien entstand aus Superzelle.''] In: ''nachrichten.at''. 11. Juli 2017, abgerufen am 16. April 2020.</ref>
+|-
+| align=right | 21. Mai 2024
+| F1
+| 0
+| Im Zuge eines [[Mittelmeertief|Genuatiefs]] und der daraus resultierenden, über Slowenien nach Österreich ziehenden Gewitterfronten kam es um ca. 17:00 Uhr im Raum [[Eggenberg (Graz)]] zu einem kurzlebigen Tornado. Der Tornado führte zu geringen Sachschäden, Menschen kamen nicht zu Schaden.<ref>[https://uwz.at/de/a/starke-gewitter-in-oesterreich-tornado-in-graz ''Starke Gewitter in Österreich, Tornado in Graz''] In: ''uwz.at''. 22. Mai 2024, abgerufen am 24. September 2025.</ref>
+
+|}
+
+=== Rumänien ===
+{| class="sortable wikitable zebra toptextcells"
+|-
+! width="120"| Datum
+! F
+! Tote
+! Beschreibung
+|-
+| align=right | 30. April 2019
+| 
+| 0
+| Ein Tornado erfasste einen besetzten Reisebus und wirbelte ihn Dutzende Meter durch die Luft und versetzte ihn auf ein Feld. Dabei wurden mindestens zwölf der 40 Insassen verletzt, vier davon schwer. Anschließend verfehlte der Tornado knapp das Dorf [[Dragalina (Călărași)|Dragalina]], er zerstörte Dächer und entwurzelte Bäume.<ref>{{Internetquelle |url=https://orf.at/stories/3120611/ |titel=Viele Verletzte durch Tornado in Rumänien |werk=[[Österreichischer Rundfunk|orf.at]] |datum=2019-05-01 |abruf=2019-05-01}} – Video: Staubsäule und Wolkenrüssel.</ref>
+|}
+
+=== Schweiz ===
+{| class="sortable wikitable zebra toptextcells"
+|-
+! width="120"| Datum
+! F
+! Tote
+! Beschreibung
+|-
+| align=right | 26. August 1971
+| F4
+| 0
+| Ein Tornado zog durch das [[Vallée de Joux]] und verwüstete in einer Schneise von rund 23 Kilometer Länge zahlreiche Häuser und ganze Waldstücke.<ref>{{Internetquelle |url=https://www.sturmarchiv.ch/index.php?title=Tornados |titel=Sturmarchiv Schweiz |abruf=2024-07-30}}</ref>
+|-
+| align=right | 12. Juni 1926
+| F3
+| 0
+| Tornado in [[La Chaux-de-Fonds]]
+|-
+| align=right | 17. August 2004
+| F2
+| 0
+| Tornado in [[Villargiroud]]
+|-
+| align=right | 26. Juni 2020
+| F1
+| 0
+| Tornado in [[Oberebersol]]
+|-
+| align=right | 24. Juli 2023
+| ?
+| 1
+| Tornado? in La Chaux-de-Fonds. Laut Meteo Schweiz kein eindeutiger Tornado, Drehwind mit 217 km/h, hinterließ Schneise mit großen Schäden.
+|}
+
+=== Tschechien ===
+{| class="sortable wikitable zebra toptextcells"
+|-
+! width="120"| Datum
+! F
+! Tote
+! Beschreibung
+|-
+| align=right | 24. Juni 2021
+| F4
+| 6<ref name="irozhlas210627">{{Internetquelle | url=https://www.irozhlas.cz/zpravy-domov/tornado-na-hodoninsku-sesta-obet-fakultni-nemocnice-brno_2106271556_voj | titel=Tornádo na jihu Moravy má šestou oběť. V brněnské nemocnici zemřelo dítě | werk=irozhlas.cz | sprache=cs | datum=2021-06-27 | abruf=2021-06-30 | kommentar=6. Todesopfer in der Nacht zum Folgetag}}</ref>
+| [[Tornado in Südmähren 2021|Ein starker Tornado]], anfangs als Stärke F3, dann als Stärke F4 eingestuft<ref name="irozhlas210628">{{Internetquelle | url=https://www.irozhlas.cz/zpravy-domov/tornado-na-morave-jizni-morava-v-cr-v-cesku-2021-online-fujitova-stupnice_2106280855_ako | autor= | titel=Škody po tornádu na Moravě zatím dosáhly 15 miliard. Vláda schválila pomoc pro zasažené oblasti | werk=irozhlas.cz | sprache=cs | datum=2021-06-28 | abruf=2021-06-30 | kommentar=Einstufung durch das Tschechische Hydrometeorologische Institut}}</ref><ref>{{Internetquelle | url=https://www.noen.at/mistelbach/suedmaehren-verwuestung-nach-dem-tornado-unterstinkenbrunn-suedmaehren-wirbelsturm-unwetter-tornado-aufraeumarbeiten-einsturzgefahr-verwuestung-matthias-hartmann-print-279517354 | autor=Michael Pfabigan | titel=Südmähren. Verwüstung nach dem Tornado | werk=noen.at | datum=2021-06-30 | abruf=2021-06-30}}</ref>, traf die Kreise Břeclav und Hodonín im Süden Tschechiens. Besonders betroffen waren die Stadt Hodonín sowie die Dörfer Mikulčice und Lužice. Neben 6 Toten gab es über 200 Verletzte. In der 26 km langen und 500 m breiten Schneise wurden mind. 1.200 Häuser beschädigt, darunter das UNESCO-Weltkulturerbe [[Schloss Valtice]], mind. 70 Häuser müssen abgerissen werden.<ref>{{Internetquelle |url=https://www.oe24.at/welt/tschechien-soforthilfen-fuer-tornado-opfer/482247448 |titel=80.000 Euro für Hausbesitzer. Tschechien: Soforthilfen für Tornado-Opfer | werk=oe24.at |datum=2021-06-28 |abruf=2021-06-30}}</ref><ref>{{Internetquelle |autor=Marko Korosec |url=https://www.severe-weather.eu/weather-report/europe-severe-weather-tornado-hodonin-czech-republic-mk/ |titel=The most powerful tornado on record hit the Czech Republic, leaving several fatalities and 200+ injured across the Hodonin district |werk=Severe Weather Europe |datum=2021-06-25 |sprache=en |abruf=2021-06-25}}</ref><ref name="irozhlas210627" /> Mindestens 15 Milliarden Kronen (588 Millionen Euro) Schaden.<ref name="irozhlas210628" />
+|}
+
+== Siehe auch ==
+* [[Liste von Tornados]]
+* [[Liste von Tornados 2007]]
+* [[Liste von Tornados 2011]]
+* [[Liste von Tornados 2013]]
+* [[Liste von Wetterereignissen in Europa]]
+* [[Liste von Katastrophen]]
+
+== Weblinks ==
+{{Commonscat|Tornadoes|Tornados|audio=1|video=1}}
+{{Commonscat|Waterspouts|Wasserhosen|audio=0|video=1}}
+{{Wiktionary|Tornado}}
+
+Deutschsprachiger Raum:
+* [https://tornadoliste.de/ Tornadoliste Deutschland mit zahlreichen Informationen und Links]
+* [https://www.skywarn.de/ Skywarn Deutschland e.&nbsp;V.]
+* [http://www.wolken-online.de/wolkenatlas/unterarten/tuba.htm Tornadofotos/Wolkenatlas]
+* [https://www.skywarn.at/ Skywarn Austria]
+* [http://www.sturmarchiv.ch/ Swiss Severe Weather Database (Sturmarchiv Schweiz)]
+* [https://www.skywarn.ch/ Skywarn Schweiz]
+
+Europa insgesamt:
+* [https://www.eswd.eu/cgi-bin/eswd.cgi#lookupanchor European Severe Weather Database] (englisch)
+* [http://extremwetter.ch/thesis.pdf Diplomarbeit über Tornados in Europa] (englisch; PDF-Datei; 12,81&nbsp;MB)
+* [https://essl.org/ European Severe Storms virtual Laboratory (ESSL)] (englisch)
+* [http://www.torro.org.uk/ The Tornado and Storm Research Organisation (TORRO)] (englisch)
+* https://www.rms.com/blog/2018/03/23/tornadoes-in-europe
+* https://www.tornado-map.de/karten/tornado/europa
+* https://www.wetter-center.de/blog/tornados-in-europa-eine-seltenheit
+* http://www.naturgewalten.de/tornado2.htm
+* http://www.keraunos.org/tornades-france-trombes-tubas-bdd.htm
+
+== Literatur ==
+* Howard Bluestein: ''Tornado Alley: Monster storms of the Great Plains.'' Oxford University Press, Oxford/New York 1999, ISBN 0-19-530711-9.
+
+== Einzelnachweise ==
+<references responsive />
+
+{{Hinweis Seiten-Koordinaten|linked=1}}
+
+{{Navigationsleiste Tornados nach Kontinent}}
+[[Kategorie:Liste (Meteorologie)|Tornados in Europa]]
+[[Kategorie:Liste (Naturkatastrophen)|Tornados in Europa]]
+[[Kategorie:Tornado|!Europa]]
+[[Kategorie:Gewitter|!Tornados in Europa]]
+[[Kategorie:Lithometeor|!Tornados in Europa]]

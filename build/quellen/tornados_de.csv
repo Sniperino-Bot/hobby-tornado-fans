@@ -1,0 +1,49 @@
+datum,ort,bundesland,lat,lon,staerke
+1582-07-15,Rockhausen,Thüringen,50.9015,11.0408,F4
+1764-06-29,Woldegk,Mecklenburg-Vorpommern,53.4594,13.5829,F5
+1800-04-23,Hainichen,Sachsen,50.9704,13.1229,F5
+1894-07-14,östlich von München,Bayern,48.1374,11.5755,F3
+1898-08-07,Köln,Nordrhein-Westfalen,50.9333,6.95,F4
+1913-06-01,Plochingen,Baden-Württemberg,48.7107,9.4195,
+1925-08-10,Uetersen,Schleswig-Holstein,53.6888,9.662,F3
+1927-06-01,Auen-Holthaus (Lkr. Cloppenburg),Niedersachsen,52.8475,8.0474,F4
+1936-01-10,Düsseldorf,Nordrhein-Westfalen,51.2232,6.7793,F4
+1936-07-15,Trinwillershagen,Mecklenburg-Vorpommern,54.2505,12.6231,F4
+1968-07-10,Pforzheim,Baden-Württemberg,48.8844,8.6989,F4
+1973-05-05,Kiel,Schleswig-Holstein,54.3213,10.1349,F3
+1979-05-24,Prestewitz,Brandenburg,51.5448,13.4204,F4
+1980-06-15,Wilhelmsthal,Bayern,50.3111,11.3728,F1
+1987-07-17,Geeste,Niedersachsen,52.6,7.2667,F1
+1992-08-09,Buchholz in der Nordheide,Niedersachsen,53.3304,9.866,
+1997-06-29,Bissendorf,Niedersachsen,52.2333,8.1667,F2
+1998-06-22,Falkenstein,Sachsen,50.4779,12.3713,
+1998-09-09,Tecklenburg,Nordrhein-Westfalen,52.2196,7.8136,F2
+2001-08-06,Belm,Niedersachsen,52.3,8.1333,F1/F2
+2002-06-12,Wittenberg,Sachsen-Anhalt,51.8661,12.6497,F2
+2003-06-10,Acht,Rheinland-Pfalz,50.3667,7.0667,F3
+2004-01-13,Assel,Niedersachsen,53.6899,9.434,F2
+2004-06-23,Micheln,Sachsen-Anhalt,51.8088,11.9712,F3
+2006-03-27,Hamburg,Hamburg,53.5507,9.993,F2
+2006-08-21,Brohl-Lützing,Rheinland-Pfalz,50.483,7.3291,
+2007-01-18,Brachwitz,Brandenburg,52.1479,12.8873,F3
+2007-01-18,Lutherstadt Wittenberg,Sachsen-Anhalt,51.8661,12.6497,F3
+2007-01-18,Lauchhammer,Brandenburg,51.4881,13.7662,F3
+2008-08-12,Gießen,Hessen,50.5873,8.6755,F1
+2010-05-24,Großenhain,Sachsen,51.2895,13.5335,F3
+2010-08-23,Grünberg,Hessen,50.594,8.9587,
+2011-09-11,Bernburg,Sachsen-Anhalt,51.7946,11.7401,F1
+2013-08-19,Abtsgmünd-Pommertsweiler,Baden-Württemberg,48.895,10.0017,F2
+2015-05-05,Bützow,Mecklenburg-Vorpommern,53.8413,11.9815,F3
+2015-05-13,Landkreis Waldshut,Baden-Württemberg,47.6231,8.2154,F3
+2015-05-13,Affing-Stettenhofen,Bayern,48.4667,10.9833,F3
+2016-06-07,Hamburg,Hamburg,53.5507,9.993,F1
+2016-06-13,Bad Waldsee-Reute,Baden-Württemberg,47.9203,9.7549,F0/F1
+2017-06-22,Töppel (bei Zerbst),Sachsen-Anhalt,51.9667,12.0833,F2
+2018-05-16,Viersen,Nordrhein-Westfalen,51.2544,6.3944,F2
+2019-03-13,Roetgen,Nordrhein-Westfalen,50.65,6.2,F3
+2019-06-04,Bocholt,Nordrhein-Westfalen,51.8388,6.6153,F2
+2021-03-28,Dortmund,Nordrhein-Westfalen,51.5149,7.466,F1
+2021-08-16,Großheide,Niedersachsen,53.5975,7.3708,F2
+2022-05-20,Lippstadt,Nordrhein-Westfalen,51.6737,8.3448,F2
+2022-11-17,Marpingen,Saarland,49.4523,7.0582,F2
+2023-08-31,Wuppertal,Nordrhein-Westfalen,51.2563,7.1482,F0/F1
