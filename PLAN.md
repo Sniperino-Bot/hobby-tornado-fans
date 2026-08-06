@@ -7,6 +7,14 @@ Empfehlung, keine Abhängigkeitskette — außer wo unten anders vermerkt.
 **Status:** Maßnahme 2 erledigt (06.08.2026). Offen: 1, 3, 4, 5.
 Zuletzt bearbeitet: 06.08.2026 — Konvektions-Gate.
 
+> ⚠️ **Offener Punkt vom 06.08. abends:** `prototyp/daten/gitter.js` ist gerade
+> das grobe **60-km-Testgitter**, nicht die 15-km-Fassung. Ein Testlauf hat die
+> Datei überschrieben, und der Neuaufbau lief in Open-Meteos **Tageskontingent**
+> (429 auch bei einer einzelnen Minimalanfrage). `pipeline/nachholen.sh` wartet
+> auf den Reset um 00:00 UTC und rechnet dann neu; Fortschritt in
+> `pipeline/nachholen.log`. Falls das nicht geklappt hat: einmal
+> `python3 pipeline/rechne_gitter.py` von Hand. Danach kann `nachholen.sh` weg.
+
 ---
 
 ## 1. Rückwirkende Verifikation aufsetzen

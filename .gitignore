@@ -7,3 +7,4 @@ prototyp/daten/gitter.json
 
 __pycache__/
 *.pyc
+pipeline/nachholen.log
