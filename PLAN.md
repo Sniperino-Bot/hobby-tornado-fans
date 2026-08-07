@@ -7,13 +7,13 @@ Empfehlung, keine Abhängigkeitskette — außer wo unten anders vermerkt.
 **Status:** Maßnahme 2 erledigt (06.08.2026). Offen: 1, 3, 4, 5.
 Zuletzt bearbeitet: 06.08.2026 — Konvektions-Gate.
 
-> ⚠️ **Offener Punkt vom 06.08. abends:** `prototyp/daten/gitter.js` ist gerade
-> das grobe **60-km-Testgitter**, nicht die 15-km-Fassung. Ein Testlauf hat die
-> Datei überschrieben, und der Neuaufbau lief in Open-Meteos **Tageskontingent**
-> (429 auch bei einer einzelnen Minimalanfrage). `pipeline/nachholen.sh` wartet
-> auf den Reset um 00:00 UTC und rechnet dann neu; Fortschritt in
-> `pipeline/nachholen.log`. Falls das nicht geklappt hat: einmal
-> `python3 pipeline/rechne_gitter.py` von Hand. Danach kann `nachholen.sh` weg.
+> **Merkposten Ratelimit:** Am 06.08. abends lief ein 15-km-Lauf in Open-Meteos
+> **Tageskontingent** — danach bekam selbst eine einzelne Minimalanfrage 429.
+> Ursache war das Konvektions-Gate, das die Anfragen verdoppelt, zusammen mit
+> mehreren Fehlversuchen. Nach dem Reset um 00:00 UTC lief es am 07.08. um
+> 00:14 UTC durch (2596 Punkte, 49 Stunden, 2,26 MB). Wer am Abruf schraubt,
+> sollte wissen: das Kontingent ist knapper als es aussieht, und mehr als ein
+> paar Fehlläufe am Tag verträgt es nicht.
 
 ---
 
