@@ -4,8 +4,9 @@ Aus dem Fachgutachten vom 06.08.2026 (`GUTACHTEN.md`). Fünf Maßnahmen, nach
 Wirkung sortiert. Jede ist für sich abschließbar; die Reihenfolge ist eine
 Empfehlung, keine Abhängigkeitskette — außer wo unten anders vermerkt.
 
-**Status:** Maßnahme 2 erledigt (06.08.2026). Offen: 1, 3, 4, 5.
-Zuletzt bearbeitet: 06.08.2026 — Konvektions-Gate.
+**Status:** Maßnahme 2 erledigt (06.08.2026), Gewitterebene erledigt
+(07.08.2026). Offen: 1, 3, 4, 5.
+Zuletzt bearbeitet: 07.08.2026 — Gewitterebene, Anspringen, Datenprüfung.
 
 > **Merkposten Ratelimit:** Am 06.08. abends lief ein 15-km-Lauf in Open-Meteos
 > **Tageskontingent** — danach bekam selbst eine einzelne Minimalanfrage 429.
@@ -14,6 +15,79 @@ Zuletzt bearbeitet: 06.08.2026 — Konvektions-Gate.
 > 00:14 UTC durch (2596 Punkte, 49 Stunden, 2,26 MB). Wer am Abruf schraubt,
 > sollte wissen: das Kontingent ist knapper als es aussieht, und mehr als ein
 > paar Fehlläufe am Tag verträgt es nicht.
+
+---
+
+## 0. Gewitterebene — ERLEDIGT 07.08.2026
+
+**Warum:** Seit dem Konvektions-Gate ist die Karte an ruhigen Tagen leer, und
+das sind die meisten Tage. Sie zeigte nur Tornadopotenzial — eine Größe, die an
+360 Tagen im Jahr nahe null liegt. Jetzt zeigt sie zuerst die **allgemeine
+Gewitterlage** und hebt Tornadopotenzial darin hervor.
+
+**Umgesetzt**
+1. Zwei neue Felder aus denselben ICON-D2-Rohgrößen wie das Gate:
+   `gew` (Zellstärke 0…100) und `blitz` (elektrische Aktivität 0…100).
+   `zell_staerke()` / `zellStaerke()`, wieder **doppelt gepflegt**.
+   ```
+   kern  = clamp(max(Niederschlag/10, (Aufwind−1,5)/16), 0, 1)
+   blitz = clamp(LPI/25, 0, 1)
+   gew   = 100 · clamp(0,65·kern + 0,35·blitz + 0,35·kern·blitz, 0, 1)
+   ```
+2. Eigene kalte Farbrampe und eigene Ebene unter dem Risikofeld, **nicht
+   additiv** gezeichnet — Wolkenmasse deckt ab, sie leuchtet nicht. Additiv
+   addieren sich beide Ebenen zu Weiß.
+3. `findGewitter()` + `drawGewitter()`: bis zu 36 Zellkerne mit Amboss in
+   Zugrichtung, quellendem Kern, Böenfront-Ring und Blitzflackern, dessen Takt
+   am `blitz`-Feld hängt. Vorgerenderte Wolkenscheiben statt Verläufe je Bild.
+4. Trichteranimation an den Potenzial-Zellen ab TPI 25, Bodenwirbel ab TPI 45.
+5. Panelzeile, Layer-Schalter, eigener Legendenblock.
+
+**Der Punkt, den man leicht wieder kaputtmacht:** `gew`/`blitz` kennen einen
+eigenen Kennwert für **„keine Daten"** (negativ, `KEINE_DATEN`). Weder 0 noch 1
+wären ehrlich: 0 hieße „hier ist kein Gewitter", 1 hieße „überall Gewitter".
+Jenseits des ICON-D2-Horizonts bleibt der Kennwert stehen, `D.gewAb` merkt sich
+die erste solche Stunde, und ab dort wird die Ebene **gar nicht gezeichnet** —
+mit Hinweis in der Legende. Das Gate bleibt dort weiterhin **offen** (1).
+
+## 0b. Datenprüfung 07.08.2026 — Befunde
+
+Beim Durchmessen von `gitter.js` gegen Pipeline und Frontend:
+
+- **`konv` ist faktisch binär.** 6.419 von 6.711 Werten über null stehen auf
+  1,0 — das Gate sättigt ab LPI 5. Als Intensitätsmaß unbrauchbar, deshalb die
+  eigenen Felder oben. Das Gate selbst ist davon unberührt richtig.
+- **Die letzten drei Stunden hatten `konv` = 1 an allen 2.102 Punkten.** Das ist
+  der „Gate offen"-Rückfall, keine Konvektion. Eine Gewitterebene auf `konv`
+  hätte dort ganz Deutschland zugepflastert.
+- **Das vorgerechnete Gitter war 9 h alt und Stunde 0 hieß trotzdem „JETZT".**
+  Die Aufzeichnung läuft alle 3 h, ein ausgefallener Lauf macht daraus mehr.
+  `ladeDienst()` überspringt jetzt vergangene Stunden, verschiebt `t0` mit und
+  weist das Alter im Kopf aus (ab 6 h als `DATEN ALT`).
+- **`cin`-Skala 50 klippt bei −655 J/kg**, im Bestand stand schon −531.
+  Auf 20 geändert (±1.638 J/kg), Auflösung bleibt 0,05 J/kg. Die Skala steht in
+  der Datei selbst, ältere Gitter lesen sich weiter korrekt.
+- **Formelparität bestätigt:** derselbe Datensatz ergibt in Python und im
+  Browser denselben TPI-Höchstwert (41,24).
+- **Kein Fehler, aber wissenswert:** der Höchstwert des Feldes liegt oft
+  außerhalb Deutschlands (im 30-km-Saum). Die Kopfleiste sucht deshalb weiterhin
+  nur über `INDE` — sonst verspräche sie Werte, die auf der geclippten Karte
+  nicht zu sehen sind.
+- **Ungefetchte Punkte außerhalb des Saums bleiben harte Nullen** (494 × 49).
+  Geprüft: der Saum ist mit 2 Zellen bei 15 km breit genug, die bilineare
+  Interpolation im Inland greift nie darauf zu. Bei gröberem Gitter oder
+  kleinerem `RAND_KM` wäre das anders.
+
+## 0c. Anspringen — ERLEDIGT 07.08.2026
+
+Der Klick auf die Kopfleiste setzte nur die Zeit; die Karte blieb in der
+Übersicht stehen und die Zelle war als Fleck von wenigen Pixeln zu suchen.
+Jetzt fliegt die Ansicht auf Position und Stunde: `fliegeZu()` mit
+geometrischer Zoom-Mischung (linear lässt große Sprünge in der zweiten Hälfte
+stehen), Zielbegrenzung wie `panBegrenzen()`, kurze Zielmarke, und jede eigene
+Maus- oder Radbewegung bricht den Flug ab. Die Leiste kennt außerdem den Fall
+**„kein Tornadopotenzial, aber Gewitter"** und springt dann auf die stärkste
+Zelle statt eine Fehlanzeige zu melden.
 
 ---
 

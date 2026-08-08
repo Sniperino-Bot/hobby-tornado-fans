@@ -163,7 +163,15 @@ header:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;
   background:var(--glass);border:1px solid var(--line);border-radius:12px;
   backdrop-filter:blur(14px);padding:11px 13px;min-width:186px;
   box-shadow:0 14px 40px rgba(0,0,0,.55);
+  /* Gedeckelt, damit die Legende nie bis zu den Layer-Schaltern hochwächst:
+     sie hängt unten, die Schalter oben, und seit der Gewitterebene reicht der
+     Platz für beides nicht mehr sicher. Die Farbskalen stehen oben und bleiben
+     dadurch immer sichtbar, die Erklärtexte scrollen. */
+  max-height:calc(100% - 300px);overflow-y:auto;overscroll-behavior:contain;
 }
+#legend::-webkit-scrollbar{width:5px}
+#legend::-webkit-scrollbar-track{background:transparent}
+#legend::-webkit-scrollbar-thumb{background:rgba(120,190,230,.22);border-radius:3px}
 #legend h4{font-size:9.5px;letter-spacing:.17em;color:var(--ink3);
   text-transform:uppercase;font-weight:600;margin-bottom:9px}
 .lg{display:flex;align-items:center;gap:9px;padding:3px 0;font-size:11.5px;color:var(--ink2)}
@@ -171,6 +179,14 @@ header:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;
 .lg u{text-decoration:none;margin-left:auto;font-size:10px;color:var(--ink3)}
 #legend .note{margin-top:9px;padding-top:8px;border-top:1px solid rgba(120,190,230,.1);
   font-size:9.5px;line-height:1.5;color:var(--ink3);max-width:210px}
+.gewnote{margin-top:9px;padding-top:8px;border-top:1px solid rgba(120,190,230,.1);max-width:210px}
+.gewnote h4{font-size:9.5px;letter-spacing:.17em;color:var(--ink3);
+  text-transform:uppercase;margin:0 0 5px;font-weight:600}
+.gewnote i{display:block;margin-top:6px;font-style:normal;font-size:9.5px;
+  line-height:1.5;color:var(--ink3)}
+.gewnote i b{font-size:9.5px;color:var(--ink2)}
+.tgl[data-l="storms"].on{border-color:rgba(191,224,247,.45)}
+.tgl[data-l="storms"].on i{background:#bfe0f7;box-shadow:0 0 9px rgba(191,224,247,.85)}
 .tornote{margin-top:9px;padding-top:8px;border-top:1px solid rgba(120,190,230,.1);max-width:210px}
 .tornote b{font-size:11px;color:var(--ink2);font-weight:600;vertical-align:middle}
 .tornote u{text-decoration:none;float:right;font-size:10px;color:var(--ink3);padding-top:2px}
@@ -357,6 +373,7 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;
   .tpi b{font-size:36px}
   #legend{left:10px;bottom:10px;min-width:150px}
   #legend .note{display:none}
+  .gewnote i{display:none}
   #layers{top:10px;left:10px}
   .tstamp{min-width:130px}
   .stat:nth-child(n+4){display:none}
@@ -375,8 +392,9 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;
     <div class="hero-badge"><i></i>Hobbyprojekt · kein amtlicher Warndienst</div>
     <h1>HOBBY TORNADO<i>//</i>FANS</h1>
     <p class="hero-sub">Die Konvektions-Potenzialkarte für <b>Sturmjäger und
-      Wetter-Nerds</b>. Wir zeigen, wo die Zutaten für rotierende Gewitter
-      zusammenkommen — aus purer Faszination am Wetter.
+      Wetter-Nerds</b>. Wir zeigen die <b>Gewitterlage der nächsten 48 Stunden</b> —
+      und darin die Stellen, an denen die Zutaten für rotierende Gewitter
+      zusammenkommen. Aus purer Faszination am Wetter.
       <b>Hier gibt es keine Warnungen:</b> dafür ist allein der DWD zuständig.</p>
     <div class="hero-tags">
       <span>⌁ Live-Modelldaten ICON</span>
@@ -412,6 +430,7 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;
     <div class="hudE bl"></div><div class="hudE br"></div>
 
     <div id="layers">
+      <div class="tgl on" data-l="storms"><i></i>Gewitterzellen</div>
       <div class="tgl on" data-l="risk"><i></i>Risikofeld</div>
       <div class="tgl on" data-l="wind"><i></i>Höhenströmung 500 hPa</div>
       <div class="tgl on" data-l="cells"><i></i>Potenzial-Zellen</div>
@@ -443,6 +462,19 @@ input[type=range]::-moz-range-thumb{width:15px;height:15px;border-radius:50%;
         begrenzt durch das Konvektions-Gate aus ICON-D2 (baut das Modell dort überhaupt
         ein Gewitter?). Keine Tornado-Wahrscheinlichkeit in Prozent — an 360 Tagen im Jahr
         liegt die nahe null. Zellen sind Modell-Potenzial, <b>kein Radar</b>.</div>
+
+      <div class="gewnote">
+        <h4>Gewitterzellen</h4>
+        <div class="lg"><i style="background:#f2f9ff"></i>Schwer<u>≥ 70</u></div>
+        <div class="lg"><i style="background:#bfe0f7"></i>Kräftig<u>45–70</u></div>
+        <div class="lg"><i style="background:#84b8dd"></i>Mäßig<u>22–45</u></div>
+        <div class="lg"><i style="background:#5789ab"></i>Schwach<u>10–22</u></div>
+        <i>Die allgemeine Gewitterlage aus ICON-D2 — <b>unabhängig</b> vom Tornado-Index,
+          aus Aufwind, Niederschlag und Blitzpotenzial. Das Flackern folgt dem
+          Blitzpotenzial, die Fahne dem Höhenwind; nur Zellen mit erhöhtem Index bekommen
+          zusätzlich den Trichter. Auch das ist <b>Modell, kein Radar</b>.</i>
+        <i id="gewHor"></i>
+      </div>
       <div class="tornote">
         <span class="torpunkt"></span>
         <b>Bestätigte Tornados</b>
@@ -761,7 +793,21 @@ const LEVELS = [
   {t:10, c:'#57b6e0', n:'Gering'},
   {t:-1, c:'#7f93a6', n:'Minimal'}
 ];
-const LAY = {risk:true, wind:true, cells:true, places:true, tornados:true, scan:true};
+/* Gewitterstufen — bewusst eine kalte, graublaue Reihe, damit sie nie mit der
+   warmen Skala des Tornado-Index verwechselt wird. Die Zellen sind die Lage,
+   der Index ist die Bewertung; zwei Aussagen, zwei Farbwelten. */
+const GEWSTUFEN = [
+  {t:70, c:'#f2f9ff', n:'Schwer'},
+  {t:45, c:'#bfe0f7', n:'Kräftig'},
+  {t:22, c:'#84b8dd', n:'Mäßig'},
+  {t:-1, c:'#5789ab', n:'Schwach'}
+];
+function gewStufe(v){ for(const S of GEWSTUFEN) if(v>=S.t) return S; return GEWSTUFEN[GEWSTUFEN.length-1]; }
+/* Kennwert für „ICON-D2 hat hier nichts gesagt". Weder 0 (hieße: kein Gewitter)
+   noch 1 (hieße: überall Gewitter) wären ehrlich. */
+const KEINE_DATEN = -0.5;
+
+const LAY = {risk:true, storms:true, wind:true, cells:true, places:true, tornados:true, scan:true};
 
 /* Schwellwerte je Parameter — europäische Fallsammlungen (Taszarek, Púčik u. a.),
    bewusst NICHT die US-Werte des STP: europäische Tornados entstehen oft bei
@@ -771,7 +817,7 @@ const PARS = [
   {k:'shear', name:'Scherung 0–6 km',   e:'m/s',  von:0,    bis:45,   min:15,   opt:[20,32],    gut:'hoch'},
   {k:'cin',   name:'CIN (Deckel)',      e:'J/kg', von:-200, bis:0,    min:-75,  opt:[-40,-5],   gut:'hoch'},
   {k:'lcl',   name:'LCL-Höhe',          e:'m',    von:0,    bis:2500, min:1200, opt:[400,900],  gut:'tief'},
-  {k:'konv',  name:'Konvektion ICON-D2', e:'%',   von:0,    bis:100,  min:1,    opt:null,       gut:'hoch'},
+  {k:'gew',   name:'Gewitterzelle',      e:'',    von:0,    bis:100,  min:8,    opt:null,       gut:'hoch'},
   {k:'wind',  name:'Höhenwind 500 hPa', e:'km/h', von:0,    bis:160,  min:null, opt:null,       gut:null}
 ];
 
@@ -795,8 +841,13 @@ function zellPos(idx){
   return [GRID.lon0+i*dLon, GRID.lat1-j*dLat];
 }
 
-/* Daten: D.tpi[h] = Float32Array(NC), analog cape/shear/cin/lcl/u/v/konv */
-const D = {tpi:[], cape:[], shear:[], cin:[], lcl:[], u:[], v:[], konv:[], t0:null, run:'–'};
+/* Daten: D.tpi[h] = Float32Array(NC), analog cape/shear/cin/lcl/u/v/konv/gew/blitz.
+   gew   = Stärke der Gewitterzelle 0…100 (die Lage)
+   blitz = elektrische Aktivität 0…100 (steuert das Flackern)
+   Beide können KEINE_DATEN sein — jenseits des ICON-D2-Horizonts weiß niemand,
+   ob dort eine Zelle steht. */
+const D = {tpi:[], cape:[], shear:[], cin:[], lcl:[], u:[], v:[], konv:[],
+           gew:[], blitz:[], t0:null, run:'–', alterH:0, gewAb:null};
 
 /* ══════════════ Canvas & Projektion ═════════════════════════════════════════ */
 const stage = document.getElementById('stage');
@@ -887,6 +938,64 @@ function zoomAuf(nz, mx, my){
   Z = nz;
   panBegrenzen(); ansichtGeaendert();
 }
+/* ── Anspringen ───────────────────────────────────────────────────────────────
+   Ein Klick auf die Kopfleiste soll dort landen, wo die Lage ist: heranzoomen,
+   zentrieren und dieselbe Stunde einstellen. Vorher wurde nur die Zeit gesetzt —
+   die Karte blieb in der Übersicht stehen und man musste die Stelle suchen.     */
+function zielAnsicht(lon, lat, z){
+  /* Dieselbe Begrenzung wie panBegrenzen(), nur für ein Ziel statt für den
+     aktuellen Stand — sonst rutscht der Flug am Rand aus dem Rahmen. */
+  const w=world(lon,lat);
+  let tx=W/2-w[0]*z, ty=H/2-w[1]*z;
+  const bw=W*z, bh=H*z;
+  tx=Math.min(0, Math.max(W-bw, tx));
+  ty=Math.min(0, Math.max(H-bh, ty));
+  if(bw<=W) tx=(W-bw)/2;
+  if(bh<=H) ty=(H-bh)/2;
+  return [tx,ty];
+}
+let flug=null, marke=null;
+function fliegeZu(lon, lat, zoom, dauer=780){
+  const z1=Math.max(ZMIN, Math.min(ZMAX, zoom));
+  const [tx1,ty1]=zielAnsicht(lon,lat,z1);
+  flug={t0:null, dauer, z0:Z, x0:TX, y0:TY, z1, x1:tx1, y1:ty1};
+  marke={lon, lat, t0:null};
+}
+function flugSchritt(ts){
+  if(!flug) return;
+  if(flug.t0===null) flug.t0=ts;
+  const f=Math.min(1,(ts-flug.t0)/flug.dauer);
+  const e=f<0.5 ? 4*f*f*f : 1-Math.pow(-2*f+2,3)/2;      // weich an, weich aus
+  /* Zoom geometrisch mischen: linear führt bei großen Sprüngen dazu, dass die
+     zweite Hälfte des Flugs steht und die erste rast. */
+  Z  = flug.z0*Math.pow(flug.z1/flug.z0, e);
+  TX = flug.x0+(flug.x1-flug.x0)*e;
+  TY = flug.y0+(flug.y1-flug.y0)*e;
+  panBegrenzen();
+  paintFieldDirty=true;
+  document.getElementById('zoomlvl').textContent=Z.toFixed(1)+'×';
+  if(f>=1){ flug=null; ansichtGeaendert(); }
+}
+/* Kurze Zielmarke, damit klar ist, worauf gesprungen wurde. */
+function zielMarke(ts){
+  if(!marke) return;
+  if(marke.t0===null) marke.t0=ts;
+  const f=(ts-marke.t0)/2600;
+  if(f>=1){ marke=null; return; }
+  const [x,y]=project(marke.lon,marke.lat);
+  xF.save();
+  for(let k=0;k<2;k++){
+    const p=(f*1.7+k*0.5)%1;
+    if(p>1) continue;
+    xF.globalAlpha=(1-p)*(1-f)*0.85;
+    xF.strokeStyle='#eaf6ff'; xF.lineWidth=1.4;
+    xF.beginPath(); xF.arc(x,y, 8+p*46, 0, 6.2832); xF.stroke();
+  }
+  xF.globalAlpha=(1-f)*0.9; xF.strokeStyle='#eaf6ff'; xF.lineWidth=1.2;
+  xF.beginPath(); xF.arc(x,y,7,0,6.2832); xF.stroke();
+  xF.restore();
+}
+
 function ansichtGeaendert(){
   /* Nach Zoom oder Verschieben liegen die Marker woanders */
   torUnterCursor = hover ? tornadoUnter(hover.x, hover.y) : null;
@@ -897,12 +1006,14 @@ function ansichtGeaendert(){
 }
 stage.addEventListener('wheel', e=>{
   e.preventDefault();
+  flug=null;                                  // eigene Hand schlägt den Flug
   const r=cFx.getBoundingClientRect();
   zoomAuf(Z*Math.exp(-e.deltaY*0.0016), e.clientX-r.left, e.clientY-r.top);
 }, {passive:false});
 
 let zieh=null;
 cFx.addEventListener('pointerdown', e=>{
+  flug=null;
   zieh={x:e.clientX, y:e.clientY, tx:TX, ty:TY, bewegt:false};
   cFx.setPointerCapture(e.pointerId); cFx.classList.add('grab');
 });
@@ -961,6 +1072,24 @@ function cellAt(key, idx, t=T){
   const j = Math.min(s.length-1, i+1), f = t-i;
   return s[i][idx]*(1-f) + s[j][idx]*f;
 }
+/* gew und blitz kennen Lücken (KEINE_DATEN, negativ). Beim Abgreifen werden sie
+   auf 0 gezogen, damit nichts Negatives in die Zeichnung läuft — die Aussage
+   „hier weiß niemand etwas" macht nicht diese Funktion, sondern D.gewAb: ab
+   dieser Stunde wird die Ebene gar nicht erst gezeichnet und die Leiste sagt es. */
+function gewFeld(key, lon, lat, t=T){
+  const s = D[key]; if(!s.length) return 0;
+  const i = Math.max(0, Math.min(s.length-1, Math.floor(t)));
+  const j = Math.min(s.length-1, i+1), f = t-i;
+  return Math.max(0,bilinear(s[i],lon,lat))*(1-f) + Math.max(0,bilinear(s[j],lon,lat))*f;
+}
+function gewZelle(key, idx, t=T){
+  const s = D[key]; if(!s.length) return 0;
+  const i = Math.max(0, Math.min(s.length-1, Math.floor(t)));
+  const j = Math.min(s.length-1, i+1), f = t-i;
+  return Math.max(0,s[i][idx])*(1-f) + Math.max(0,s[j][idx])*f;
+}
+/* Liegt die aktuelle Stunde noch im Konvektionshorizont von ICON-D2? */
+function gewGueltig(t=T){ return D.gewAb===null || t < D.gewAb; }
 
 /* ══════════════ Farbe ═══════════════════════════════════════════════════════ */
 const RAMP = [[0,'#0e2033',0],[10,'#57b6e0',.30],[25,'#f2d84b',.46],
@@ -1002,9 +1131,54 @@ function paintField(){
   fieldCx.putImageData(img,0,0);
 }
 
+/* Gewitterfeld — eigene Leinwand und eigene Rampe. Kaltes Weißblau, damit die
+   Wolkenmasse nie mit der warmen Skala des Tornado-Index verwechselt wird: die
+   Zellen sind die Lage, der Index ist die Bewertung. */
+const gewCv = document.createElement('canvas');
+const gewCx = gewCv.getContext('2d');
+const GRAMP = [[6,[44,74,104],0],[22,[64,112,150],.30],[45,[104,158,196],.48],
+               [70,[158,200,230],.64],[100,[208,232,248],.78]];
+function gewColor(v){
+  if(v<=6) return [0,0,0,0];
+  for(let i=1;i<GRAMP.length;i++){
+    if(v<=GRAMP[i][0] || i===GRAMP.length-1){
+      const A=GRAMP[i-1], B=GRAMP[i];
+      const f=Math.max(0,Math.min(1,(v-A[0])/(B[0]-A[0])));
+      const fade = v<12 ? (v-6)/6 : 1;
+      return [A[1][0]+(B[1][0]-A[1][0])*f, A[1][1]+(B[1][1]-A[1][1])*f,
+              A[1][2]+(B[1][2]-A[1][2])*f, (A[2]+(B[2]-A[2])*f)*fade];
+    }
+  }
+  return [0,0,0,0];
+}
+function paintGew(){
+  const w=gewCv.width, h=gewCv.height;
+  const img = gewCx.createImageData(w,h);
+  for(let y=0;y<h;y++){
+    const lat = GRID.lat1 - (y/(h-1))*(GRID.lat1-GRID.lat0);
+    for(let x=0;x<w;x++){
+      const lon = GRID.lon0 + (x/(w-1))*(GRID.lon1-GRID.lon0);
+      const [r,g,b,a] = gewColor(gewFeld('gew',lon,lat));
+      const o=(y*w+x)*4;
+      img.data[o]=r; img.data[o+1]=g; img.data[o+2]=b; img.data[o+3]=a*255;
+    }
+  }
+  gewCx.putImageData(img,0,0);
+}
+
 function drawBase(){
   xB.clearRect(0,0,W,H);
   if(!landPath) return;
+
+  /* Die beiden Feldbilder liegen in Gitterkoordinaten — sie hängen an der
+     Stunde, nicht an der Ansicht. Deshalb beim Schwenken und Zoomen nur neu
+     zeichnen, nicht neu rechnen: sonst kostet jedes Bild des Anspringens zwei
+     volle Feldläufe über je 90.000 Bildpunkte. */
+  if(feldDirty){
+    if(D.tpi.length) paintField();
+    if(D.gew.length) paintGew();
+    feldDirty=false;
+  }
 
   /* Gradnetz */
   xB.save(); xB.strokeStyle='rgba(120,190,230,.055)'; xB.lineWidth=1;
@@ -1017,9 +1191,24 @@ function drawBase(){
   /* Grundfläche */
   mitZoom(xB); xB.fillStyle='rgba(16,32,52,.55)'; xB.fill(landPath); xB.restore();
 
+  /* Gewitterfeld zuerst: es ist die Lage, das Risikofeld ist die Bewertung
+     darüber. Beide additiv, damit sich Zelle und Index sichtbar überlagern. */
+  if(LAY.storms && D.gew.length && gewGueltig()){
+    mitZoom(xB);
+    xB.clip(landPath);
+    xB.setTransform(DPR,0,0,DPR,0,0);
+    /* Bewusst NICHT additiv, anders als das Risikofeld: Wolkenmasse deckt ab,
+       sie leuchtet nicht. Additiv addieren sich beide Ebenen zu Weiß und die
+       Karte brennt aus. So legt sich die Lage als Decke darunter und der Index
+       glüht sichtbar hindurch. */
+    xB.imageSmoothingEnabled=true; xB.imageSmoothingQuality='high';
+    const [ax0,ay0]=project(GRID.lon0,GRID.lat1), [ax1,ay1]=project(GRID.lon1,GRID.lat0);
+    xB.drawImage(gewCv, ax0,ay0, ax1-ax0, ay1-ay0);
+    xB.restore();
+  }
+
   /* Risikofeld, auf die Landesfläche geclippt */
   if(LAY.risk && D.tpi.length){
-    paintField();
     /* Clip in Weltkoordinaten setzen, dann zurück in CSS-Pixel: der Clip bleibt
        bestehen, das Feld wird aber direkt in Bildschirmkoordinaten gezeichnet. */
     mitZoom(xB);
@@ -1083,6 +1272,168 @@ function drawWind(){
   }
 }
 
+/* ══════════════ Gewitterzellen ══════════════════════════════════════════════
+   Die allgemeine Gewitterlage aus ICON-D2 — unabhängig davon, ob dort auch
+   Tornadopotenzial steckt. An den allermeisten Tagen ist das alles, was es zu
+   sehen gibt, und genau deshalb gibt es diese Ebene: die Tornado-Ebene ist an
+   360 Tagen im Jahr leer, Gewitter sind es nicht.
+   Weiterhin Modellvorhersage, kein Radar — deshalb weiche Wolkenformen und
+   keine harten Echokanten.                                                     */
+
+/* Zufallszahl, die an der Gitterzelle hängt statt am Listenplatz. Wichtig, weil
+   sich die Reihenfolge der Zellen bei jedem Zeitschritt ändert: hinge die Phase
+   am Index der Liste, würde jede Zelle beim Weiterschalten sichtbar springen. */
+function streu(n, salz=0){
+  const s=Math.sin(n*127.1 + salz*311.7)*43758.5453;
+  return s-Math.floor(s);
+}
+
+/* Weiche Wolkenscheibe, einmal je Farbe vorgerendert. Radiale Verläufe je Zelle
+   und Bild wären auf einem Laptop zu teuer — so ist es ein drawImage. */
+const BLOBS={};
+function blobBild(farbe){
+  if(BLOBS[farbe]) return BLOBS[farbe];
+  const c=document.createElement('canvas'); c.width=c.height=128;
+  const x=c.getContext('2d');
+  const [r,g,b]=hex2rgb(farbe);
+  const gr=x.createRadialGradient(64,64,0,64,64,64);
+  gr.addColorStop(0,    `rgba(${r},${g},${b},.95)`);
+  gr.addColorStop(0.38, `rgba(${r},${g},${b},.42)`);
+  gr.addColorStop(0.70, `rgba(${r},${g},${b},.12)`);
+  gr.addColorStop(1,    `rgba(${r},${g},${b},0)`);
+  x.fillStyle=gr; x.fillRect(0,0,128,128);
+  return BLOBS[farbe]=c;
+}
+function blob(bild,x,y,rx,ry,rot,alpha){
+  xF.save(); xF.globalAlpha=alpha; xF.translate(x,y); xF.rotate(rot);
+  xF.drawImage(bild,-rx,-ry,rx*2,ry*2); xF.restore();
+}
+
+let gewitter=[];
+function findGewitter(){
+  gewitter=[];
+  if(!D.gew.length || !INDE || !gewGueltig()) return;
+  const kand=[];
+  for(let j=0;j<GRID.rows;j++) for(let i=0;i<GRID.cols;i++){
+    const idx=j*GRID.cols+i;
+    if(!INDE[idx]) continue;
+    const v=gewZelle('gew',idx);
+    if(v<10) continue;
+    let isMax=true;
+    for(let dj=-1;dj<=1&&isMax;dj++) for(let di=-1;di<=1;di++){
+      if(!di&&!dj) continue;
+      const nj=j+dj, ni=i+di;
+      if(nj<0||nj>=GRID.rows||ni<0||ni>=GRID.cols) continue;
+      if(gewZelle('gew',nj*GRID.cols+ni) > v){ isMax=false; break; }
+    }
+    if(!isMax) continue;
+    const [lon,lat]=zellPos(idx);
+    kand.push({lon,lat,v,idx,b:gewZelle('blitz',idx)});
+  }
+  /* Plateaus liefern viele gleichwertige Maxima nebeneinander — Mindestabstand.
+     Enger als bei den Potenzial-Zellen: eine Gewitterlage besteht aus vielen
+     Kernen, und genau die will man sehen. */
+  kand.sort((a,b)=>b.v-a.v);
+  for(const h of kand){
+    if(gewitter.every(k=>Math.hypot((k.lon-h.lon)/dLon,(k.lat-h.lat)/dLat) >= 1.7)) gewitter.push(h);
+    if(gewitter.length===36) break;
+  }
+}
+
+function drawGewitter(ts){
+  if(!gewitter.length) return;
+  const t=ts/1000;
+  /* Auf die Landesfläche geclippt wie das Feld — sonst schweben Zellen über der
+     abgedunkelten Nachbarschaft, für die wir gar keine Aussage treffen. */
+  mitZoom(xF); xF.clip(landPath); xF.setTransform(DPR,0,0,DPR,0,0);
+  xF.globalCompositeOperation='lighter';
+
+  for(const z of gewitter){
+    const [x,y]=project(z.lon,z.lat);
+    const S=gewStufe(z.v);
+    /* Radius wächst mit der Stärke und gedämpft mit dem Zoom: bei 20× soll die
+       Zelle größer sein, aber nicht das ganze Bild füllen. */
+    const r=(10+z.v*0.26)*Math.min(3.2, Math.max(0.9, Math.pow(Z,0.42)));
+    if(x<-r*4||x>W+r*4||y<-r*4||y>H+r*4) continue;
+
+    const ph=streu(z.idx)*6.2832;
+    const bild=blobBild(S.c);
+    const u=cellAt('u',z.idx), v=cellAt('v',z.idx), sp=Math.hypot(u,v);
+    const zug=Math.atan2(-v,u);                       // Zugrichtung im Bild
+
+    /* Amboss: die Fahne, die der Höhenwind stromab zieht. Länge nach Windstärke,
+       damit eine träge Luftmasse keine Superzelle vortäuscht. */
+    if(sp>4){
+      const l=Math.min(2.6, 1.0+sp/26);
+      blob(bild, x+Math.cos(zug)*r*0.85, y+Math.sin(zug)*r*0.85,
+           r*l, r*0.78, zug, 0.09+z.v/900);
+    }
+
+    /* Kern: drei versetzte Scheiben, die langsam umeinander wandern. Das ergibt
+       das Quellen, ohne je Bild einen Verlauf neu bauen zu müssen. */
+    for(let k=0;k<3;k++){
+      const a=t*(0.20+k*0.11)+ph+k*2.1;
+      const w=0.90-k*0.19+0.07*Math.sin(t*1.25+ph+k*1.7);
+      blob(bild, x+Math.cos(a)*r*0.20, y+Math.sin(a)*r*0.15,
+           r*w, r*w*0.86, a*0.35, 0.15+z.v/700);
+    }
+
+    /* Böenfront: ein Ring, der alle paar Sekunden nach außen läuft und vergeht. */
+    const bf=(t*0.30+streu(z.idx,7))%1;
+    if(z.v>=22){
+      xF.save();
+      xF.globalAlpha=(1-bf)*0.20*Math.min(1,(z.v-22)/30);
+      xF.strokeStyle=S.c; xF.lineWidth=1.1;
+      xF.beginPath(); xF.ellipse(x,y, r*(0.9+bf*1.5), r*(0.75+bf*1.3), 0, 0, 6.2832);
+      xF.stroke(); xF.restore();
+    }
+
+    /* Blitz: Takt nach elektrischer Aktivität. Die Zacken hängen am Zeitfach,
+       nicht am Bild — sonst zappelt der Blitz innerhalb seines Aufleuchtens. */
+    if(z.b>6){
+      const takt=0.3+z.b/100*2.2;                     // Entladungen je Sekunde
+      const p=t*takt+ph*3, fach=Math.floor(p), rest=p-fach;
+      if(rest<0.13 && streu(fach, z.idx)<0.62){
+        const hell=Math.pow(1-rest/0.13, 1.7);
+        blob(bild, x, y, r*1.15, r*1.0, 0, hell*0.75);
+        xF.save();
+        xF.globalAlpha=hell; xF.strokeStyle='#ffffff'; xF.lineWidth=1.3;
+        xF.shadowColor='#bfe0f7'; xF.shadowBlur=9;
+        xF.beginPath();
+        let bx=x+(streu(fach,z.idx+11)-0.5)*r*0.7, by=y-r*0.55;
+        xF.moveTo(bx,by);
+        for(let s=1;s<=4;s++){
+          bx += (streu(fach,z.idx+s*31)-0.5)*r*0.55;
+          by += r*0.30;
+          xF.lineTo(bx,by);
+        }
+        xF.stroke(); xF.restore();
+      }
+    }
+  }
+  xF.restore();
+
+  /* Beschriftung außerhalb des additiven Modus, sonst leuchtet die Schrift aus. */
+  xF.save();
+  xF.font='600 9.5px ui-monospace,Menlo,monospace';
+  /* Sparsam beschriften: die Ortsnamen liegen in derselben Ebene, und drei
+     Zahlen sagen genug — den Rest liest man im Panel unter dem Cursor. */
+  for(let n=0;n<gewitter.length && n<3;n++){
+    const z=gewitter[n];
+    if(z.v<45) break;
+    const [x,y]=project(z.lon,z.lat);
+    const r=(10+z.v*0.26)*Math.min(3.2, Math.max(0.9, Math.pow(Z,0.42)));
+    if(x<0||x>W||y<0||y>H) continue;
+    const links = x > W*0.72, d = links ? -1 : 1;
+    xF.textAlign = links ? 'right' : 'left';
+    xF.lineWidth=2.4; xF.strokeStyle='rgba(5,8,14,.7)';
+    xF.strokeText(`${gewStufe(z.v).n} ${Math.round(z.v)}`, x+(r*0.8+7)*d, y+r*0.9+9);
+    xF.fillStyle='rgba(198,226,246,.85)';
+    xF.fillText(`${gewStufe(z.v).n} ${Math.round(z.v)}`, x+(r*0.8+7)*d, y+r*0.9+9);
+  }
+  xF.restore();
+}
+
 /* ══════════════ Potenzial-Zellen ════════════════════════════════════════════
    Lokale Maxima des Index innerhalb Deutschlands. Bewusst als Schema gezeichnet
    (Umriss, Rotationspfeil, Zugrichtung) und nie als Radar-Echo — es sind
@@ -1142,6 +1493,48 @@ function drawZellen(ts){
     xF.arc(r*0.44*Math.cos(4.4), r*0.44*Math.sin(4.4), r*0.17, 4.4, 1.4);
     xF.stroke();
     xF.restore();
+
+    /* Trichter — nur ab „Erhöht". Er ist das Zeichen, das diese Zelle von einem
+       gewöhnlichen Gewitter unterscheidet, und darf deshalb nicht überall
+       hängen. Länge und Deckkraft wachsen mit dem Index; das Wanken kommt aus
+       einer langsamen Schwingung, nicht aus Zufall, damit es ruhig wirkt. */
+    if(z.v>=25){
+      const kraft=Math.min(1,(z.v-25)/45);
+      const laenge=r*(0.70+kraft*0.85), breite=r*(0.21+kraft*0.11);
+      const wank=Math.sin(ts/900+n*1.3)*0.16*(1-kraft*0.4);
+      xF.save();
+      xF.translate(x, y+r*0.42); xF.rotate(wank);
+      const gr=xF.createLinearGradient(0,0,0,laenge);
+      gr.addColorStop(0, L.c+'b0'); gr.addColorStop(0.55, L.c+'55'); gr.addColorStop(1, L.c+'11');
+      xF.fillStyle=gr; xF.globalAlpha=0.42+kraft*0.28;
+      xF.beginPath();
+      xF.moveTo(-breite,0);
+      xF.quadraticCurveTo(-breite*0.34, laenge*0.62, -breite*0.16, laenge);
+      xF.lineTo(breite*0.16, laenge);
+      xF.quadraticCurveTo(breite*0.34, laenge*0.62, breite, 0);
+      xF.closePath(); xF.fill();
+      /* Wendeln im Trichter: waagerechte Bögen, die nach unten laufen — das
+         liest sich als Rotation, ohne dass etwas rotieren muss. */
+      xF.globalAlpha=0.30+kraft*0.35; xF.strokeStyle=L.c; xF.lineWidth=1;
+      for(let s=0;s<4;s++){
+        const f=((ts/1300+s/4+n*0.2)%1);
+        const yy=f*laenge, bb=breite*(1-f*0.82);
+        xF.beginPath(); xF.ellipse(0,yy,bb,bb*0.30,0,0,6.2832); xF.stroke();
+      }
+      xF.restore();
+      /* Wirbel am Boden — erst bei kräftigen Lagen, sonst behauptet die Karte
+         zu viel. */
+      if(z.v>=45){
+        xF.save(); xF.globalAlpha=0.45;
+        for(let s=0;s<7;s++){
+          const a=ts/380+s*0.9, rr=breite*(1.1+0.5*Math.sin(ts/500+s));
+          xF.beginPath();
+          xF.arc(x+Math.cos(a)*rr, y+r*0.42+laenge+Math.sin(a)*rr*0.32, 1.1, 0, 6.2832);
+          xF.fillStyle=L.c; xF.fill();
+        }
+        xF.restore();
+      }
+    }
 
     /* Kern */
     xF.beginPath(); xF.arc(x,y,3.2,0,6.2832);
@@ -1320,9 +1713,13 @@ function drawFx(ts){
     }
   }
 
-  if(LAY.places)   drawOrte();
+  /* Reihenfolge ist Aussage: erst die Gewitterlage, dann die Bewertung darauf,
+     Ortsnamen zuletzt, damit sie über allem lesbar bleiben. */
+  if(LAY.storms)   drawGewitter(ts);
   if(LAY.cells)    drawZellen(ts);
+  if(LAY.places)   drawOrte();
   if(LAY.tornados) drawTornados(ts);
+  zielMarke(ts);
 
   if(hover && !zieh && !torUnterCursor){
     const {x,y}=hover;
@@ -1347,8 +1744,8 @@ function parAufbauen(){
     if(p.min!==null) minstrich=`<i class="min" style="left:${pct(p,p.min)}%"></i>`;
     if(p.k==='cin'){
       fuss=`<span>Deckel bleibt zu ab −75</span><span>optimal −40 bis −5</span>`;
-    }else if(p.k==='konv'){
-      fuss=`<span>baut das Modell dort ein Gewitter?</span><span>bei 0 keine Zelle</span>`;
+    }else if(p.k==='gew'){
+      fuss=`<span>Stärke der Zelle aus ICON-D2</span><span>ab 22 mäßig, ab 45 kräftig</span>`;
     }else if(p.opt){
       fuss=`<span>möglich ab ${p.min} ${p.e}</span><span>optimal ${p.opt[0]}–${p.opt[1]} ${p.e}</span>`;
     }else{
@@ -1392,7 +1789,7 @@ function updatePanel(){
     shear:fieldAt('shear',lon,lat),
     cin:  fieldAt('cin',lon,lat),
     lcl:  fieldAt('lcl',lon,lat),
-    konv: fieldAt('konv',lon,lat)*100,
+    gew:  gewGueltig() ? gewFeld('gew',lon,lat) : 0,
     wind: Math.hypot(fieldAt('u',lon,lat),fieldAt('v',lon,lat))*3.6
   };
   for(const p of PARS){
@@ -1443,7 +1840,10 @@ document.getElementById('play').addEventListener('click',function(){
 
 let lastT=-1;
 function onTimeChange(){
-  paintFieldDirty=true; findZellen(); updateTime(); updatePanel();
+  /* feldDirty zusätzlich: nur beim Stundenwechsel ändern sich die Feldbilder.
+     Schwenken und Zoomen setzen allein paintFieldDirty. */
+  feldDirty=true; paintFieldDirty=true;
+  findZellen(); findGewitter(); updateTime(); updatePanel();
 }
 
 /* ══════════════ Layer-Schalter ══════════════════════════════════════════════ */
@@ -1451,7 +1851,7 @@ document.querySelectorAll('.tgl').forEach(el=>{
   el.addEventListener('click',()=>{
     const k=el.dataset.l; LAY[k]=!LAY[k]; el.classList.toggle('on',LAY[k]);
     if(k==='wind' && !LAY.wind) xW.clearRect(0,0,W,H);
-    if(k==='risk') paintFieldDirty=true;
+    if(k==='risk' || k==='storms') paintFieldDirty=true;
     /* Sonst bleibt der Tooltip stehen, bis die Maus das nächste Mal wackelt */
     if(k==='tornados') torUnterCursor = LAY.tornados && hover
                                         ? tornadoUnter(hover.x, hover.y) : null;
@@ -1459,8 +1859,9 @@ document.querySelectorAll('.tgl').forEach(el=>{
 });
 
 /* ══════════════ Render-Schleife ═════════════════════════════════════════════ */
-let paintFieldDirty=true;
+let paintFieldDirty=true, feldDirty=true;
 function loop(ts){
+  if(flug) flugSchritt(ts);
   if(playing){
     T += 0.045;
     if(T>48) T=0;
@@ -1483,6 +1884,32 @@ function loop(ts){
    Aufrufer 1 herein — kein Konvektionsfeld ist kein Beleg für keine Konvektion. */
 function konvFaktor(lpi, aufwind, nied){
   return Math.max(0, Math.min(1, Math.max(lpi/5, (aufwind-2)/6, nied/1.0)));
+}
+/* Gewitterzelle als Stärke 0…100 — identisch zu zell_staerke() in
+   rechne_gitter.py, beide Seiten müssen zusammen gepflegt werden.
+   Getrennt vom Gate, weil das Gate absichtlich sättigt: es fragt nur
+   „Gewitter ja/nein" und steht ab LPI 5 auf 1. Für die Karte brauchen wir eine
+   Skala, die Schauer und Superzelle noch auseinanderhält.
+     kern  — überhaupt ein Konvektionskern (Aufwind oder Regen)
+     blitz — LPI, das eigentliche Gewittermerkmal; hebt den Kern an, kann ihn
+             aber nicht ersetzen.
+   Rückgabe: [Zellstärke 0…100, elektrische Aktivität 0…100]. */
+function zellStaerke(lpi, aufwind, nied){
+  const kern  = Math.max(0, Math.min(1, Math.max(nied/10.0, (aufwind-1.5)/16.0)));
+  const blitz = Math.max(0, Math.min(1, lpi/25.0));
+  const gew   = Math.max(0, Math.min(1, 0.65*kern + 0.35*blitz + 0.35*kern*blitz));
+  return [100*gew, 100*blitz];
+}
+/* Ab welcher Stunde weiß ICON-D2 nichts mehr über Konvektion? Ab dort wird die
+   Gewitterebene nicht gezeichnet — eine leere Ebene wäre die Behauptung, es
+   gebe dort keine Gewitter. */
+function gewHorizontBestimmen(n){
+  D.gewAb=null;
+  for(let h=0;h<n;h++){
+    let hat=false;
+    for(let c=0;c<NC;c++) if(INDE[c] && D.gew[h][c]>=0){ hat=true; break; }
+    if(!hat){ D.gewAb=h; return; }
+  }
 }
 function tpiOf(cape, shear, cin, lcl, konv=1){
   /* CIN kommt bei Open-Meteo als positiver Betrag (0 … 300+), in der Meteorologie
@@ -1530,6 +1957,10 @@ function feldSpeicherAnlegen(n){
     /* Vorbelegung 1 = Gate offen. Wer keine ICON-D2-Daten hat, soll nicht
        stillschweigend überall null Potenzial bekommen. */
     D.konv.push(new Float32Array(NC).fill(1));
+    /* Bei der Gewitterebene ist es umgekehrt: dort wäre 1 die Behauptung
+       „überall Gewitter". Deshalb der eigene Kennwert für „unbekannt". */
+    D.gew.push(new Float32Array(NC).fill(KEINE_DATEN));
+    D.blitz.push(new Float32Array(NC).fill(KEINE_DATEN));
   }
 }
 
@@ -1638,15 +2069,22 @@ async function ladeLive(){
            muss hier gleich behandelt werden, sonst schlösse das Gate fälschlich. */
         const lies = arr => (gk>=0 && gk<arr.length) ? arr[gk] : null;
         const lpi=lies(G_.lightning_potential), up=lies(G_.updraft), nd=lies(G_.precipitation);
-        /* Alle drei null = jenseits des ICON-D2-Horizonts → Gate offen lassen. */
+        /* Alle drei null = jenseits des ICON-D2-Horizonts → Gate offen lassen,
+           Gewitterebene aber NICHT auf 0 setzen: das hieße „hier ist kein
+           Gewitter", und das weiß dort niemand. KEINE_DATEN bleibt stehen. */
         if(lpi==null && up==null && nd==null) ohneGate++;
-        else kv = konvFaktor(lpi??0, up??0, nd??0);
+        else{
+          kv = konvFaktor(lpi??0, up??0, nd??0);
+          const [gw,bz]=zellStaerke(lpi??0, up??0, nd??0);
+          D.gew[h][c]=gw; D.blitz[h][c]=bz;
+        }
       }
       D.cape[h][c]=cp; D.cin[h][c]=ci; D.shear[h][c]=sh; D.lcl[h][c]=lz;
       D.u[h][c]=u50;   D.v[h][c]=v50;  D.konv[h][c]=kv;
       D.tpi[h][c]=tpiOf(cp, sh, ci, lz, kv);
     }
   }
+  gewHorizontBestimmen(n);
   if(ohneGate) blogZeile(`  … letzte ${Math.round(ohneGate/NC)} Stunden ohne ICON-D2-Gate`);
   ledSetzen('', 'DATEN AKTIV');
   document.getElementById('sRun').textContent=D.run+' UTC';
@@ -1660,25 +2098,51 @@ function ladeDienst(){
   if(!j) throw new Error('kein vorgerechnetes Gitter');
   setzeGitter(j.grid);
   maskeBauen();
-  D.t0=new Date(j.t0); D.run=j.run;
-  const n=j.hours;
+
+  /* Das vorgerechnete Gitter ist nie taufrisch — die Aufzeichnung läuft alle
+     drei Stunden, und ein ausgefallener Lauf macht daraus schnell mehr. Wer
+     Stunde 0 dann trotzdem „JETZT" nennt, schiebt die ganze Zeitleiste in die
+     Vergangenheit. Also die bereits vergangenen Stunden überspringen. */
+  const t0roh=new Date(j.t0);
+  const alterH=Math.floor((Date.now()-t0roh.getTime())/3600e3);
+  const vers=Math.max(0, Math.min(j.hours-1, alterH));
+  const n=j.hours-vers;
+  D.t0=new Date(t0roh.getTime()+vers*3600e3);
+  D.run=j.run; D.alterH=Math.max(0, alterH);
+
   feldSpeicherAnlegen(n);
-  /* konv ist optional: ältere gitter.js aus der Zeit vor dem Konvektions-Gate
-     haben das Feld nicht. Dann bleibt die Vorbelegung 1 stehen, also Gate offen. */
-  const felder=['cape','cin','shear','lcl','u','v','konv'];
+  /* Alle Felder sind optional: ältere gitter.js kennen konv, gew oder blitz noch
+     nicht. Dann bleibt die Vorbelegung stehen — Gate offen, Gewitterebene aus. */
+  const felder=['cape','cin','shear','lcl','u','v','konv','gew','blitz'];
   for(const f of felder){
     if(!j.fields[f]) continue;
     const roh=Uint8Array.from(atob(j.fields[f]), c=>c.charCodeAt(0));
     const view=new Int16Array(roh.buffer);
     const s=j.scale[f];
-    for(let h=0;h<n;h++) for(let c=0;c<NC;c++) D[f][h][c]=view[h*NC+c]/s;
+    for(let h=0;h<n;h++) for(let c=0;c<NC;c++) D[f][h][c]=view[(h+vers)*NC+c]/s;
   }
   for(let h=0;h<n;h++) for(let c=0;c<NC;c++)
     D.tpi[h][c]=tpiOf(D.cape[h][c], D.shear[h][c], D.cin[h][c], D.lcl[h][c], D.konv[h][c]);
-  ledSetzen('', 'DATENDIENST');
-  document.getElementById('sRun').textContent=D.run;
+  gewHorizontBestimmen(n);
+
+  ledSetzen(D.alterH>=6 ? 'warn' : '', D.alterH>=6 ? 'DATEN ALT' : 'DATENDIENST');
+  document.getElementById('sRun').textContent =
+    D.run + (D.alterH>0 ? ` · vor ${D.alterH} h` : '');
+  if(vers) blogZeile(`  … ${vers} bereits vergangene Stunden übersprungen`);
+  if(!j.fields.gew) blogZeile('  … Gitter ohne Gewitterebene (älterer Lauf)');
+  else if(D.gewAb!==null) blogZeile(`  … Konvektionsvorhersage reicht ${D.gewAb} h weit`);
   blog(`Vorgerechnetes Gitter geladen — ${n} Stunden`, 90);
 }
+
+/* Kerne für die Gewitterlinie des Ersatzdatensatzes. Ein glattes Feld sähe aus
+   wie Nebel; eine echte Lage besteht aus einzelnen Zellen, und genau dafür ist
+   die Ebene gebaut. Die Kerne ziehen mit der Stunde nach Nordost. */
+const SKERNE=[];
+for(let k=0;k<15;k++) SKERNE.push({
+  x: 0.06+0.062*k,
+  y: 0.34+0.30*Math.sin(k*1.27)+0.10*Math.sin(k*0.41),
+  s: 0.34+0.66*Math.abs(Math.sin(k*2.33))
+});
 
 function synth(){
   D.t0=new Date(Math.ceil(Date.now()/3600e3)*3600e3);
@@ -1702,34 +2166,94 @@ function synth(){
       const kv=Math.max(0, Math.min(1, blob*1.8-0.15));
       D.konv[h][c]=kv;
       D.tpi[h][c]=tpiOf(cp,sh,D.cin[h][c],D.lcl[h][c],kv);
+
+      /* Gewitterlinie: breiter als der Tornadokern und mit eigenen Kernen, damit
+         die Demo zeigt, was der Normalfall ist — viele Zellen, davon höchstens
+         eine mit Rotation. Die Rohgrößen werden nachgebildet und durch dieselbe
+         Formel geschickt wie die echten, nicht das Ergebnis gemalt. */
+      let staerke=0;
+      for(const K of SKERNE){
+        const kx=(K.x+h*0.019)%1.3-0.15, ky=K.y-h*0.0055;
+        const d=Math.hypot((fx-kx)*1.9, (fy-ky)*1.5);
+        staerke=Math.max(staerke, K.s*Math.exp(-d*d*24));
+      }
+      /* Rohgrößen nachbilden und durch dieselbe Formel schicken wie die echten,
+         statt das Ergebnis zu malen — sonst zeigt die Demo ein Verhalten, das
+         es live nicht gibt. Amplituden so gewählt, dass die Lage die ganze
+         Skala von schwach bis schwer abdeckt. */
+      const lpi = Math.max(0, staerke*22-1.0);
+      const auf = Math.max(0, staerke*18-0.6);
+      const nie = Math.max(0, staerke*9-0.4);
+      const [gw,bz]=zellStaerke(lpi,auf,nie);
+      D.gew[h][c]=gw; D.blitz[h][c]=bz;
     }
   }
+  /* Im Ersatzdatensatz gibt es keinen Horizont — sonst prüft niemand je die
+     letzten Stunden der Zeitleiste. */
+  D.gewAb=null;
 }
 
 /* Höchstwert der nächsten 48 h — nur innerhalb Deutschlands, sonst verspricht
    die Leiste Werte, die auf der geclippten Karte gar nicht zu sehen sind. */
 function buildPeak(){
   const el=document.getElementById('peak');
-  let best={v:-1,h:0,c:0};
-  for(let h=0;h<D.tpi.length;h++){
-    const a=D.tpi[h];
-    for(let c=0;c<NC;c++) if(INDE[c] && a[c]>best.v) best={v:a[c],h,c};
-  }
-  const L=levelOf(best.v);
-  const d=new Date(D.t0.getTime()+best.h*3600e3);
-  const wann = best.h===0 ? 'jetzt'
-    : d.toLocaleString('de-DE',{weekday:'short',hour:'2-digit',minute:'2-digit'})+' Uhr';
-  const ort = best.v>=10 ? naechsterOrt(...zellPos(best.c)) : null;
+  const spitze=(feld)=>{
+    let best={v:-1,h:0,c:0};
+    if(!D[feld].length) return best;
+    for(let h=0;h<D[feld].length;h++){
+      const a=D[feld][h];
+      for(let c=0;c<NC;c++) if(INDE[c] && a[c]>best.v) best={v:a[c],h,c};
+    }
+    return best;
+  };
+  const tor=spitze('tpi'), gew=spitze('gew');
+
+  /* Welche Lage die Leiste zeigt, entscheidet der Tornado-Index — aber nur,
+     wenn es überhaupt einen gibt. Sonst wäre die Leiste an 360 Tagen im Jahr
+     eine Fehlanzeige, obwohl auf der Karte Gewitter stehen. */
+  const zeigeTor = tor.v>=10;
+  const ziel = zeigeTor ? tor : gew;
+  const wannText=(h)=>{
+    const d=new Date(D.t0.getTime()+h*3600e3);
+    return h===0 ? 'jetzt'
+      : d.toLocaleString('de-DE',{weekday:'short',hour:'2-digit',minute:'2-digit'})+' Uhr';
+  };
   el.hidden=false;
-  el.innerHTML = best.v<10
-    ? `<i style="background:${L.c}"></i>Ruhige Lage — kein nennenswertes Konvektionspotenzial in 48 h`
-      + `<s>Höchstwert TPI ${Math.round(best.v)}</s>`
-    : `<i style="background:${L.c}"></i>Höchstes Potenzial: <b style="color:${L.c}">`
-      + `${L.n} · TPI ${Math.round(best.v)}</b> ${ort?'bei '+ort+' ':''}um ${wann}<s>anspringen ›</s>`;
+
+  if(zeigeTor){
+    const L=levelOf(tor.v), ort=naechsterOrt(...zellPos(tor.c));
+    el.innerHTML = `<i style="background:${L.c}"></i>Höchstes Tornado-Potenzial: `
+      + `<b style="color:${L.c}">${L.n} · TPI ${Math.round(tor.v)}</b> `
+      + `${ort?'bei '+ort+' ':''}um ${wannText(tor.h)}<s>anspringen ›</s>`;
+  }else if(gew.v>=10){
+    const S=gewStufe(gew.v), ort=naechsterOrt(...zellPos(gew.c));
+    el.innerHTML = `<i style="background:${S.c}"></i>Kein nennenswertes Tornado-Potenzial — `
+      + `stärkste Gewitterzelle <b style="color:${S.c}">${S.n} · ${Math.round(gew.v)}</b> `
+      + `${ort?'bei '+ort+' ':''}um ${wannText(gew.h)}<s>anspringen ›</s>`;
+  }else{
+    const L=levelOf(tor.v);
+    /* Ohne Konvektionsdaten darf hier nicht „keine Gewitterzellen" stehen —
+       das wäre eine Aussage über etwas, worüber der Lauf schweigt. */
+    const text = D.gewAb===0
+      ? 'Kein nennenswertes Tornadopotenzial in 48 h — Gewitterebene ohne Daten'
+      : 'Ruhige Lage — weder Gewitterzellen noch nennenswertes Tornadopotenzial in 48 h';
+    el.innerHTML = `<i style="background:${L.c}"></i>${text}`
+      + `<s>Höchstwert TPI ${Math.round(Math.max(0,tor.v))}</s>`;
+    el.onclick=null; el.style.cursor='default';
+    return;
+  }
+
+  /* Anspringen heißt: dieselbe Stunde UND dieselbe Stelle. Nur die Zeit zu
+     setzen ließ die Karte in der Übersicht stehen — die Zelle war dann irgendwo
+     als Fleck von wenigen Pixeln zu suchen. */
+  el.style.cursor='pointer';
   el.onclick=()=>{
-    T=best.h; slider.value=T; playing=false;
+    const [lon,lat]=zellPos(ziel.c);
+    T=ziel.h; slider.value=T; playing=false;
     document.getElementById('play').textContent='▶';
     onTimeChange();
+    fliegeZu(lon, lat, 7);
+    document.getElementById('app').scrollIntoView({behavior:'smooth', block:'start'});
   };
 }
 function naechsterOrt(lon,lat){
@@ -1751,6 +2275,18 @@ function finish(){
       `${TORS.length} · ${Math.min(...j)}–${Math.max(...j)}`;
   }
   parAufbauen();
+  /* Wo die Gewitterebene endet, muss dranstehen — sonst liest man die leeren
+     hinteren Stunden als „dort ist nichts" statt als „dort weiß niemand etwas". */
+  const hor=document.getElementById('gewHor');
+  if(D.gewAb===0){
+    hor.innerHTML='<b>Für diesen Lauf liegen keine Konvektionsdaten vor</b> — '
+      + 'die Gewitterebene bleibt aus.';
+  }else if(D.gewAb!==null && D.t0){
+    const d=new Date(D.t0.getTime()+D.gewAb*3600e3);
+    hor.innerHTML='Diese Vorhersage reicht bis <b>'
+      + d.toLocaleString('de-DE',{weekday:'short',hour:'2-digit',minute:'2-digit'})
+      + ' Uhr</b>, danach bleibt die Ebene leer.';
+  }
   buildTicks(); buildPeak(); resize();
   const q=new URLSearchParams(location.search);
   const qt=parseFloat(q.get('t'));
@@ -1785,6 +2321,7 @@ async function load(){
   blog('Initialisiere Projektion und Landesgeometrie …', 12);
   setzeGitter(gitterAusKm(KM_LIVE));
   fieldCv.width=(GRID.cols-1)*SUP+1; fieldCv.height=(GRID.rows-1)*SUP+1;
+  gewCv.width=fieldCv.width; gewCv.height=fieldCv.height;
   resize();
   maskeBauen();
   blog(`Gitter aufgespannt — ${NC} Stützstellen, davon ${INDE.reduce((a,b)=>a+b,0)} in Deutschland`, 26);
@@ -1810,6 +2347,7 @@ async function load(){
   }
   /* Die Feldauflösung hängt am Gitter — erst jetzt steht sie fest. */
   fieldCv.width=(GRID.cols-1)*SUP+1; fieldCv.height=(GRID.rows-1)*SUP+1;
+  gewCv.width=fieldCv.width; gewCv.height=fieldCv.height;
   finish();
 }
 

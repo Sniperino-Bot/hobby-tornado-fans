@@ -57,8 +57,16 @@ VARIABLEN = ("cape,convective_inhibition,wind_speed_10m,wind_direction_10m,"
 KONV_VARIABLEN = "lightning_potential,updraft,precipitation"
 
 # Quantisierung: Faktor je Feld, damit alles in Int16 passt (±32767)
-SKALA = {"cape": 4, "cin": 50, "shear": 300, "lcl": 6, "u": 200, "v": 200,
-         "konv": 1000}
+# cin bewusst nur 20: bei Faktor 50 klippt der Betrag ab 655 J/kg, und im
+# Bestand stehen schon −531. Auflösung 0,05 J/kg ist immer noch reichlich.
+SKALA = {"cape": 4, "cin": 20, "shear": 300, "lcl": 6, "u": 200, "v": 200,
+         "konv": 1000, "gew": 100, "blitz": 100}
+
+# Felder, die „keine Daten" kennen müssen. 0 wäre dort eine Lüge (hieße: kein
+# Gewitter), 1 ebenso (hieße: überall Gewitter). Deshalb ein eigener Kennwert,
+# den das Frontend erkennt und als Lücke behandelt.
+KEINE_DATEN = -1.0
+LUECKENFELDER = ("gew", "blitz")
 
 
 # ── Geometrie: liegt der Punkt in Deutschland? ───────────────────────────────
@@ -92,6 +100,28 @@ def konv_faktor(lpi, aufwind, nied):
     das Modell dort ein Gewitter baut. LPI in J/kg, Aufwind in m/s, Nied. in mm/h.
     """
     return max(0.0, min(1.0, max(lpi / 5, (aufwind - 2) / 6, nied / 1.0)))
+
+
+def zell_staerke(lpi, aufwind, nied):
+    """Gewitterzelle als Stärke 0…100 — identisch zu zellStaerke() im Frontend.
+
+    Getrennt vom Gate, weil das Gate absichtlich sättigt: es fragt nur „Gewitter
+    ja/nein", und ab LPI 5 steht es auf 1. Für die Darstellung brauchen wir aber
+    eine Skala, die zwischen Schauer und Superzelle noch unterscheidet.
+
+    Zwei Anteile, weil beide für sich in die Irre führen:
+      kern  — dass überhaupt ein Konvektionskern da ist (Aufwind oder Regen).
+              Ein Starkregenkern ohne Blitze ist eine Zelle, nur eben keine
+              elektrisch aktive.
+      blitz — LPI, das eigentliche Gewittermerkmal. Hebt den Kern an, kann ihn
+              aber nicht ersetzen: LPI ohne Kern kommt in der Praxis nicht vor.
+
+    Rückgabe: (Zellstärke 0…100, elektrische Aktivität 0…100).
+    """
+    kern = max(0.0, min(1.0, max(nied / 10.0, (aufwind - 1.5) / 16.0)))
+    blitz = max(0.0, min(1.0, lpi / 25.0))
+    gew = max(0.0, min(1.0, 0.65 * kern + 0.35 * blitz + 0.35 * kern * blitz))
+    return 100 * gew, 100 * blitz
 
 
 def tpi_of(cape, shear, cin, lcl, konv=1.0):
@@ -323,8 +353,9 @@ def main():
     t0 = datetime.fromisoformat(zeiten[start]).replace(tzinfo=timezone.utc)
     lauf = datetime.fromisoformat(zeiten[0]).replace(tzinfo=timezone.utc)
 
-    felder = {k: [[0.0] * nc for _ in range(n)]
-              for k in ("cape", "cin", "shear", "lcl", "u", "v", "konv", "tpi")}
+    felder = {k: [[KEINE_DATEN if k in LUECKENFELDER else 0.0] * nc for _ in range(n)]
+              for k in ("cape", "cin", "shear", "lcl", "u", "v", "konv", "tpi",
+                        "gew", "blitz")}
 
     ohne_gate = 0
     for h in range(n):
@@ -347,6 +378,13 @@ def main():
                     ohne_gate += 1
                 else:
                     konv = konv_faktor(lpi or 0.0, auf or 0.0, nie or 0.0)
+                    # Nur hier, wo ICON-D2 wirklich geantwortet hat, wird die
+                    # Zellstärke gesetzt. Sonst bleibt KEINE_DATEN stehen —
+                    # sonst hieße Stunde 47 „Gewitter über ganz Deutschland",
+                    # weil das Gate dort offensteht.
+                    g, b = zell_staerke(lpi or 0.0, auf or 0.0, nie or 0.0)
+                    felder["gew"][h][c] = g
+                    felder["blitz"][h][c] = b
             cape = st["cape"][k] or 0.0
             cin = -abs(st["convective_inhibition"][k] or 0.0)   # API liefert Beträge
             u10, v10 = uv(st["wind_speed_10m"][k] or 0.0, st["wind_direction_10m"][k] or 0.0)
@@ -367,7 +405,19 @@ def main():
     if ohne_gate:
         anteil = ohne_gate / (n * max(1, len(idx)))
         print(f"  Gate: {anteil:.1%} der Punktstunden ohne ICON-D2 "
-              f"(Horizont +48 h ab Lauf) — dort bleibt das Gate offen")
+              f"(Horizont +48 h ab Lauf) — dort bleibt das Gate offen, "
+              f"die Gewitterebene bleibt dort leer statt voll")
+
+    # Kurzbilanz der Gewitterebene — ohne die merkt man erst im Browser, dass
+    # ein Lauf gar keine Zellen enthält.
+    zellwerte = [felder["gew"][h][c] for h in range(n) for c in range(nc)
+                 if felder["gew"][h][c] > 0]
+    if zellwerte:
+        print(f"  Gewitterebene: {len(zellwerte)} Punktstunden mit Zelle, "
+              f"Höchstwert {max(zellwerte):.0f}, "
+              f"davon kräftig (≥40): {sum(1 for v in zellwerte if v >= 40)}")
+    else:
+        print("  Gewitterebene: keine einzige Zelle im Vorhersagezeitraum")
 
     # JSON fürs Frontend
     ausgabe = {
